@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumeet Kumar — Data Analyst & Business Intelligence Specialist</title>
+    <meta name="description" content="Portfolio of Sumeet Kumar — Data Analyst and Business Intelligence professional with 13+ years of experience in financial reporting, BI dashboards, and operational analytics.">
+    <meta name="author" content="Sumeet Kumar">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Background Elements -->
+    <div class="bg-orbs">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+    <div class="bg-grid"></div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <a href="#landing" class="logo">SK.</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#landing" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+            <li><a href="#education" onclick="closeMenu()">Education</a></li>
+            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+            <li><a href="#certifications" onclick="closeMenu()">Certifications</a></li>
+            <li><a href="#achievements" onclick="closeMenu()">Achievements</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- ══════════════════ PAGE 1 — LANDING ══════════════════ -->
+        <section id="landing">
+            <div class="landing-content">
+                <div class="reveal">
+                    <p class="landing-tag">Welcome to my Digital Portfolio</p>
+                </div>
+                <h1 class="landing-name reveal reveal-delay-1">
+                    <span class="highlight">Sumeet</span> Kumar.
+                </h1>
+                <p class="landing-designations reveal reveal-delay-2">
+                    <span id="typed-text"></span><span class="typing-cursor"></span>
+                </p>
+                <p class="landing-intro reveal reveal-delay-3">
+                    Data Analyst and Business Intelligence professional with over 13 years of experience driving data operations, financial reporting, and operational analytics. I specialize in building executive Power BI dashboards, executing vendor invoice & fee reconciliations, and automating multi-step reporting pipelines. My current focus centers on leveraging Generative AI tools like Copilot to transform raw business data into actionable executive insights. Explore my journey below to see how I deliver quantifiable impact.
+                </p>
+                
+                <div class="landing-cta-container cta-slide reveal reveal-delay-4">
+                    <a href="#about" class="btn-primary">Learn More About Me ↗</a>
+                    <a href="#contact" class="btn-outline">Get In Touch</a>
+
+                    <div class="social-icons-bar">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
+                            <span class="icon">💻</span>
+                        </a>
+                        <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+                            <span class="icon">🔗</span>
+                        </a>
+                        <a href="mailto:sumit.kausik@gmail.com" class="social-icon-btn" title="Email">
+                            <span class="icon">✉️</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 2 — ABOUT ME ══════════════════ -->
+        <section id="about">
+            <div class="section-header reveal">
+                <span class="section-number">01.</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Profile Photo Card -->
+                <div class="profile-photo-container">
+                    <div class="profile-photo-card">
+                        <img src="./MY_PIC/MY PIC.jpeg" alt="Sumeet Kumar" class="profile-photo-img">
+                    </div>
+                </div>
+
+                <!-- Right Narrative & Mission/Vision -->
+                <div class="about-content">
+                    <p class="about-summary-text reveal">
+                        As Senior Manager of Franchise Operations at Mentors Eduserv, I lead financial analysis, purchase order reviews, and multi-site operational audits. Over the past 13+ years, I have served across key academic and corporate management roles, mastering tools such as Power BI, DAX, Power Query, SQL, and Excel. Combining an M.Sc. and B.Ed. background with advanced analytics certifications, I bridge complex data architectures with high-level strategic decision-making. My unique edge lies in marrying rigorous financial reconciliation with cutting-edge AI workflow automation.
+                    </p>
+
+                    <div class="mission-vision-grid">
+                        <div class="flip-card" id="mission-card">
+                            <h4>🎯 Mission</h4>
+                            <p>To empower organizations with accurate, automated financial and operational reporting, enabling leaders to make confident, data-backed strategic decisions.</p>
+                        </div>
+                        <div class="flip-card" id="vision-card">
+                            <h4>🚀 Vision</h4>
+                            <p>To pioneer the integration of Business Intelligence and Generative AI within corporate operations, maximizing efficiency and eliminating reporting bottlenecks.</p>
+                        </div>
+                    </div>
+
+                    <div class="view-work-nav reveal">
+                        <p class="view-work-title">View My Work</p>
+                        <div class="view-work-buttons">
+                            <a href="#experience" class="work-nav-btn">Work Experience <span class="icon">→</span></a>
+                            <a href="#education" class="work-nav-btn">Education <span class="icon">→</span></a>
+                            <a href="#projects" class="work-nav-btn">Projects <span class="icon">→</span></a>
+                            <a href="#skills" class="work-nav-btn">Skills <span class="icon">→</span></a>
+                            <a href="#certifications" class="work-nav-btn">Certifications <span class="icon">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 3 — WORK EXPERIENCE ══════════════════ -->
+        <section id="experience">
+            <div class="section-header reveal">
+                <span class="section-number">02.</span>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="experience-timeline">
+                
+                <!-- Role 1 -->
+                <div class="exp-card">
+                    <div class="exp-left-panel">
+                        <span class="exp-badge">Full-Time</span>
+                        <h3 class="exp-company">Mentors Eduserv</h3>
+                        <p class="exp-duration">Apr 2025 — Present</p>
+                        <p class="exp-location">Patna, Bihar, India</p>
+                    </div>
+                    <div class="exp-right-panel">
+                        <h4 class="exp-role-title">Senior Manager — Franchise Operations</h4>
+                        <p class="exp-section-label">Key Responsibilities</p>
+                        <ul class="exp-bullets">
+                            <li>Reviewed and approved purchase orders across regional franchise centers, verifying vendor invoices against purchase records for budget compliance.</li>
+                            <li>Conducted recurring expense audits, reconciling vendor invoices and identifying financial discrepancies prior to payment processing.</li>
+                            <li>Consolidated multi-site operational and financial data into a single structured BI data model.</li>
+                        </ul>
+                        <p class="exp-section-label">Key Achievements & Impact</p>
+                        <ul class="exp-bullets exp-achievements">
+                            <li>⚡ Built Power BI executive dashboards (DAX, Power Query), accelerating leadership decision-making speed by <strong>50%</strong>.</li>
+                            <li>⏱️ Automated Excel/Power BI reporting workflows, cutting manual reporting turnaround time by <strong>40%</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="exp-card">
+                    <div class="exp-left-panel">
+                        <span class="exp-badge">Full-Time</span>
+                        <h3 class="exp-company">Dr DY Patil Pushpalata Patil School</h3>
+                        <p class="exp-duration">Nov 2022 — Aug 2024</p>
+                        <p class="exp-location">Patna, Bihar, India</p>
+                    </div>
+                    <div class="exp-right-panel">
+                        <h4 class="exp-role-title">Academic Coordinator & Manager</h4>
+                        <p class="exp-section-label">Key Responsibilities</p>
+                        <ul class="exp-bullets">
+                            <li>Reconciled fee and accounts records to ensure exact precision of student payment collections and outstanding balances.</li>
+                            <li>Verified vendor and supplier payments against invoices and purchase orders prior to financial dispatch.</li>
+                            <li>Ran data-driven academic and financial reviews with school board leadership and administration.</li>
+                        </ul>
+                        <p class="exp-section-label">Key Achievements & Impact</p>
+                        <ul class="exp-bullets exp-achievements">
+                            <li>📈 Designed Excel-based MIS trackers and dashboards, driving a <strong>30% improvement</strong> in tracked operational outcomes.</li>
+                            <li>🔍 Eliminated billing discrepancies through recurring 100% accurate vendor invoice reconciliations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="exp-card">
+                    <div class="exp-left-panel">
+                        <span class="exp-badge">Full-Time</span>
+                        <h3 class="exp-company">Teevra Edutech</h3>
+                        <p class="exp-duration">May 2022 — Nov 2022</p>
+                        <p class="exp-location">India</p>
+                    </div>
+                    <div class="exp-right-panel">
+                        <h4 class="exp-role-title">Business Development Manager</h4>
+                        <p class="exp-section-label">Key Responsibilities</p>
+                        <ul class="exp-bullets">
+                            <li>Analyzed market and sales trends across B2B, B2C, and institutional segments to drive strategic business growth.</li>
+                            <li>Built and maintained relationships with school and institutional stakeholders to expand market presence.</li>
+                        </ul>
+                        <p class="exp-section-label">Key Achievements & Impact</p>
+                        <ul class="exp-bullets exp-achievements">
+                            <li>🎯 Expanded institutional accounts portfolio by <strong>25%</strong> within a 6-month period.</li>
+                            <li>💡 Delivered data-backed market analysis reports for senior executive strategy planning.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="exp-card">
+                    <div class="exp-left-panel">
+                        <span class="exp-badge">Full-Time</span>
+                        <h3 class="exp-company">Central Public School</h3>
+                        <p class="exp-duration">Apr 2014 — May 2022</p>
+                        <p class="exp-location">Bihar, India</p>
+                    </div>
+                    <div class="exp-right-panel">
+                        <h4 class="exp-role-title">Academic Incharge</h4>
+                        <p class="exp-section-label">Key Responsibilities</p>
+                        <ul class="exp-bullets">
+                            <li>Managed fee collection and accounts records across all academic and institutional operations.</li>
+                            <li>Tracked budget vs. actual departmental expenses, identifying variances and reporting key metrics for executive review.</li>
+                            <li>Verified vendor purchase bills prior to payment processing against authorized purchase orders.</li>
+                        </ul>
+                        <p class="exp-section-label">Key Achievements & Impact</p>
+                        <ul class="exp-bullets exp-achievements">
+                            <li>💰 Maintained strict financial audit control over <strong>8 consecutive years</strong> of operational budgets.</li>
+                            <li>🏆 Supervised 40+ faculty members and implemented standardized performance monitoring frameworks.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 5 -->
+                <div class="exp-card">
+                    <div class="exp-left-panel">
+                        <span class="exp-badge">Full-Time</span>
+                        <h3 class="exp-company">Systopic Laboratories</h3>
+                        <p class="exp-duration">Apr 2013 — May 2014</p>
+                        <p class="exp-location">India</p>
+                    </div>
+                    <div class="exp-right-panel">
+                        <h4 class="exp-role-title">Market Representative</h4>
+                        <p class="exp-section-label">Key Responsibilities</p>
+                        <ul class="exp-bullets">
+                            <li>Managed territory sales and key client relationships, meeting assigned targets through proactive market expansion.</li>
+                        </ul>
+                        <p class="exp-section-label">Key Achievements & Impact</p>
+                        <ul class="exp-bullets exp-achievements">
+                            <li>📊 Consistently achieved <strong>100%+</strong> quarterly sales targets across assigned commercial territories.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 4 — EDUCATION ══════════════════ -->
+        <section id="education">
+            <div class="section-header reveal">
+                <span class="section-number">03.</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="education-grid">
+                <div class="edu-card">
+                    <span class="edu-cap-icon">🎓</span>
+                    <h3 class="edu-qualification">M.Sc. — Master of Science</h3>
+                    <p class="edu-institution">Ch. Charan Singh University</p>
+                    <div class="edu-meta">
+                        <span>Postgraduate</span> · <span>Full-Time</span>
+                    </div>
+                    <ul class="edu-highlights">
+                        <li>Advanced scientific methodology & quantitative research</li>
+                        <li>Analytical problem solving and mathematical modeling foundations</li>
+                        <li>Data analysis and research documentation expertise</li>
+                    </ul>
+                </div>
+
+                <div class="edu-card">
+                    <span class="edu-cap-icon">📖</span>
+                    <h3 class="edu-qualification">B.Ed. — Bachelor of Education</h3>
+                    <p class="edu-institution">Ch. Charan Singh University</p>
+                    <div class="edu-meta">
+                        <span>Bachelor's Degree</span> · <span>Full-Time</span>
+                    </div>
+                    <ul class="edu-highlights">
+                        <li>Pedagogical strategies, curriculum development & evaluation methodology</li>
+                        <li>Institutional administration and academic coordinator training</li>
+                        <li>Stakeholder communication & structured leadership skills</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 5 — PROJECTS ══════════════════ -->
+        <section id="projects">
+            <div class="section-header reveal">
+                <span class="section-number">04.</span>
+                <h2 class="section-title">Key Projects</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="projects-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h3 class="project-title">Power BI Executive Dashboard</h3>
+                    <p class="project-type-tag">Financial BI & Operations · 2025</p>
+                    <p class="project-desc">Designed and deployed an interactive executive KPI dashboard utilizing complex DAX measures and automated Power Query ETL pipelines for leadership tracking.</p>
+                    <div class="project-outcomes-list">
+                        <div class="outcome-box">
+                            <span class="outcome-num">1.</span> Accelerated executive decision-making speed by 50%.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">2.</span> Consolidated multi-branch franchise financial metrics into a single view.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">3.</span> Automated daily data refreshing via Power Query connectors.
+                        </div>
+                    </div>
+                    <div class="project-tech-grid">
+                        <span class="tech-pill">Power BI</span>
+                        <span class="tech-pill">DAX</span>
+                        <span class="tech-pill">Power Query</span>
+                        <span class="tech-pill">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h3 class="project-title">Excel Workflow Automation</h3>
+                    <p class="project-type-tag">Process Automation · 2024</p>
+                    <p class="project-desc">Developed an automated end-to-end reporting pipeline using advanced Excel formulas, Power Pivot data modeling, and automated data validation rules.</p>
+                    <div class="project-outcomes-list">
+                        <div class="outcome-box">
+                            <span class="outcome-num">1.</span> Reduced recurring report turnaround time by 40%.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">2.</span> Eliminated manual copy-paste errors across multi-sheet workbooks.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">3.</span> Standardized vendor invoice audit templates across regional teams.
+                        </div>
+                    </div>
+                    <div class="project-tech-grid">
+                        <span class="tech-pill">Excel</span>
+                        <span class="tech-pill">Power Pivot</span>
+                        <span class="tech-pill">Pivot Tables</span>
+                        <span class="tech-pill">VBA / Macros</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <h3 class="project-title">Student Performance & Accounts Analytics</h3>
+                    <p class="project-type-tag">MIS & Operational BI · 2023</p>
+                    <p class="project-desc">Built a central MIS analytics system tracking student academic outcomes, attendance records, and tuition fee collection/reconciliation dashboards.</p>
+                    <div class="project-outcomes-list">
+                        <div class="outcome-box">
+                            <span class="outcome-num">1.</span> Improved tracked student & accounts outcomes by 30%.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">2.</span> Enabled real-time tracking of pending fee balances & collection rates.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">3.</span> Provided board administration with automated monthly summary cards.
+                        </div>
+                    </div>
+                    <div class="project-tech-grid">
+                        <span class="tech-pill">MIS Analytics</span>
+                        <span class="tech-pill">Excel BI</span>
+                        <span class="tech-pill">Accounts Rec</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <h3 class="project-title">AI Productivity & Workflow Toolkit</h3>
+                    <p class="project-type-tag">Generative AI Integration · 2025</p>
+                    <p class="project-desc">Integrated ChatGPT and Microsoft Copilot into core daily operations to automate report generation, data structuring, prompt engineering, and executive summaries.</p>
+                    <div class="project-outcomes-list">
+                        <div class="outcome-box">
+                            <span class="outcome-num">1.</span> Cut documentation drafting time by 60% using AI prompts.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">2.</span> Automated SQL query generation and DAX measure troubleshooting.
+                        </div>
+                        <div class="outcome-box">
+                            <span class="outcome-num">3.</span> Enhanced team productivity through standardized Copilot workflows.
+                        </div>
+                    </div>
+                    <div class="project-tech-grid">
+                        <span class="tech-pill">Microsoft Copilot</span>
+                        <span class="tech-pill">ChatGPT</span>
+                        <span class="tech-pill">Gen AI</span>
+                        <span class="tech-pill">Prompt Eng</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 6 — SKILLS ══════════════════ -->
+        <section id="skills">
+            <div class="section-header reveal">
+                <span class="section-number">05.</span>
+                <h2 class="section-title">Core Skills</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-container">
+                
+                <!-- Category 1 -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">📊</span>
+                        <h3 class="skill-cat-title">Data & BI Tools</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Power BI</span>
+                                <span class="skill-percent-num" data-count="95">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>DAX & Data Modeling</span>
+                                <span class="skill-percent-num" data-count="90">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Power Query (ETL)</span>
+                                <span class="skill-percent-num" data-count="92">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>SQL / SQL Server</span>
+                                <span class="skill-percent-num" data-count="85">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Excel (Power Pivot, Pivots)</span>
+                                <span class="skill-percent-num" data-count="98">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="98%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">💳</span>
+                        <h3 class="skill-cat-title">Financial & Accounting Ops</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Budget Planning & Variance</span>
+                                <span class="skill-percent-num" data-count="92">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Purchase Order Review</span>
+                                <span class="skill-percent-num" data-count="90">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Vendor Invoice Reconciliation</span>
+                                <span class="skill-percent-num" data-count="95">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Expense Audits & Control</span>
+                                <span class="skill-percent-num" data-count="92">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Fee / Accounts Reconciliation</span>
+                                <span class="skill-percent-num" data-count="94">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">🤖</span>
+                        <h3 class="skill-cat-title">Analytics, AI & Leadership</h3>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Python for Data Analysis</span>
+                                <span class="skill-percent-num" data-count="80">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Data Visualization & Reporting</span>
+                                <span class="skill-percent-num" data-count="95">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Generative AI (Copilot, ChatGPT)</span>
+                                <span class="skill-percent-num" data-count="88">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Workflow Automation</span>
+                                <span class="skill-percent-num" data-count="90">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-item-header">
+                                <span>Stakeholder & Team Leadership</span>
+                                <span class="skill-percent-num" data-count="92">0%</span>
+                            </div>
+                            <div class="skill-bar-bg">
+                                <div class="skill-bar-fill" data-value="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 7 — CERTIFICATIONS ══════════════════ -->
+        <section id="certifications">
+            <div class="section-header reveal">
+                <span class="section-number">06.</span>
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="certifications-grid">
+                
+                <a href="./Certification/GEN AI WITH M365 & COPILOT.pdf" target="_blank" class="cert-card">
+                    <span class="cert-provider-badge">Microsoft & Be10x</span>
+                    <h3 class="cert-title">Generative AI & Microsoft Copilot</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Gen AI Integration with M365 Productivity Suite</p>
+                    <div class="cert-image-preview">
+                        <img src="./Certification/GEN AI.jpeg" alt="Generative AI Certificate">
+                    </div>
+                </a>
+
+                <a href="./Certification/POWER BI.jpeg" target="_blank" class="cert-card">
+                    <span class="cert-provider-badge">Data Analysis Certification</span>
+                    <h3 class="cert-title">Power BI Data Analysis</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Advanced BI Dashboard & DAX Data Modeling</p>
+                    <div class="cert-image-preview">
+                        <img src="./Certification/POWER BI.jpeg" alt="Power BI Certificate">
+                    </div>
+                </a>
+
+                <a href="./Certification/ADVANCE CERTIFICATES IN DATA ANALYSIS.jpeg" target="_blank" class="cert-card">
+                    <span class="cert-provider-badge">Professional Credential</span>
+                    <h3 class="cert-title">Advanced Data Analysis</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Specialized Business Intelligence & Analytics</p>
+                    <div class="cert-image-preview">
+                        <img src="./Certification/ADVANCE CERTIFICATES IN DATA ANALYSIS.jpeg" alt="Advanced Data Analysis Certificate">
+                    </div>
+                </a>
+
+                <a href="./Certification/BE 10X.jpeg" target="_blank" class="cert-card">
+                    <span class="cert-provider-badge">Be10x Mastery</span>
+                    <h3 class="cert-title">Be10x AI Mastery</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">AI Tools, Automation & 10x Productivity Boost</p>
+                    <div class="cert-image-preview">
+                        <img src="./Certification/BE 10X.jpeg" alt="Be10x Certificate">
+                    </div>
+                </a>
+
+                <div class="cert-card">
+                    <span class="cert-provider-badge">DeepLearning.AI</span>
+                    <h3 class="cert-title">Generative AI for All</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Core GenAI Concepts & Large Language Models</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 8 — ACHIEVEMENTS ══════════════════ -->
+        <section id="achievements">
+            <div class="section-header reveal">
+                <span class="section-number">07.</span>
+                <h2 class="section-title">Achievements & Recognition</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="section-subtitle">Track record of operational excellence, financial accuracy, and data innovation</p>
+
+            <!-- 4 Stat Counters -->
+            <div class="stats-counter-bar">
+                <div class="stat-counter-card">
+                    <div class="stat-counter-num" data-count="13" data-suffix="+">0</div>
+                    <div class="stat-counter-label">Years Experience</div>
+                </div>
+                <div class="stat-counter-card">
+                    <div class="stat-counter-num" data-count="5" data-suffix="+">0</div>
+                    <div class="stat-counter-label">Certifications</div>
+                </div>
+                <div class="stat-counter-card">
+                    <div class="stat-counter-num" data-count="10" data-suffix="+">0</div>
+                    <div class="stat-counter-label">Projects & BI Dashboards</div>
+                </div>
+                <div class="stat-counter-card">
+                    <div class="stat-counter-num" data-count="4" data-suffix="+">0</div>
+                    <div class="stat-counter-label">Key Awards / Honors</div>
+                </div>
+            </div>
+
+            <!-- Achievement Cards -->
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <span class="achieve-badge">🏆 Professional Award · 2025</span>
+                    <h3 class="achieve-title">Franchise Operations BI Transformation</h3>
+                    <p class="achieve-inst">Mentors Eduserv</p>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem;">Engineered the company-wide BI dashboard structure across regional franchise centers, driving a 50% increase in executive decision speed and 40% reduction in reporting overhead.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <span class="achieve-badge">🥇 Academic Excellence · 2024</span>
+                    <h3 class="achieve-title">MIS Systems Optimization Award</h3>
+                    <p class="achieve-inst">Dr DY Patil Pushpalata Patil School</p>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem;">Recognized by administrative leadership for designing zero-error fee reconciliation and student MIS tracking models that boosted outcome monitoring by 30%.</p>
+                </div>
+
+                <div class="achievement-card">
+                    <span class="achieve-badge">🎓 Academic Credential</span>
+                    <h3 class="achieve-title">Postgraduate Master of Science</h3>
+                    <p class="achieve-inst">Ch. Charan Singh University</p>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem;">Graduated with distinction in advanced scientific methodology, quantitative modeling, and data research foundations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════ PAGE 9 — CONTACT ══════════════════ -->
+        <section id="contact">
+            <div class="section-header reveal">
+                <span class="section-number">08.</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-container">
+                
+                <!-- LEFT COLUMN: Contact Form -->
+                <div class="contact-form-card">
+                    <h3 class="form-title">Send Me a Message</h3>
+                    <form id="contact-form">
+                        
+                        <div class="form-group">
+                            <input type="text" id="form-name" class="form-input" placeholder=" " required>
+                            <label for="form-name" class="floating-label">Full Name</label>
+                            <div class="form-underline"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="form-email" class="form-input" placeholder=" " required>
+                            <label for="form-email" class="floating-label">Email Address</label>
+                            <div class="form-underline"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="form-subject" class="form-input" placeholder=" " required>
+                            <label for="form-subject" class="floating-label">Subject</label>
+                            <div class="form-underline"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="form-message" class="form-textarea" placeholder=" " required></textarea>
+                            <label for="form-message" class="floating-label">Your Message</label>
+                            <div class="form-underline"></div>
+                        </div>
+
+                        <button type="submit" class="btn-send">
+                            Send Message ↗
+                        </button>
+                    </form>
+                </div>
+
+                <!-- RIGHT COLUMN: Contact Information -->
+                <div class="contact-info-card">
+                    <div>
+                        <h3 class="contact-info-title">Let's Connect</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Currently open for new opportunities in Data Analysis, BI Dashboard Development, and Financial Operations Analytics.</p>
+
+                        <div class="contact-rows">
+                            <a href="mailto:sumit.kausik@gmail.com" class="contact-row">
+                                <div class="contact-row-icon">✉️</div>
+                                <div class="contact-row-text">
+                                    <div class="label">Email Address</div>
+                                    <div class="value">sumit.kausik@gmail.com</div>
+                                </div>
+                            </a>
+
+                            <a href="tel:+919153579997" class="contact-row">
+                                <div class="contact-row-icon">📞</div>
+                                <div class="contact-row-text">
+                                    <div class="label">Phone Number</div>
+                                    <div class="value">+91 9153579997</div>
+                                </div>
+                            </a>
+
+                            <div class="contact-row">
+                                <div class="contact-row-icon">📍</div>
+                                <div class="contact-row-text">
+                                    <div class="label">Location</div>
+                                    <div class="value">Patna, Bihar, India</div>
+                                </div>
+                            </div>
+
+                            <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="contact-row">
+                                <div class="contact-row-icon">🔗</div>
+                                <div class="contact-row-text">
+                                    <div class="label">LinkedIn</div>
+                                    <div class="value">sumeet-kumar-86038010b</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-name">Sumeet Kumar</div>
+        <p class="footer-tagline">Transforming Raw Data into Strategic Decision Power</p>
+        <div class="footer-socials">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><span class="icon">💻</span></a>
+            <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><span class="icon">🔗</span></a>
+            <a href="mailto:sumit.kausik@gmail.com" class="social-icon-btn"><span class="icon">✉️</span></a>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1.5rem;">© 2026 Sumeet Kumar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
