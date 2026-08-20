@@ -1,1000 +1,1423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumeet Kumar — Data Analyst & Business Intelligence Specialist</title>
-    <meta name="description" content="Portfolio of Sumeet Kumar — Data Analyst and Business Intelligence professional with 13+ years of experience in financial reporting, BI dashboards, and operational analytics.">
-    <meta name="author" content="Sumeet Kumar">
-
-    <!-- Fonts -->
+    <title>Sumeet Kumar | AI Developer & Data Analytics Specialist</title>
+    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-main: #060d17;
+            --bg-card: #0d1b2a;
+            --bg-card-hover: #132742;
+            --accent-gold: #f59e0b;
+            --accent-gold-light: #fbbf24;
+            --accent-gold-glow: rgba(245, 158, 11, 0.15);
+            --text-heading: #f8fafc;
+            --text-body: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(245, 158, 11, 0.18);
+            --border-glass: rgba(255, 255, 255, 0.07);
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'Fira Code', monospace;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 85% 70%, rgba(13, 27, 42, 0.8) 0%, transparent 50%);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--text-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(6, 13, 23, 0.88);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-glass);
+            transition: var(--transition);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-body);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem !important;
+            transition: var(--transition);
+        }
+
+        .nav-btn:hover {
+            background: var(--accent-gold-glow);
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-heading);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-gold-glow);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 30px;
+            color: var(--accent-gold-light);
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge i {
+            font-size: 0.75rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            margin-bottom: 2.5rem;
+            max-width: 580px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: #060d17;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-heading);
+            border: 1px solid var(--border-glass);
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--border-color);
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .hero-terminal {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #09131e;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .term-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red {
+            background: #ef4444;
+        }
+
+        .dot-yellow {
+            background: #f59e0b;
+        }
+
+        .dot-green {
+            background: #10b981;
+        }
+
+        .terminal-title {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.88rem;
+            color: var(--text-heading);
+        }
+
+        .terminal-body .code-line {
+            margin-bottom: 10px;
+        }
+
+        .terminal-body .prompt {
+            color: var(--accent-gold);
+        }
+
+        .terminal-body .cmd {
+            color: #38bdf8;
+        }
+
+        .terminal-body .comment {
+            color: var(--text-muted);
+        }
+
+        .terminal-body .output {
+            color: #a7f3d0;
+            margin-left: 15px;
+        }
+
+        /* Stats Grid */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            border-right: 1px solid var(--border-glass);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            font-family: var(--font-mono);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Projects Section */
+        .project-filter {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            color: var(--text-body);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent-gold);
+            color: #060d17;
+            border-color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-color);
+            background: var(--bg-card-hover);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-folder-icon {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+        }
+
+        .project-status {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .status-enterprise {
+            background: var(--accent-gold-glow);
+            color: var(--accent-gold);
+            border: 1px solid var(--border-color);
+        }
+
+        .project-title {
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 1.8rem;
+        }
+
+        .tech-pill {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-gold-light);
+            background: rgba(245, 158, 11, 0.08);
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            border-top: 1px solid var(--border-glass);
+            padding-top: 1rem;
+        }
+
+        .project-btn {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .project-btn:hover {
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 2px;
+            background: var(--border-glass);
+        }
+
+        .timeline-card {
+            position: relative;
+            margin-left: 60px;
+            margin-bottom: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .timeline-card:hover {
+            border-color: var(--border-color);
+            transform: translateX(6px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -48px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--bg-main);
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        .timeline-role {
+            font-size: 1.3rem;
+            margin-bottom: 4px;
+        }
+
+        .timeline-company {
+            font-family: var(--font-mono);
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 0.92rem;
+        }
+
+        .timeline-bullets li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* Skills Matrix */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+
+        .skill-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-gold);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            color: var(--text-heading);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .skill-badge:hover {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold-glow);
+            color: var(--accent-gold-light);
+            transform: translateY(-2px);
+        }
+
+        /* Education & Certs */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .edu-card:hover {
+            border-color: var(--border-color);
+            transform: translateY(-4px);
+        }
+
+        .edu-title {
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .edu-org {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-family: var(--font-mono);
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .contact-box h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-chip {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            padding: 12px 20px;
+            border-radius: 10px;
+            color: var(--text-heading);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-chip:hover {
+            border-color: var(--accent-gold);
+            background: var(--accent-gold-glow);
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-glass);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+        }
+
+        /* Modal for Project Case Studies */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            max-width: 650px;
+            width: 100%;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-desc {
+                margin: 0 auto 2.5rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-card);
+                padding: 2rem;
+                border-bottom: 1px solid var(--border-glass);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero-title {
+                font-size: 2.4rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid var(--border-glass);
+                padding-bottom: 1rem;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-    <!-- Animated Background Elements -->
-    <div class="bg-orbs">
-        <div class="orb"></div>
-        <div class="orb"></div>
-        <div class="orb"></div>
-    </div>
-    <div class="bg-grid"></div>
-
-    <!-- Navigation Bar -->
-    <nav id="navbar">
-        <a href="#landing" class="logo">SK.</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-links" id="nav-links">
-            <li><a href="#landing" onclick="closeMenu()">Home</a></li>
-            <li><a href="#about" onclick="closeMenu()">About</a></li>
-            <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
-            <li><a href="#education" onclick="closeMenu()">Education</a></li>
-            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
-            <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
-            <li><a href="#certifications" onclick="closeMenu()">Certifications</a></li>
-            <li><a href="#achievements" onclick="closeMenu()">Achievements</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-        </ul>
+    <!-- Header / Nav -->
+    <nav>
+        <div class="container nav-wrapper">
+            <a href="#hero" class="logo">
+                <i class="fa-solid fa-code highlight"></i> Sumeet<span>.io</span>
+            </a>
+            <button class="mobile-toggle" onclick="toggleNav()"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="toggleNav()"><i class="fa-regular fa-user"></i> About</a></li>
+                <li><a href="#projects" onclick="toggleNav()"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
+                <li><a href="#skills" onclick="toggleNav()"><i class="fa-solid fa-laptop-code"></i> Skills</a></li>
+                <li><a href="#experience" onclick="toggleNav()"><i class="fa-solid fa-briefcase"></i> Experience</a>
+                </li>
+                <li><a href="#education" onclick="toggleNav()"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+                </li>
+                <li><a href="#contact" class="nav-btn" onclick="toggleNav()">Get In Touch</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-
-        <!-- ══════════════════ PAGE 1 — LANDING ══════════════════ -->
-        <section id="landing">
-            <div class="landing-content">
-                <div class="reveal">
-                    <p class="landing-tag">Welcome to my Digital Portfolio</p>
-                </div>
-                <h1 class="landing-name reveal reveal-delay-1">
-                    <span class="highlight">Sumeet</span> Kumar.
-                </h1>
-                <p class="landing-designations reveal reveal-delay-2">
-                    <span id="typed-text"></span><span class="typing-cursor"></span>
-                </p>
-                <p class="landing-intro reveal reveal-delay-3">
-                    Data Analyst and Business Intelligence professional with over 13 years of experience driving data operations, financial reporting, and operational analytics. I specialize in building executive Power BI dashboards, executing vendor invoice & fee reconciliations, and automating multi-step reporting pipelines. My current focus centers on leveraging Generative AI tools like Copilot to transform raw business data into actionable executive insights. Explore my journey below to see how I deliver quantifiable impact.
-                </p>
-                
-                <div class="landing-cta-container cta-slide reveal reveal-delay-4">
-                    <a href="#about" class="btn-primary">Learn More About Me ↗</a>
-                    <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">💬 Chat on WhatsApp</a>
-                    <a href="#contact" class="btn-outline">Get In Touch</a>
-
-                    <div class="social-icons-bar">
-                        <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="social-icon-btn whatsapp-social" title="WhatsApp Direct">
-                            <span class="icon">💬</span>
-                        </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub">
-                            <span class="icon">💻</span>
-                        </a>
-                        <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
-                            <span class="icon">🔗</span>
-                        </a>
-                        <a href="mailto:sumit.kausik@gmail.com" class="social-icon-btn" title="Email">
-                            <span class="icon">✉️</span>
-                        </a>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div>
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-circle"></i> Open for Analytics & AI Solutions
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════ PAGE 2 — ABOUT ME ══════════════════ -->
-        <section id="about">
-            <div class="section-header reveal">
-                <span class="section-number">01.</span>
-                <h2 class="section-title">About Me</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="about-grid">
-                <!-- Profile Photo Card -->
-                <div class="profile-photo-container">
-                    <div class="profile-photo-card">
-                        <img src="./PIC/MY PIC.jpeg" alt="Sumeet Kumar" class="profile-photo-img">
-                    </div>
-                </div>
-
-                <!-- Right Narrative & Mission/Vision -->
-                <div class="about-content">
-                    <p class="about-summary-text reveal">
-                        As Senior Manager of Franchise Operations at Mentors Eduserv, I lead financial analysis, purchase order reviews, and multi-site operational audits. Over the past 13+ years, I have served across key academic and corporate management roles, mastering tools such as Power BI, DAX, Power Query, SQL, and Excel. Combining an M.Sc. and B.Ed. background with advanced analytics certifications, I bridge complex data architectures with high-level strategic decision-making. My unique edge lies in marrying rigorous financial reconciliation with cutting-edge AI workflow automation.
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">Sumeet Kumar</span></h1>
+                    <div class="hero-subtitle">> AI Developer & Financial Analytics Specialist</div>
+                    <p class="hero-desc">
+                        13+ years transforming complex enterprise data into high-impact BI dashboards, intelligent
+                        automation pipelines, and generative AI toolkits with Python, Power BI, SQL, and FastAPI.
                     </p>
-
-                    <div class="mission-vision-grid">
-                        <div class="flip-card" id="mission-card">
-                            <h4>🎯 Mission</h4>
-                            <p>To empower organizations with accurate, automated financial and operational reporting, enabling leaders to make confident, data-backed strategic decisions.</p>
-                        </div>
-                        <div class="flip-card" id="vision-card">
-                            <h4>🚀 Vision</h4>
-                            <p>To pioneer the integration of Business Intelligence and Generative AI within corporate operations, maximizing efficiency and eliminating reporting bottlenecks.</p>
-                        </div>
-                    </div>
-
-                    <div class="view-work-nav reveal">
-                        <p class="view-work-title">View My Work</p>
-                        <div class="view-work-buttons">
-                            <a href="#experience" class="work-nav-btn">Work Experience <span class="icon">→</span></a>
-                            <a href="#education" class="work-nav-btn">Education <span class="icon">→</span></a>
-                            <a href="#projects" class="work-nav-btn">Projects <span class="icon">→</span></a>
-                            <a href="#skills" class="work-nav-btn">Skills <span class="icon">→</span></a>
-                            <a href="#certifications" class="work-nav-btn">Certifications <span class="icon">→</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════ PAGE 3 — WORK EXPERIENCE ══════════════════ -->
-        <section id="experience">
-            <div class="section-header reveal">
-                <span class="section-number">02.</span>
-                <h2 class="section-title">Work Experience</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="experience-timeline">
-                
-                <!-- Role 1 -->
-                <div class="exp-card">
-                    <div class="exp-left-panel">
-                        <span class="exp-badge">Full-Time</span>
-                        <h3 class="exp-company">Mentors Eduserv</h3>
-                        <p class="exp-duration">Apr 2025 — Present</p>
-                        <p class="exp-location">Patna, Bihar, India</p>
-                    </div>
-                    <div class="exp-right-panel">
-                        <h4 class="exp-role-title">Senior Manager — Franchise Operations</h4>
-                        <p class="exp-section-label">Key Responsibilities</p>
-                        <ul class="exp-bullets">
-                            <li>Reviewed and approved purchase orders across regional franchise centers, verifying vendor invoices against purchase records for budget compliance.</li>
-                            <li>Conducted recurring expense audits, reconciling vendor invoices and identifying financial discrepancies prior to payment processing.</li>
-                            <li>Consolidated multi-site operational and financial data into a single structured BI data model.</li>
-                        </ul>
-                        <p class="exp-section-label">Key Achievements & Impact</p>
-                        <ul class="exp-bullets exp-achievements">
-                            <li>⚡ Built Power BI executive dashboards (DAX, Power Query), accelerating leadership decision-making speed by <strong>50%</strong>.</li>
-                            <li>⏱️ Automated Excel/Power BI reporting workflows, cutting manual reporting turnaround time by <strong>40%</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 2 -->
-                <div class="exp-card">
-                    <div class="exp-left-panel">
-                        <span class="exp-badge">Full-Time</span>
-                        <h3 class="exp-company">Dr DY Patil Pushpalata Patil School</h3>
-                        <p class="exp-duration">Nov 2022 — Aug 2024</p>
-                        <p class="exp-location">Patna, Bihar, India</p>
-                    </div>
-                    <div class="exp-right-panel">
-                        <h4 class="exp-role-title">Academic Coordinator & Manager</h4>
-                        <p class="exp-section-label">Key Responsibilities</p>
-                        <ul class="exp-bullets">
-                            <li>Reconciled fee and accounts records to ensure exact precision of student payment collections and outstanding balances.</li>
-                            <li>Verified vendor and supplier payments against invoices and purchase orders prior to financial dispatch.</li>
-                            <li>Ran data-driven academic and financial reviews with school board leadership and administration.</li>
-                        </ul>
-                        <p class="exp-section-label">Key Achievements & Impact</p>
-                        <ul class="exp-bullets exp-achievements">
-                            <li>📈 Designed Excel-based MIS trackers and dashboards, driving a <strong>30% improvement</strong> in tracked operational outcomes.</li>
-                            <li>🔍 Eliminated billing discrepancies through recurring 100% accurate vendor invoice reconciliations.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 3 -->
-                <div class="exp-card">
-                    <div class="exp-left-panel">
-                        <span class="exp-badge">Full-Time</span>
-                        <h3 class="exp-company">Teevra Edutech</h3>
-                        <p class="exp-duration">May 2022 — Nov 2022</p>
-                        <p class="exp-location">India</p>
-                    </div>
-                    <div class="exp-right-panel">
-                        <h4 class="exp-role-title">Business Development Manager</h4>
-                        <p class="exp-section-label">Key Responsibilities</p>
-                        <ul class="exp-bullets">
-                            <li>Analyzed market and sales trends across B2B, B2C, and institutional segments to drive strategic business growth.</li>
-                            <li>Built and maintained relationships with school and institutional stakeholders to expand market presence.</li>
-                        </ul>
-                        <p class="exp-section-label">Key Achievements & Impact</p>
-                        <ul class="exp-bullets exp-achievements">
-                            <li>🎯 Expanded institutional accounts portfolio by <strong>25%</strong> within a 6-month period.</li>
-                            <li>💡 Delivered data-backed market analysis reports for senior executive strategy planning.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 4 -->
-                <div class="exp-card">
-                    <div class="exp-left-panel">
-                        <span class="exp-badge">Full-Time</span>
-                        <h3 class="exp-company">Central Public School</h3>
-                        <p class="exp-duration">Apr 2014 — May 2022</p>
-                        <p class="exp-location">Bihar, India</p>
-                    </div>
-                    <div class="exp-right-panel">
-                        <h4 class="exp-role-title">Academic Incharge</h4>
-                        <p class="exp-section-label">Key Responsibilities</p>
-                        <ul class="exp-bullets">
-                            <li>Managed fee collection and accounts records across all academic and institutional operations.</li>
-                            <li>Tracked budget vs. actual departmental expenses, identifying variances and reporting key metrics for executive review.</li>
-                            <li>Verified vendor purchase bills prior to payment processing against authorized purchase orders.</li>
-                        </ul>
-                        <p class="exp-section-label">Key Achievements & Impact</p>
-                        <ul class="exp-bullets exp-achievements">
-                            <li>💰 Maintained strict financial audit control over <strong>8 consecutive years</strong> of operational budgets.</li>
-                            <li>🏆 Supervised 40+ faculty members and implemented standardized performance monitoring frameworks.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 5 -->
-                <div class="exp-card">
-                    <div class="exp-left-panel">
-                        <span class="exp-badge">Full-Time</span>
-                        <h3 class="exp-company">Systopic Laboratories</h3>
-                        <p class="exp-duration">Apr 2013 — May 2014</p>
-                        <p class="exp-location">India</p>
-                    </div>
-                    <div class="exp-right-panel">
-                        <h4 class="exp-role-title">Market Representative</h4>
-                        <p class="exp-section-label">Key Responsibilities</p>
-                        <ul class="exp-bullets">
-                            <li>Managed territory sales and key client relationships, meeting assigned targets through proactive market expansion.</li>
-                        </ul>
-                        <p class="exp-section-label">Key Achievements & Impact</p>
-                        <ul class="exp-bullets exp-achievements">
-                            <li>📊 Consistently achieved <strong>100%+</strong> quarterly sales targets across assigned commercial territories.</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ══════════════════ PAGE 4 — EDUCATION ══════════════════ -->
-        <section id="education">
-            <div class="section-header reveal">
-                <span class="section-number">03.</span>
-                <h2 class="section-title">Education</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="education-grid">
-                <div class="edu-card">
-                    <span class="edu-cap-icon">🎓</span>
-                    <h3 class="edu-qualification">M.Sc. — Master of Science</h3>
-                    <p class="edu-institution">Ch. Charan Singh University</p>
-                    <div class="edu-meta">
-                        <span>Postgraduate</span> · <span>Full-Time</span>
-                    </div>
-                    <ul class="edu-highlights">
-                        <li>Advanced scientific methodology & quantitative research</li>
-                        <li>Analytical problem solving and mathematical modeling foundations</li>
-                        <li>Data analysis and research documentation expertise</li>
-                    </ul>
-                </div>
-
-                <div class="edu-card">
-                    <span class="edu-cap-icon">📖</span>
-                    <h3 class="edu-qualification">B.Ed. — Bachelor of Education</h3>
-                    <p class="edu-institution">Ch. Charan Singh University</p>
-                    <div class="edu-meta">
-                        <span>Bachelor's Degree</span> · <span>Full-Time</span>
-                    </div>
-                    <ul class="edu-highlights">
-                        <li>Pedagogical strategies, curriculum development & evaluation methodology</li>
-                        <li>Institutional administration and academic coordinator training</li>
-                        <li>Stakeholder communication & structured leadership skills</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ══════════════════ PAGE 5 — PROJECTS ══════════════════ -->
-        <section id="projects">
-            <div class="section-header reveal">
-                <span class="section-number">04.</span>
-                <h2 class="section-title">Key Projects</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="projects-grid">
-                
-                <!-- Featured Project: Sumeet ATS Resume Pro -->
-                <div class="project-card featured-project">
-                    <div class="featured-badge">🚀 Featured Web Application</div>
-                    <h3 class="project-title">Sumeet ATS Resume Pro — AI Resume Creator</h3>
-                    <p class="project-type-tag">Full-Stack AI Web Application · Render Cloud Deployment · 2026</p>
-                    <p class="project-desc">Architected and deployed a live AI-powered Applicant Tracking System (ATS) Resume Creator & Keyword Scoring Engine. Features user authentication, intelligent keyword optimization, job description matching algorithms, and PDF exports for high ATS pass rates.</p>
-                    <div class="project-outcomes-list">
-                        <div class="outcome-box">
-                            <span class="outcome-num">1.</span> Engineered AI keyword density matching & ATS compatibility scoring engine.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">2.</span> Implemented cloud user authentication, session security, and dynamic document generation.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">3.</span> Deployed on Render cloud infrastructure with live interactive web access.
-                        </div>
-                    </div>
-                    <div class="project-actions" style="margin-top: 1rem;">
-                        <a href="https://ats-resume-pro-tiq1.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-primary project-demo-btn">
-                            Launch Live Application ↗
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">
+                            <i class="fa-solid fa-cubes"></i> Explore Projects
+                        </a>
+                        <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" class="btn-secondary">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
                         </a>
                     </div>
-                    <div class="project-tech-grid" style="margin-top: 1.2rem;">
-                        <span class="tech-pill">AI Resume Engine</span>
-                        <span class="tech-pill">ATS Analytics</span>
-                        <span class="tech-pill">Render Cloud</span>
-                        <span class="tech-pill">JavaScript / Node</span>
-                        <span class="tech-pill">Auth Security</span>
+                </div>
+
+                <!-- Interactive Terminal Visual -->
+                <div class="hero-terminal">
+                    <div class="terminal-header">
+                        <div class="term-dot dot-red"></div>
+                        <div class="term-dot dot-yellow"></div>
+                        <div class="term-dot dot-green"></div>
+                        <div class="terminal-title">sumeet@core-system:~$</div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">init-profile</span>
+                            --target "Sumeet Kumar"</div>
+                        <div class="code-line output">[+] Experience: 13+ Years Enterprise Analytics</div>
+                        <div class="code-line output">[+] Primary Stack: Python, Power BI, SQL, DAX, FastAPI</div>
+                        <div class="code-line output">[+] AI Deployments: Project Jarvis, SKAI Engine</div>
+                        <div class="code-line output">[+] Status: Systems Active & Operational</div>
+                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">cat</span>
+                            mission_statement.txt</div>
+                        <div class="code-line comment">// Engineering automated workflows & actionable intelligence
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-num">13+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">50%</div>
+                    <div class="stat-label">Decision Speed Improvement</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">40%</div>
+                    <div class="stat-label">Workflow Automation Gain</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">AI & BI Projects Built</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Portfolio & Engineering</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+
+            <!-- Project Filter -->
+            <div class="project-filter">
+                <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+                <button class="filter-btn" onclick="filterProjects('ai')">AI & Automation</button>
+                <button class="filter-btn" onclick="filterProjects('bi')">BI & Analytics</button>
+                <button class="filter-btn" onclick="filterProjects('web')">Web & Apps</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="projects-grid">
+
+                <!-- Project 1: Jarvis -->
+                <div class="project-card" data-category="ai">
+                    <div>
+                        <div class="project-top">
+                            <i class="fa-solid fa-brain project-folder-icon"></i>
+                            <span class="project-status status-enterprise">Proprietary AI System</span>
+                        </div>
+                        <h3 class="project-title">Project Jarvis (AI Assistant)</h3>
+                        <p class="project-desc">
+                            A multi-modal desktop assistant and automation engine built in Python for voice commands,
+                            deep workflow automation, session monitoring, and real-time task orchestration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Speech API</span>
+                            <span class="tech-pill">Automation</span>
+                            <span class="tech-pill">FastAPI</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <button class="project-btn"
+                            onclick="openModal('Project Jarvis', 'An advanced AI automation engine designed to execute localized operating system tasks, voice-driven commands, and intelligent report synthesis. Includes auto-recovery loops, secure session triggers, and custom tooling.')">
+                            <i class="fa-solid fa-circle-info"></i> View System Architecture
+                        </button>
                     </div>
                 </div>
 
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <h3 class="project-title">Power BI Executive Dashboard</h3>
-                    <p class="project-type-tag">Financial BI & Operations · 2025</p>
-                    <p class="project-desc">Designed and deployed an interactive executive KPI dashboard utilizing complex DAX measures and automated Power Query ETL pipelines for leadership tracking.</p>
-                    <div class="project-outcomes-list">
-                        <div class="outcome-box">
-                            <span class="outcome-num">1.</span> Accelerated executive decision-making speed by 50%.
+                <!-- Project 2: SKAI -->
+                <div class="project-card" data-category="ai">
+                    <div>
+                        <div class="project-top">
+                            <i class="fa-solid fa-microchip project-folder-icon"></i>
+                            <span class="project-status status-enterprise">Enterprise Engine</span>
                         </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">2.</span> Consolidated multi-branch franchise financial metrics into a single view.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">3.</span> Automated daily data refreshing via Power Query connectors.
-                        </div>
-                    </div>
-                    <div class="project-tech-grid">
-                        <span class="tech-pill">Power BI</span>
-                        <span class="tech-pill">DAX</span>
-                        <span class="tech-pill">Power Query</span>
-                        <span class="tech-pill">SQL</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <h3 class="project-title">Excel Workflow Automation</h3>
-                    <p class="project-type-tag">Process Automation · 2024</p>
-                    <p class="project-desc">Developed an automated end-to-end reporting pipeline using advanced Excel formulas, Power Pivot data modeling, and automated data validation rules.</p>
-                    <div class="project-outcomes-list">
-                        <div class="outcome-box">
-                            <span class="outcome-num">1.</span> Reduced recurring report turnaround time by 40%.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">2.</span> Eliminated manual copy-paste errors across multi-sheet workbooks.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">3.</span> Standardized vendor invoice audit templates across regional teams.
+                        <h3 class="project-title">SKAI Intelligence Platform</h3>
+                        <p class="project-desc">
+                            Next-generation enterprise AI toolkit combining LLM prompts, automated data cleaning,
+                            contextual query retrieval, and automated document synthesis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">Generative AI</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">OpenAI / Copilot</span>
+                            <span class="tech-pill">JSON ETL</span>
                         </div>
                     </div>
-                    <div class="project-tech-grid">
-                        <span class="tech-pill">Excel</span>
-                        <span class="tech-pill">Power Pivot</span>
-                        <span class="tech-pill">Pivot Tables</span>
-                        <span class="tech-pill">VBA / Macros</span>
+                    <div class="project-links">
+                        <button class="project-btn"
+                            onclick="openModal('SKAI Intelligence Platform', 'A generative intelligence workflow designed for executive summaries, prompt automation, automated validation of operational spreadsheets, and intelligent documentation generation.')">
+                            <i class="fa-solid fa-circle-info"></i> View System Architecture
+                        </button>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <h3 class="project-title">Student Performance & Accounts Analytics</h3>
-                    <p class="project-type-tag">MIS & Operational BI · 2023</p>
-                    <p class="project-desc">Built a central MIS analytics system tracking student academic outcomes, attendance records, and tuition fee collection/reconciliation dashboards.</p>
-                    <div class="project-outcomes-list">
-                        <div class="outcome-box">
-                            <span class="outcome-num">1.</span> Improved tracked student & accounts outcomes by 30%.
+                <!-- Project 3: ATS Resume Generator -->
+                <div class="project-card" data-category="web">
+                    <div>
+                        <div class="project-top">
+                            <i class="fa-solid fa-file-invoice project-folder-icon"></i>
+                            <span class="project-status">Live Web Application</span>
                         </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">2.</span> Enabled real-time tracking of pending fee balances & collection rates.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">3.</span> Provided board administration with automated monthly summary cards.
+                        <h3 class="project-title">Sumit ATS Resume Builder</h3>
+                        <p class="project-desc">
+                            High-conversion ATS resume generation platform that structures user credentials into clean,
+                            parser-friendly, industry-standard resume documents.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">HTML5/CSS3</span>
+                            <span class="tech-pill">JavaScript</span>
+                            <span class="tech-pill">ATS Scoring Engine</span>
+                            <span class="tech-pill">PDF Generator</span>
                         </div>
                     </div>
-                    <div class="project-tech-grid">
-                        <span class="tech-pill">MIS Analytics</span>
-                        <span class="tech-pill">Excel BI</span>
-                        <span class="tech-pill">Accounts Rec</span>
+                    <div class="project-links">
+                        <a href="https://sumeet-glitch.github.io/Sumeet-portfolio/" target="_blank" class="project-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Launch Application
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <h3 class="project-title">AI Productivity & Workflow Toolkit</h3>
-                    <p class="project-type-tag">Generative AI Integration · 2025</p>
-                    <p class="project-desc">Integrated ChatGPT and Microsoft Copilot into core daily operations to automate report generation, data structuring, prompt engineering, and executive summaries.</p>
-                    <div class="project-outcomes-list">
-                        <div class="outcome-box">
-                            <span class="outcome-num">1.</span> Cut documentation drafting time by 60% using AI prompts.
+                <!-- Project 4: Power BI Executive Dashboard -->
+                <div class="project-card" data-category="bi">
+                    <div>
+                        <div class="project-top">
+                            <i class="fa-solid fa-chart-line project-folder-icon"></i>
+                            <span class="project-status">Completed</span>
                         </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">2.</span> Automated SQL query generation and DAX measure troubleshooting.
-                        </div>
-                        <div class="outcome-box">
-                            <span class="outcome-num">3.</span> Enhanced team productivity through standardized Copilot workflows.
+                        <h3 class="project-title">Power BI Executive Financial Dashboard</h3>
+                        <p class="project-desc">
+                            Interactive financial intelligence suite with complex DAX measures, budget variance alerts,
+                            and multi-franchise operational KPIs.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">Power BI</span>
+                            <span class="tech-pill">DAX</span>
+                            <span class="tech-pill">Power Query</span>
+                            <span class="tech-pill">SQL Server</span>
                         </div>
                     </div>
-                    <div class="project-tech-grid">
-                        <span class="tech-pill">Microsoft Copilot</span>
-                        <span class="tech-pill">ChatGPT</span>
-                        <span class="tech-pill">Gen AI</span>
-                        <span class="tech-pill">Prompt Eng</span>
+                    <div class="project-links">
+                        <button class="project-btn"
+                            onclick="openModal('Executive Financial Dashboard', 'Comprehensive multi-site dashboard delivering a 50% increase in executive decision-making speed by unifying regional franchise expenses, student billing, and operational metrics.')">
+                            <i class="fa-solid fa-circle-info"></i> Project Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: Excel Pipeline Automation -->
+                <div class="project-card" data-category="bi">
+                    <div>
+                        <div class="project-top">
+                            <i class="fa-solid fa-file-excel project-folder-icon"></i>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        <h3 class="project-title">Automated Financial Reconciliation Pipeline</h3>
+                        <p class="project-desc">
+                            End-to-end automated audit workbook reconciling purchase orders, vendor invoices, fee
+                            ledgers, and department balances with zero manual intervention.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">Advanced Excel</span>
+                            <span class="tech-pill">Power Pivot</span>
+                            <span class="tech-pill">VBA / Macros</span>
+                            <span class="tech-pill">Audit Controls</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <button class="project-btn"
+                            onclick="openModal('Financial Reconciliation Pipeline', 'Eliminated over 40% of manual reconciliation overhead across multi-center franchise operations through dynamic Power Pivot data models and automated ledger validation formulas.')">
+                            <i class="fa-solid fa-circle-info"></i> Project Case Study
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6: Swadeshi Mini Mart POS & Retail Suite -->
+                <div class="project-card" data-category="web">
+                    <div>
+                        <div class="project-top">
+                            <i class="fa-solid fa-store project-folder-icon"></i>
+                            <span class="project-status">Live System</span>
+                        </div>
+                        <h3 class="project-title">Swadeshi Retail & Inventory Management</h3>
+                        <p class="project-desc">
+                            Inventory tracking, SKU analysis, supplier invoicing verification, and sales performance
+                            dashboard engineered for modern retail operations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-pill">Retail Analytics</span>
+                            <span class="tech-pill">Inventory Auditing</span>
+                            <span class="tech-pill">Python Backend</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <button class="project-btn"
+                            onclick="openModal('Swadeshi Retail Management', 'Engineered inventory management and POS pipeline enabling SKU tracking, margin calculation, and vendor ledger verification for retail operations.')">
+                            <i class="fa-solid fa-circle-info"></i> View System Info
+                        </button>
                     </div>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ══════════════════ PAGE 6 — SKILLS ══════════════════ -->
-        <section id="skills">
-            <div class="section-header reveal">
-                <span class="section-number">05.</span>
-                <h2 class="section-title">Core Skills</h2>
-                <div class="section-line"></div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Core Competencies</span>
+                <h2 class="section-title">Technical Expertise</h2>
             </div>
 
             <div class="skills-container">
-                
-                <!-- Category 1 -->
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <span class="skill-cat-icon">📊</span>
-                        <h3 class="skill-cat-title">Data & BI Tools</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Power BI</span>
-                                <span class="skill-percent-num" data-count="95">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>DAX & Data Modeling</span>
-                                <span class="skill-percent-num" data-count="90">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Power Query (ETL)</span>
-                                <span class="skill-percent-num" data-count="92">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>SQL / SQL Server</span>
-                                <span class="skill-percent-num" data-count="85">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Excel (Power Pivot, Pivots)</span>
-                                <span class="skill-percent-num" data-count="98">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="98%"></div>
-                            </div>
-                        </div>
+                <!-- Box 1 -->
+                <div class="skill-box">
+                    <h3><i class="fa-solid fa-chart-pie"></i> BI & Data Visualization</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge"><i class="fa-solid fa-chart-column"></i> Power BI</span>
+                        <span class="skill-badge"><i class="fa-solid fa-calculator"></i> DAX Measures</span>
+                        <span class="skill-badge"><i class="fa-solid fa-bolt"></i> Power Query</span>
+                        <span class="skill-badge"><i class="fa-solid fa-table"></i> Advanced Excel</span>
+                        <span class="skill-badge"><i class="fa-solid fa-cubes"></i> Power Pivot</span>
+                        <span class="skill-badge"><i class="fa-solid fa-chart-area"></i> KPI Dashboards</span>
                     </div>
                 </div>
 
-                <!-- Category 2 -->
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <span class="skill-cat-icon">💳</span>
-                        <h3 class="skill-cat-title">Financial & Accounting Ops</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Budget Planning & Variance</span>
-                                <span class="skill-percent-num" data-count="92">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Purchase Order Review</span>
-                                <span class="skill-percent-num" data-count="90">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Vendor Invoice Reconciliation</span>
-                                <span class="skill-percent-num" data-count="95">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Expense Audits & Control</span>
-                                <span class="skill-percent-num" data-count="92">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Fee / Accounts Reconciliation</span>
-                                <span class="skill-percent-num" data-count="94">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="94%"></div>
-                            </div>
-                        </div>
+                <!-- Box 2 -->
+                <div class="skill-box">
+                    <h3><i class="fa-solid fa-robot"></i> AI & Software Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge"><i class="fa-brands fa-python"></i> Python</span>
+                        <span class="skill-badge"><i class="fa-solid fa-database"></i> SQL / SQL Server</span>
+                        <span class="skill-badge"><i class="fa-solid fa-brain"></i> Generative AI & Copilot</span>
+                        <span class="skill-badge"><i class="fa-solid fa-terminal"></i> FastAPI / REST APIs</span>
+                        <span class="skill-badge"><i class="fa-brands fa-js"></i> JavaScript / HTML5</span>
+                        <span class="skill-badge"><i class="fa-solid fa-gears"></i> Workflow Automation</span>
                     </div>
                 </div>
 
-                <!-- Category 3 -->
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <span class="skill-cat-icon">🤖</span>
-                        <h3 class="skill-cat-title">Analytics, AI & Leadership</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Python for Data Analysis</span>
-                                <span class="skill-percent-num" data-count="80">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Data Visualization & Reporting</span>
-                                <span class="skill-percent-num" data-count="95">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Generative AI (Copilot, ChatGPT)</span>
-                                <span class="skill-percent-num" data-count="88">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Workflow Automation</span>
-                                <span class="skill-percent-num" data-count="90">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Stakeholder & Team Leadership</span>
-                                <span class="skill-percent-num" data-count="92">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="92%"></div>
-                            </div>
-                        </div>
+                <!-- Box 3 -->
+                <div class="skill-box">
+                    <h3><i class="fa-solid fa-scale-balanced"></i> Financial & Operations Auditing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-badge"><i class="fa-solid fa-receipt"></i> Purchase Order Audits</span>
+                        <span class="skill-badge"><i class="fa-solid fa-file-invoice-dollar"></i> Invoice
+                            Reconciliation</span>
+                        <span class="skill-badge"><i class="fa-solid fa-money-bill-transfer"></i> Fee & Accounts
+                            Ledger</span>
+                        <span class="skill-badge"><i class="fa-solid fa-building-columns"></i> Budget Variance
+                            Analysis</span>
+                        <span class="skill-badge"><i class="fa-solid fa-users-gear"></i> Stakeholder Management</span>
+                        <span class="skill-badge"><i class="fa-solid fa-shield-halved"></i> Operational Risk
+                            Control</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Category 4 -->
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <span class="skill-cat-icon">⚡</span>
-                        <h3 class="skill-cat-title">AI App Engineering & ATS Systems</h3>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>ATS Resume Scoring & Optimization</span>
-                                <span class="skill-percent-num" data-count="94">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="94%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Render Cloud Application Deployment</span>
-                                <span class="skill-percent-num" data-count="90">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>Full-Stack Web App & AI Integration</span>
-                                <span class="skill-percent-num" data-count="88">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-item-header">
-                                <span>User Authentication & Session Security</span>
-                                <span class="skill-percent-num" data-count="92">0%</span>
-                            </div>
-                            <div class="skill-bar-bg">
-                                <div class="skill-bar-fill" data-value="92%"></div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Career Track</span>
+                <h2 class="section-title">Professional Experience</h2>
+            </div>
+
+            <div class="timeline">
+
+                <!-- Mentors Eduserv -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="timeline-role">Senior Manager - Franchise Operations</h3>
+                    <div class="timeline-company">Mentors Eduserv</div>
+                    <span class="timeline-date">Apr 2025 - Present</span>
+                    <ul class="timeline-bullets">
+                        <li>Reviewed and approved regional purchase orders, verifying vendor invoices against master
+                            purchase records to enforce budget compliance.</li>
+                        <li>Conducted recurring expense audits, identifying variances and anomalies prior to financial
+                            dispatch.</li>
+                        <li>Built and maintained enterprise Power BI dashboards (DAX, Power Query), accelerating
+                            executive decision-making speed by 50%.</li>
+                        <li>Automated Excel/Power BI reporting pipelines, reducing turnaround time by 40%.</li>
+                    </ul>
+                </div>
+
+                <!-- Dr DY Patil -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="timeline-role">Academic Coordinator & Manager</h3>
+                    <div class="timeline-company">Dr DY Patil Pushpalata Patil School</div>
+                    <span class="timeline-date">Nov 2022 - Aug 2024</span>
+                    <ul class="timeline-bullets">
+                        <li>Reconciled fee collection records and outstanding balance ledgers across multi-tier
+                            accounts.</li>
+                        <li>Designed Excel-based MIS reporting engines and student tracking dashboards, driving a 30%
+                            metric improvement.</li>
+                        <li>Audited vendor invoices, purchase records, and supplier payment clearances.</li>
+                    </ul>
+                </div>
+
+                <!-- Teevra Edutech -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="timeline-role">Business Development Manager</h3>
+                    <div class="timeline-company">Teevra Edutech</div>
+                    <span class="timeline-date">May 2022 - Nov 2022</span>
+                    <ul class="timeline-bullets">
+                        <li>Analyzed market sales trends across B2B, B2C, and institutional sectors to drive strategic
+                            business growth.</li>
+                    </ul>
+                </div>
+
+                <!-- CPS -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <h3 class="timeline-role">Academic Incharge</h3>
+                    <div class="timeline-company">Central Public School</div>
+                    <span class="timeline-date">Apr 2014 - May 2022</span>
+                    <ul class="timeline-bullets">
+                        <li>Managed student fee accounts, vendor purchase verification, and budget-vs-actual variance
+                            reports.</li>
+                    </ul>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ══════════════════ PAGE 7 — CERTIFICATIONS ══════════════════ -->
-        <section id="certifications">
-            <div class="section-header reveal">
-                <span class="section-number">06.</span>
-                <h2 class="section-title">Certifications & Credentials</h2>
-                <div class="section-line"></div>
+    <!-- Education & Certifications -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Background</span>
+                <h2 class="section-title">Education & Certifications</h2>
             </div>
 
-            <div class="certifications-grid">
-                
-                <!-- Deloitte -->
-                <a href="./Certifications/Deloitte Certification Data Analytics Job Simulation.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Deloitte</span>
-                    <h3 class="cert-title">Data Analytics Job Simulation</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Completed practical simulation covering business data analysis, client scenario modeling, telemetry, and executive presentation.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Deloitte Certification Data Analytics Job Simulation.jpg" alt="Deloitte Data Analytics Certification">
-                    </div>
-                </a>
-
-                <!-- PW: Gen AI M365 -->
-                <a href="./Certifications/Physics Wallah Certification For Gen AI with Microsoft 365 and Co-pilot.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Physics Wallah (PW Skills)</span>
-                    <h3 class="cert-title">Gen AI with Microsoft 365 & Copilot</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Mastered prompt engineering, AI workflow automation, and Copilot integration across Microsoft 365 and Power BI suite.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Physics Wallah Certification For Gen AI with Microsoft 365 and Co-pilot.jpg" alt="PW Gen AI with M365 and Copilot Certification">
-                    </div>
-                </a>
-
-                <!-- PW: Gen AI for Devs -->
-                <a href="./Certifications/Physics Wallah Certification For Generative AI for Developers.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Physics Wallah (PW Skills)</span>
-                    <h3 class="cert-title">Generative AI for Developers</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Hands-on implementation of LLM APIs, prompt architecture, AI tool integration, and code-driven data pipeline automation.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Physics Wallah Certification For Generative AI for Developers.jpg" alt="PW Generative AI for Developers Certification">
-                    </div>
-                </a>
-
-                <!-- PW: Gen AI for All -->
-                <a href="./Certifications/Physics Wallah Certification For Generative AI for All.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Physics Wallah (PW Skills)</span>
-                    <h3 class="cert-title">Generative AI for All</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Foundational concepts in Large Language Models (LLMs), generative workflows, and enterprise AI transformation strategies.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Physics Wallah Certification For Generative AI for All.jpg" alt="PW Generative AI for All Certification">
-                    </div>
-                </a>
-
-                <!-- PW: Excel for Finance -->
-                <a href="./Certifications/Physics Wallah Certification for Excel For Finance.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Physics Wallah (PW Skills)</span>
-                    <h3 class="cert-title">Excel for Finance</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Specialized financial modeling, Pivot Tables, financial statement analysis, automated budget tracking, and variance reconciliation.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Physics Wallah Certification for Excel For Finance.jpg" alt="PW Excel for Finance Certification">
-                    </div>
-                </a>
-
-                <!-- PW: Private Banking -->
-                <a href="./Certifications/Physics Wallah Certification For Foundation Course in Private Banking.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Physics Wallah (PW Skills)</span>
-                    <h3 class="cert-title">Foundation Course in Private Banking</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Banking operations, wealth management concepts, financial account auditing, fee reconciliation, and portfolio fundamentals.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Physics Wallah Certification For Foundation Course in Private Banking.jpg" alt="PW Private Banking Certification">
-                    </div>
-                </a>
-
-                <!-- PW: React.js -->
-                <a href="./Certifications/Physics Wallah Certification For React.Js - Basics to Advance.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Physics Wallah (PW Skills)</span>
-                    <h3 class="cert-title">React.js — Basics to Advance</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Modern frontend development, component architecture, state management, interactive dashboard UIs, and dynamic data binding.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Physics Wallah Certification For React.Js - Basics to Advance.jpg" alt="PW React.js Certification">
-                    </div>
-                </a>
-
-                <!-- Be10x -->
-                <a href="./Certifications/BE 10X.jpeg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Be10x Mastery</span>
-                    <h3 class="cert-title">Be10x AI Mastery & Productivity</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">AI productivity tools mastery, automated report drafting, AI-assisted Excel analysis, and 10x operational workflow optimization.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/BE 10X.jpeg" alt="Be10x AI Certificate">
-                    </div>
-                </a>
-
-                <!-- Skill Nation Gen AI Tools -->
-                <a href="./Certifications/Certification Skill Nation Generative AI Tools .jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Skill Nation</span>
-                    <h3 class="cert-title">Generative AI Tools Workshop</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Practical workshop on generative AI toolstacks, AI content generation, automated structuring, and analytical workflows.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Certification Skill Nation Generative AI Tools .jpg" alt="Skill Nation Gen AI Tools Certification">
-                    </div>
-                </a>
-
-                <!-- Skill Nation Power BI -->
-                <a href="./Certifications/Certification Power BI Workshop.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Skill Nation</span>
-                    <h3 class="cert-title">Power BI Workshop Certification</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Interactive BI dashboard building, data transformation with Power Query, DAX measures, and executive KPI report design.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Certification Power BI Workshop.jpg" alt="Skill Nation Power BI Certification">
-                    </div>
-                </a>
-
-                <!-- Advanced Data Analysis -->
-                <a href="./Certifications/ADVANCE CERTIFICATES IN DATA ANALYSIS.jpeg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Professional Credential</span>
-                    <h3 class="cert-title">Advanced Data Analysis</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">In-depth data analysis methodology, statistical analysis, data cleaning, relational data modeling, and business intelligence reporting.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/ADVANCE CERTIFICATES IN DATA ANALYSIS.jpeg" alt="Advanced Data Analysis Certificate">
-                    </div>
-                </a>
-
-                <!-- Power BI Data Analysis -->
-                <a href="./Certifications/POWER BI.jpeg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Data Analysis Credential</span>
-                    <h3 class="cert-title">Power BI Data Analysis</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Advanced DAX functions, star-schema data modeling, interactive reporting, and automated dashboard publishing.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/POWER BI.jpeg" alt="Power BI Data Analysis Certificate">
-                    </div>
-                </a>
-
-                <!-- CAT Internship -->
-                <a href="./Certifications/Certification Of Participation Internship CAT.jpg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Internship Credential</span>
-                    <h3 class="cert-title">Corporate Data Internship</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Hands-on internship training focusing on corporate data administration, reporting operational support, and problem-solving.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/Certification Of Participation Internship CAT.jpg" alt="Internship CAT Certification">
-                    </div>
-                </a>
-
-                <!-- Skill Nation Gen AI -->
-                <a href="./Certifications/GEN AI.jpeg" target="_blank" class="cert-card">
-                    <span class="cert-provider-badge">Skill Nation</span>
-                    <h3 class="cert-title">Generative AI Specialist</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.88rem; line-height: 1.6;">Specialized training in generative AI prompting, workflow integration, AI writing tools, and operational productivity enhancement.</p>
-                    <div class="cert-image-preview">
-                        <img src="./Certifications/GEN AI.jpeg" alt="Gen AI Specialist Certificate">
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- ══════════════════ PAGE 8 — ACHIEVEMENTS ══════════════════ -->
-        <section id="achievements">
-            <div class="section-header reveal">
-                <span class="section-number">07.</span>
-                <h2 class="section-title">Achievements & Recognition</h2>
-                <div class="section-line"></div>
-            </div>
-            <p class="section-subtitle">Track record of operational excellence, financial accuracy, and data innovation</p>
-
-            <!-- 4 Stat Counters -->
-            <div class="stats-counter-bar">
-                <div class="stat-counter-card">
-                    <div class="stat-counter-num" data-count="13" data-suffix="+">0</div>
-                    <div class="stat-counter-label">Years Experience</div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3 class="edu-title">M.Sc.</h3>
+                    <div class="edu-org">Ch. Charan Singh University</div>
                 </div>
-                <div class="stat-counter-card">
-                    <div class="stat-counter-num" data-count="5" data-suffix="+">0</div>
-                    <div class="stat-counter-label">Certifications</div>
+                <div class="edu-card">
+                    <h3 class="edu-title">B.Ed.</h3>
+                    <div class="edu-org">Ch. Charan Singh University</div>
                 </div>
-                <div class="stat-counter-card">
-                    <div class="stat-counter-num" data-count="10" data-suffix="+">0</div>
-                    <div class="stat-counter-label">Projects & BI Dashboards</div>
+                <div class="edu-card">
+                    <h3 class="edu-title">Generative AI for All</h3>
+                    <div class="edu-org">DeepLearning.AI</div>
                 </div>
-                <div class="stat-counter-card">
-                    <div class="stat-counter-num" data-count="4" data-suffix="+">0</div>
-                    <div class="stat-counter-label">Key Awards / Honors</div>
+                <div class="edu-card">
+                    <h3 class="edu-title">Power BI Data Analysis</h3>
+                    <div class="edu-org">Professional Certification</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Achievement Cards -->
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <span class="achieve-badge">🏆 Professional Award · 2025</span>
-                    <h3 class="achieve-title">Franchise Operations BI Transformation</h3>
-                    <p class="achieve-inst">Mentors Eduserv</p>
-                    <p style="color: var(--text-secondary); font-size: 0.92rem;">Engineered the company-wide BI dashboard structure across regional franchise centers, driving a 50% increase in executive decision speed and 40% reduction in reporting overhead.</p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Let's Build Something <span class="highlight">Exceptional</span></h2>
+                <p>Have an analytics project, AI automation challenge, or executive dashboard requirement? Connect
+                    directly.</p>
+
+                <div class="contact-methods">
+                    <a href="mailto:sumit.kausik@gmail.com" class="contact-chip">
+                        <i class="fa-solid fa-envelope highlight"></i> sumit.kausik@gmail.com
+                    </a>
+                    <a href="tel:+919153579997" class="contact-chip">
+                        <i class="fa-solid fa-phone highlight"></i> +91 9153579997
+                    </a>
+                    <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" class="contact-chip">
+                        <i class="fa-brands fa-linkedin highlight"></i> LinkedIn
+                    </a>
                 </div>
 
-                <div class="achievement-card">
-                    <span class="achieve-badge">🥇 Academic Excellence · 2024</span>
-                    <h3 class="achieve-title">MIS Systems Optimization Award</h3>
-                    <p class="achieve-inst">Dr DY Patil Pushpalata Patil School</p>
-                    <p style="color: var(--text-secondary); font-size: 0.92rem;">Recognized by administrative leadership for designing zero-error fee reconciliation and student MIS tracking models that boosted outcome monitoring by 30%.</p>
-                </div>
-
-                <div class="achievement-card">
-                    <span class="achieve-badge">🎓 Academic Credential</span>
-                    <h3 class="achieve-title">Postgraduate Master of Science</h3>
-                    <p class="achieve-inst">Ch. Charan Singh University</p>
-                    <p style="color: var(--text-secondary); font-size: 0.92rem;">Graduated with distinction in advanced scientific methodology, quantitative modeling, and data research foundations.</p>
-                </div>
+                <a href="mailto:sumit.kausik@gmail.com" class="btn-primary">
+                    <i class="fa-solid fa-paper-plane"></i> Send Direct Message
+                </a>
             </div>
-        </section>
-
-        <!-- ══════════════════ PAGE 9 — CONTACT ══════════════════ -->
-        <section id="contact">
-            <div class="section-header reveal">
-                <span class="section-number">08.</span>
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="contact-container">
-                
-                <!-- LEFT COLUMN: Contact Form -->
-                <div class="contact-form-card">
-                    <h3 class="form-title">Send Me a Message</h3>
-                    <form id="contact-form">
-                        
-                        <div class="form-group">
-                            <input type="text" id="form-name" class="form-input" placeholder=" " required>
-                            <label for="form-name" class="floating-label">Full Name</label>
-                            <div class="form-underline"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="email" id="form-email" class="form-input" placeholder=" " required>
-                            <label for="form-email" class="floating-label">Email Address</label>
-                            <div class="form-underline"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="text" id="form-subject" class="form-input" placeholder=" " required>
-                            <label for="form-subject" class="floating-label">Subject</label>
-                            <div class="form-underline"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <textarea id="form-message" class="form-textarea" placeholder=" " required></textarea>
-                            <label for="form-message" class="floating-label">Your Message</label>
-                            <div class="form-underline"></div>
-                        </div>
-
-                        <button type="submit" class="btn-send">
-                            Send Message ↗
-                        </button>
-                    </form>
-                </div>
-
-                <!-- RIGHT COLUMN: Contact Information -->
-                <div class="contact-info-card">
-                    <div>
-                        <h3 class="contact-info-title">Let's Connect</h3>
-                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">Currently open for new opportunities in Data Analysis, BI Dashboard Development, and Financial Operations Analytics.</p>
-
-                        <div class="contact-rows">
-                            <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="contact-row whatsapp-row">
-                                <div class="contact-row-icon whatsapp-icon">💬</div>
-                                <div class="contact-row-text">
-                                    <div class="label">WhatsApp Direct</div>
-                                    <div class="value">+91 9153579997</div>
-                                </div>
-                            </a>
-
-                            <a href="mailto:sumit.kausik@gmail.com" class="contact-row">
-                                <div class="contact-row-icon">✉️</div>
-                                <div class="contact-row-text">
-                                    <div class="label">Email Address</div>
-                                    <div class="value">sumit.kausik@gmail.com</div>
-                                </div>
-                            </a>
-
-                            <a href="tel:+919153579997" class="contact-row">
-                                <div class="contact-row-icon">📞</div>
-                                <div class="contact-row-text">
-                                    <div class="label">Phone Number</div>
-                                    <div class="value">+91 9153579997</div>
-                                </div>
-                            </a>
-
-                            <div class="contact-row">
-                                <div class="contact-row-icon">📍</div>
-                                <div class="contact-row-text">
-                                    <div class="label">Location</div>
-                                    <div class="value">Patna, Bihar, India</div>
-                                </div>
-                            </div>
-
-                            <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="contact-row">
-                                <div class="contact-row-icon">🔗</div>
-                                <div class="contact-row-text">
-                                    <div class="label">LinkedIn</div>
-                                    <div class="value">sumeet-kumar-86038010b</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-name">Sumeet Kumar</div>
-        <p class="footer-tagline">Transforming Raw Data into Strategic Decision Power</p>
-        <div class="footer-socials">
-            <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="social-icon-btn whatsapp-social" title="WhatsApp"><span class="icon">💬</span></a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><span class="icon">💻</span></a>
-            <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="social-icon-btn"><span class="icon">🔗</span></a>
-            <a href="mailto:sumit.kausik@gmail.com" class="social-icon-btn"><span class="icon">✉️</span></a>
+        <div class="container">
+            <p>Engineered & Designed by Sumeet Kumar | All Systems Operational © 2026</p>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1.5rem;">© 2026 Sumeet Kumar. All Rights Reserved.</p>
     </footer>
 
-    <!-- Floating WhatsApp Widget -->
-    <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <span class="whatsapp-float-icon">💬</span>
-        <span class="whatsapp-float-text">Chat on WhatsApp</span>
-    </a>
+    <!-- Case Study Modal -->
+    <div class="modal-backdrop" id="projectModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModalDirect()"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modalTitle" class="highlight" style="font-size: 1.5rem; margin-bottom: 1rem;"></h3>
+            <p id="modalDesc" style="color: var(--text-body); font-size: 1rem; line-height: 1.8;"></p>
+        </div>
+    </div>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+    <!-- JavaScript for Dynamic Interactions -->
+    <script>
+        function toggleNav() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
 
-    <!-- Script -->
-    <script src="script.js"></script>
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openModal(title, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+
+        function closeModalDirect() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        function closeModal(e) {
+            if (e.target.id === 'projectModal') {
+                closeModalDirect();
+            }
+        }
+    </script>
 </body>
+
 </html>
