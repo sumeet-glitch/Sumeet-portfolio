@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sumeet Kumar | AI Developer & Data Analytics Specialist</title>
+    <meta name="description" content="Official portfolio of Sumeet Kumar - AI Developer & Enterprise Financial Analytics Specialist with 13+ years transforming enterprise data into intelligent automation, Power BI dashboards, and AI engines.">
+    <meta name="author" content="Sumeet Kumar">
+    <meta name="keywords" content="Sumeet Kumar, AI Developer, Data Analytics Specialist, Power BI, Python, DAX, SQL, FastAPI, Project Jarvis, SKAI Intelligence, Enterprise Automation">
+    <meta property="og:title" content="Sumeet Kumar | AI Developer & Data Analytics Specialist">
+    <meta property="og:description" content="13+ years of experience in enterprise analytics, AI automation workflows, BI dashboards, and Python development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sumeet-glitch.github.io/Sumeet-portfolio/">
+
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -24,11 +32,13 @@
             --text-heading: #f8fafc;
             --text-body: #94a3b8;
             --text-muted: #64748b;
-            --border-color: rgba(245, 158, 11, 0.18);
-            --border-glass: rgba(255, 255, 255, 0.07);
+            --border-color: rgba(245, 158, 11, 0.22);
+            --border-glass: rgba(255, 255, 255, 0.08);
             --font-sans: 'Plus Jakarta Sans', sans-serif;
             --font-mono: 'Fira Code', monospace;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --whatsapp-green: #25D366;
+            --whatsapp-green-dark: #128C7E;
         }
 
         * {
@@ -48,8 +58,8 @@
             line-height: 1.7;
             overflow-x: hidden;
             background-image:
-                radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 85% 70%, rgba(13, 27, 42, 0.8) 0%, transparent 50%);
+                radial-gradient(circle at 15% 15%, rgba(245, 158, 11, 0.06) 0%, transparent 45%),
+                radial-gradient(circle at 85% 70%, rgba(13, 27, 42, 0.85) 0%, transparent 55%);
         }
 
         /* Container */
@@ -79,9 +89,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(6, 13, 23, 0.88);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(6, 13, 23, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 1000;
             border-bottom: 1px solid var(--border-glass);
             transition: var(--transition);
@@ -112,7 +122,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.6rem;
             align-items: center;
         }
 
@@ -136,7 +146,7 @@
             background: transparent;
             border: 1px solid var(--accent-gold);
             color: var(--accent-gold) !important;
-            padding: 0.6rem 1.2rem;
+            padding: 0.55rem 1.1rem;
             border-radius: 6px;
             font-family: var(--font-mono);
             font-size: 0.85rem !important;
@@ -162,14 +172,15 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 100px;
+            padding-top: 110px;
+            padding-bottom: 60px;
             position: relative;
         }
 
         .hero-content {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
+            gap: 3.5rem;
             align-items: center;
         }
 
@@ -217,36 +228,38 @@
 
         .hero-subtitle {
             font-family: var(--font-mono);
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--accent-gold);
             margin-bottom: 1.5rem;
         }
 
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-body);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.2rem;
             max-width: 580px;
         }
 
         .hero-actions {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .btn-primary {
             background: var(--accent-gold);
             color: #060d17;
-            padding: 0.9rem 1.8rem;
+            padding: 0.85rem 1.6rem;
             border-radius: 8px;
             font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+            font-size: 0.95rem;
         }
 
         .btn-primary:hover {
@@ -259,14 +272,15 @@
             background: rgba(255, 255, 255, 0.04);
             color: var(--text-heading);
             border: 1px solid var(--border-glass);
-            padding: 0.9rem 1.8rem;
+            padding: 0.85rem 1.6rem;
             border-radius: 8px;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
 
         .btn-secondary:hover {
@@ -276,6 +290,28 @@
             transform: translateY(-3px);
         }
 
+        .btn-whatsapp {
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-green-dark) 100%);
+            color: #ffffff;
+            padding: 0.85rem 1.6rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            font-size: 0.95rem;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            color: #ffffff;
+        }
+
+        /* Interactive Terminal Visual */
         .hero-terminal {
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
@@ -383,12 +419,12 @@
 
         /* Section Layouts */
         section {
-            padding: 100px 0;
+            padding: 90px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-tag {
@@ -405,6 +441,68 @@
             font-size: 2.3rem;
             position: relative;
             display: inline-block;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .about-photo-box {
+            position: relative;
+            text-align: center;
+        }
+
+        .about-photo {
+            width: 100%;
+            max-width: 320px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            transition: var(--transition);
+        }
+
+        .about-photo:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 45px rgba(245, 158, 11, 0.25);
+        }
+
+        .about-text {
+            color: var(--text-body);
+            font-size: 1.02rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .mv-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .mv-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Projects Section */
@@ -482,7 +580,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .project-folder-icon {
@@ -515,6 +613,7 @@
             font-size: 0.95rem;
             color: var(--text-body);
             margin-bottom: 1.5rem;
+            line-height: 1.65;
         }
 
         .project-tech {
@@ -531,6 +630,7 @@
             background: rgba(245, 158, 11, 0.08);
             padding: 3px 10px;
             border-radius: 4px;
+            border: 1px solid rgba(245, 158, 11, 0.15);
         }
 
         .project-links {
@@ -696,7 +796,7 @@
         /* Education & Certs */
         .edu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 1.5rem;
         }
 
@@ -724,12 +824,103 @@
             font-family: var(--font-mono);
         }
 
+        /* Achievements & Certifications Gallery */
+        .achieve-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .achieve-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 1.8rem;
+            border-top: 3px solid var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .achieve-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-color);
+            background: var(--bg-card-hover);
+        }
+
+        .achieve-badge {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent-gold);
+            background: var(--accent-gold-glow);
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .achieve-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .achieve-desc {
+            font-size: 0.92rem;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        .cert-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .cert-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .cert-provider {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-name {
+            font-size: 1.05rem;
+            color: var(--text-heading);
+            margin-bottom: 1rem;
+        }
+
+        .cert-thumb {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-glass);
+        }
+
         /* Contact Section */
         .contact-box {
             background: var(--bg-card);
             border: 1px solid var(--border-glass);
             border-radius: 20px;
-            padding: 4rem 2rem;
+            padding: 3.5rem 2rem;
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
@@ -737,19 +928,19 @@
         }
 
         .contact-box h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
         }
 
         .contact-box p {
-            max-width: 500px;
-            margin: 0 auto 2.5rem;
+            max-width: 540px;
+            margin: 0 auto 2.2rem;
         }
 
         .contact-methods {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
             margin-bottom: 2.5rem;
         }
@@ -757,12 +948,12 @@
         .contact-chip {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-glass);
-            padding: 12px 20px;
+            padding: 12px 18px;
             border-radius: 10px;
             color: var(--text-heading);
             text-decoration: none;
             font-family: var(--font-mono);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -776,17 +967,69 @@
             transform: translateY(-3px);
         }
 
+        .whatsapp-chip:hover {
+            border-color: var(--whatsapp-green) !important;
+            background: rgba(37, 211, 102, 0.12) !important;
+            color: var(--whatsapp-green) !important;
+        }
+
+        /* Floating WhatsApp Widget */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, var(--whatsapp-green-dark) 100%);
+            color: #ffffff;
+            padding: 12px 22px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: whatsappPulse 3s infinite;
+        }
+
+        @keyframes whatsappPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.55);
+            color: #ffffff;
+        }
+
+        .whatsapp-float-icon {
+            font-size: 1.3rem;
+        }
+
         /* Footer */
         footer {
             border-top: 1px solid var(--border-glass);
-            padding: 2rem 0;
+            padding: 2.2rem 0;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-muted);
             font-family: var(--font-mono);
         }
 
-        /* Modal for Project Case Studies */
+        /* Modal for Project Architecture & Case Studies */
         .modal-backdrop {
             display: none;
             position: fixed;
@@ -806,11 +1049,13 @@
             background: var(--bg-card);
             border: 1px solid var(--accent-gold);
             border-radius: 16px;
-            max-width: 650px;
+            max-width: 680px;
             width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
             padding: 2.5rem;
             position: relative;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
             animation: modalFadeIn 0.3s ease;
         }
 
@@ -842,6 +1087,32 @@
             color: var(--accent-gold);
         }
 
+        .modal-body-content {
+            color: var(--text-body);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .modal-body-content ul {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+        }
+
+        .modal-body-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body-content .arch-box {
+            background: rgba(245, 158, 11, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-gold-light);
+        }
+
         /* Responsive Breakpoints */
         @media (max-width: 992px) {
             .hero-content {
@@ -849,12 +1120,25 @@
                 text-align: center;
             }
 
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-photo {
+                margin: 0 auto;
+            }
+
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+
             .hero-actions {
                 justify-content: center;
             }
 
             .hero-desc {
-                margin: 0 auto 2.5rem;
+                margin: 0 auto 2.2rem;
             }
 
             .stats-bar {
@@ -905,6 +1189,17 @@
             .stat-item:last-child {
                 border-bottom: none;
             }
+
+            .whatsapp-float {
+                padding: 12px;
+                border-radius: 50%;
+                left: 1.2rem;
+                bottom: 1.5rem;
+            }
+
+            .whatsapp-float-text {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -914,18 +1209,17 @@
     <!-- Header / Nav -->
     <nav>
         <div class="container nav-wrapper">
-            <a href="#hero" class="logo">
+            <a href="https://sumeet-glitch.github.io/Sumeet-portfolio/" class="logo">
                 <i class="fa-solid fa-code highlight"></i> Sumeet<span>.io</span>
             </a>
-            <button class="mobile-toggle" onclick="toggleNav()"><i class="fa-solid fa-bars"></i></button>
+            <button class="mobile-toggle" onclick="toggleNav()" aria-label="Toggle Menu"><i class="fa-solid fa-bars"></i></button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" onclick="toggleNav()"><i class="fa-regular fa-user"></i> About</a></li>
                 <li><a href="#projects" onclick="toggleNav()"><i class="fa-solid fa-layer-group"></i> Projects</a></li>
                 <li><a href="#skills" onclick="toggleNav()"><i class="fa-solid fa-laptop-code"></i> Skills</a></li>
-                <li><a href="#experience" onclick="toggleNav()"><i class="fa-solid fa-briefcase"></i> Experience</a>
-                </li>
-                <li><a href="#education" onclick="toggleNav()"><i class="fa-solid fa-graduation-cap"></i> Education</a>
-                </li>
+                <li><a href="#experience" onclick="toggleNav()"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+                <li><a href="#education" onclick="toggleNav()"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#achievements" onclick="toggleNav()"><i class="fa-solid fa-award"></i> Achievements</a></li>
                 <li><a href="#contact" class="nav-btn" onclick="toggleNav()">Get In Touch</a></li>
             </ul>
         </div>
@@ -949,7 +1243,10 @@
                         <a href="#projects" class="btn-primary">
                             <i class="fa-solid fa-cubes"></i> Explore Projects
                         </a>
-                        <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" class="btn-secondary">
+                        <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                             <i class="fa-brands fa-linkedin"></i> LinkedIn
                         </a>
                     </div>
@@ -964,16 +1261,13 @@
                         <div class="terminal-title">sumeet@core-system:~$</div>
                     </div>
                     <div class="terminal-body">
-                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">init-profile</span>
-                            --target "Sumeet Kumar"</div>
+                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">init-profile</span> --target "Sumeet Kumar"</div>
                         <div class="code-line output">[+] Experience: 13+ Years Enterprise Analytics</div>
                         <div class="code-line output">[+] Primary Stack: Python, Power BI, SQL, DAX, FastAPI</div>
                         <div class="code-line output">[+] AI Deployments: Project Jarvis, SKAI Engine</div>
                         <div class="code-line output">[+] Status: Systems Active & Operational</div>
-                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">cat</span>
-                            mission_statement.txt</div>
-                        <div class="code-line comment">// Engineering automated workflows & actionable intelligence
-                        </div>
+                        <div class="code-line"><span class="prompt">$</span> <span class="cmd">cat</span> mission_statement.txt</div>
+                        <div class="code-line comment">// Engineering automated workflows & actionable intelligence</div>
                     </div>
                 </div>
             </div>
@@ -1000,6 +1294,42 @@
         </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Executive Profile</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-photo-box">
+                    <img src="./PIC/MY PIC.jpeg" alt="Sumeet Kumar" class="about-photo">
+                </div>
+
+                <div class="about-text">
+                    <p>
+                        As <strong>Senior Manager of Franchise Operations</strong> at Mentors Eduserv, I direct multi-site financial analysis, purchase order compliance, and operational governance across enterprise franchise locations. Over a 13+ year career bridging academic leadership and enterprise analytics, I have designed business intelligence infrastructures using <strong>Power BI, DAX, Power Query, SQL, and Python</strong>.
+                    </p>
+                    <p>
+                        Combining an M.Sc. and B.Ed. background with advanced analytics and generative AI credentials, I specialize in translating vast, unstructured operational datasets into high-fidelity executive dashboards and automated AI workflows.
+                    </p>
+
+                    <div class="mission-vision-grid">
+                        <div class="mv-card">
+                            <h4>🎯 Mission</h4>
+                            <p>To empower organizations with automated financial reporting and AI workflows, enabling leaders to make confident, data-backed decisions.</p>
+                        </div>
+                        <div class="mv-card">
+                            <h4>🚀 Vision</h4>
+                            <p>To pioneer the integration of Business Intelligence and Generative AI within corporate operations, maximizing efficiency and eliminating data bottlenecks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
@@ -1010,10 +1340,10 @@
 
             <!-- Project Filter -->
             <div class="project-filter">
-                <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
-                <button class="filter-btn" onclick="filterProjects('ai')">AI & Automation</button>
-                <button class="filter-btn" onclick="filterProjects('bi')">BI & Analytics</button>
-                <button class="filter-btn" onclick="filterProjects('web')">Web & Apps</button>
+                <button class="filter-btn active" onclick="filterProjects('all', event)">All Projects</button>
+                <button class="filter-btn" onclick="filterProjects('ai', event)">AI & Automation</button>
+                <button class="filter-btn" onclick="filterProjects('bi', event)">BI & Analytics</button>
+                <button class="filter-btn" onclick="filterProjects('web', event)">Web & Apps</button>
             </div>
 
             <!-- Grid -->
@@ -1024,23 +1354,22 @@
                     <div>
                         <div class="project-top">
                             <i class="fa-solid fa-brain project-folder-icon"></i>
-                            <span class="project-status status-enterprise">Proprietary AI System</span>
+                            <span class="project-status status-enterprise">Proprietary System (Completed)</span>
                         </div>
                         <h3 class="project-title">Project Jarvis (AI Assistant)</h3>
                         <p class="project-desc">
-                            A multi-modal desktop assistant and automation engine built in Python for voice commands,
-                            deep workflow automation, session monitoring, and real-time task orchestration.
+                            A multi-modal desktop assistant and workflow automation engine built in Python for voice commands,
+                            deep OS task orchestration, session monitoring, and real-time task automation.
                         </p>
                         <div class="project-tech">
                             <span class="tech-pill">Python</span>
                             <span class="tech-pill">Speech API</span>
-                            <span class="tech-pill">Automation</span>
+                            <span class="tech-pill">Workflow Engine</span>
                             <span class="tech-pill">FastAPI</span>
                         </div>
                     </div>
                     <div class="project-links">
-                        <button class="project-btn"
-                            onclick="openModal('Project Jarvis', 'An advanced AI automation engine designed to execute localized operating system tasks, voice-driven commands, and intelligent report synthesis. Includes auto-recovery loops, secure session triggers, and custom tooling.')">
+                        <button class="project-btn" onclick="openJarvisModal()">
                             <i class="fa-solid fa-circle-info"></i> View System Architecture
                         </button>
                     </div>
@@ -1051,7 +1380,7 @@
                     <div>
                         <div class="project-top">
                             <i class="fa-solid fa-microchip project-folder-icon"></i>
-                            <span class="project-status status-enterprise">Enterprise Engine</span>
+                            <span class="project-status status-enterprise">Enterprise AI Engine</span>
                         </div>
                         <h3 class="project-title">SKAI Intelligence Platform</h3>
                         <p class="project-desc">
@@ -1066,8 +1395,7 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <button class="project-btn"
-                            onclick="openModal('SKAI Intelligence Platform', 'A generative intelligence workflow designed for executive summaries, prompt automation, automated validation of operational spreadsheets, and intelligent documentation generation.')">
+                        <button class="project-btn" onclick="openSKAIModal()">
                             <i class="fa-solid fa-circle-info"></i> View System Architecture
                         </button>
                     </div>
@@ -1093,8 +1421,8 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <a href="https://sumeet-glitch.github.io/Sumeet-portfolio/" target="_blank" class="project-btn">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Launch Application
+                        <a href="https://ats-resume-pro-tiq1.onrender.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Launch Live Application ↗
                         </a>
                     </div>
                 </div>
@@ -1119,8 +1447,7 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <button class="project-btn"
-                            onclick="openModal('Executive Financial Dashboard', 'Comprehensive multi-site dashboard delivering a 50% increase in executive decision-making speed by unifying regional franchise expenses, student billing, and operational metrics.')">
+                        <button class="project-btn" onclick="openPowerBIModal()">
                             <i class="fa-solid fa-circle-info"></i> Project Case Study
                         </button>
                     </div>
@@ -1133,7 +1460,7 @@
                             <i class="fa-solid fa-file-excel project-folder-icon"></i>
                             <span class="project-status">Completed</span>
                         </div>
-                        <h3 class="project-title">Automated Financial Reconciliation Pipeline</h3>
+                        <h3 class="project-title">Financial Reconciliation Engine</h3>
                         <p class="project-desc">
                             End-to-end automated audit workbook reconciling purchase orders, vendor invoices, fee
                             ledgers, and department balances with zero manual intervention.
@@ -1146,8 +1473,7 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <button class="project-btn"
-                            onclick="openModal('Financial Reconciliation Pipeline', 'Eliminated over 40% of manual reconciliation overhead across multi-center franchise operations through dynamic Power Pivot data models and automated ledger validation formulas.')">
+                        <button class="project-btn" onclick="openReconciliationModal()">
                             <i class="fa-solid fa-circle-info"></i> Project Case Study
                         </button>
                     </div>
@@ -1160,7 +1486,7 @@
                             <i class="fa-solid fa-store project-folder-icon"></i>
                             <span class="project-status">Live System</span>
                         </div>
-                        <h3 class="project-title">Swadeshi Retail & Inventory Management</h3>
+                        <h3 class="project-title">Swadeshi Retail Management</h3>
                         <p class="project-desc">
                             Inventory tracking, SKU analysis, supplier invoicing verification, and sales performance
                             dashboard engineered for modern retail operations.
@@ -1172,8 +1498,7 @@
                         </div>
                     </div>
                     <div class="project-links">
-                        <button class="project-btn"
-                            onclick="openModal('Swadeshi Retail Management', 'Engineered inventory management and POS pipeline enabling SKU tracking, margin calculation, and vendor ledger verification for retail operations.')">
+                        <button class="project-btn" onclick="openSwadeshiModal()">
                             <i class="fa-solid fa-circle-info"></i> View System Info
                         </button>
                     </div>
@@ -1223,15 +1548,11 @@
                     <h3><i class="fa-solid fa-scale-balanced"></i> Financial & Operations Auditing</h3>
                     <div class="skill-tags">
                         <span class="skill-badge"><i class="fa-solid fa-receipt"></i> Purchase Order Audits</span>
-                        <span class="skill-badge"><i class="fa-solid fa-file-invoice-dollar"></i> Invoice
-                            Reconciliation</span>
-                        <span class="skill-badge"><i class="fa-solid fa-money-bill-transfer"></i> Fee & Accounts
-                            Ledger</span>
-                        <span class="skill-badge"><i class="fa-solid fa-building-columns"></i> Budget Variance
-                            Analysis</span>
+                        <span class="skill-badge"><i class="fa-solid fa-file-invoice-dollar"></i> Invoice Reconciliation</span>
+                        <span class="skill-badge"><i class="fa-solid fa-money-bill-transfer"></i> Fee & Accounts Ledger</span>
+                        <span class="skill-badge"><i class="fa-solid fa-building-columns"></i> Budget Variance Analysis</span>
                         <span class="skill-badge"><i class="fa-solid fa-users-gear"></i> Stakeholder Management</span>
-                        <span class="skill-badge"><i class="fa-solid fa-shield-halved"></i> Operational Risk
-                            Control</span>
+                        <span class="skill-badge"><i class="fa-solid fa-shield-halved"></i> Operational Risk Control</span>
                     </div>
                 </div>
             </div>
@@ -1255,12 +1576,9 @@
                     <div class="timeline-company">Mentors Eduserv</div>
                     <span class="timeline-date">Apr 2025 - Present</span>
                     <ul class="timeline-bullets">
-                        <li>Reviewed and approved regional purchase orders, verifying vendor invoices against master
-                            purchase records to enforce budget compliance.</li>
-                        <li>Conducted recurring expense audits, identifying variances and anomalies prior to financial
-                            dispatch.</li>
-                        <li>Built and maintained enterprise Power BI dashboards (DAX, Power Query), accelerating
-                            executive decision-making speed by 50%.</li>
+                        <li>Reviewed and approved regional purchase orders, verifying vendor invoices against master purchase records to enforce budget compliance.</li>
+                        <li>Conducted recurring expense audits, identifying variances and anomalies prior to financial dispatch.</li>
+                        <li>Built and maintained enterprise Power BI dashboards (DAX, Power Query), accelerating executive decision-making speed by 50%.</li>
                         <li>Automated Excel/Power BI reporting pipelines, reducing turnaround time by 40%.</li>
                     </ul>
                 </div>
@@ -1272,10 +1590,8 @@
                     <div class="timeline-company">Dr DY Patil Pushpalata Patil School</div>
                     <span class="timeline-date">Nov 2022 - Aug 2024</span>
                     <ul class="timeline-bullets">
-                        <li>Reconciled fee collection records and outstanding balance ledgers across multi-tier
-                            accounts.</li>
-                        <li>Designed Excel-based MIS reporting engines and student tracking dashboards, driving a 30%
-                            metric improvement.</li>
+                        <li>Reconciled fee collection records and outstanding balance ledgers across multi-tier accounts.</li>
+                        <li>Designed Excel-based MIS reporting engines and student tracking dashboards, driving a 30% metric improvement.</li>
                         <li>Audited vendor invoices, purchase records, and supplier payment clearances.</li>
                     </ul>
                 </div>
@@ -1287,8 +1603,7 @@
                     <div class="timeline-company">Teevra Edutech</div>
                     <span class="timeline-date">May 2022 - Nov 2022</span>
                     <ul class="timeline-bullets">
-                        <li>Analyzed market sales trends across B2B, B2C, and institutional sectors to drive strategic
-                            business growth.</li>
+                        <li>Analyzed market sales trends across B2B, B2C, and institutional sectors to drive strategic business growth.</li>
                     </ul>
                 </div>
 
@@ -1299,8 +1614,7 @@
                     <div class="timeline-company">Central Public School</div>
                     <span class="timeline-date">Apr 2014 - May 2022</span>
                     <ul class="timeline-bullets">
-                        <li>Managed student fee accounts, vendor purchase verification, and budget-vs-actual variance
-                            reports.</li>
+                        <li>Managed student fee accounts, vendor purchase verification, and budget-vs-actual variance reports.</li>
                     </ul>
                 </div>
 
@@ -1308,31 +1622,139 @@
         </div>
     </section>
 
-    <!-- Education & Certifications -->
+    <!-- Education Section -->
     <section id="education">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">// Background</span>
-                <h2 class="section-title">Education & Certifications</h2>
+                <h2 class="section-title">Education & Degrees</h2>
             </div>
 
             <div class="edu-grid">
                 <div class="edu-card">
-                    <h3 class="edu-title">M.Sc.</h3>
+                    <h3 class="edu-title">M.Sc. (Master of Science)</h3>
                     <div class="edu-org">Ch. Charan Singh University</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">Postgraduate Degree with focus on quantitative modeling and data analysis.</p>
                 </div>
                 <div class="edu-card">
-                    <h3 class="edu-title">B.Ed.</h3>
+                    <h3 class="edu-title">B.Ed. (Bachelor of Education)</h3>
                     <div class="edu-org">Ch. Charan Singh University</div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 6px;">Pedagogy, institutional administration, and structured academic coordination.</p>
                 </div>
-                <div class="edu-card">
-                    <h3 class="edu-title">Generative AI for All</h3>
-                    <div class="edu-org">DeepLearning.AI</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Certifications Section -->
+    <section id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// Honors & Verified Credentials</span>
+                <h2 class="section-title">Achievements & Certifications</h2>
+            </div>
+
+            <!-- Key Recognition Cards -->
+            <div class="achieve-container">
+                <div class="achieve-card">
+                    <span class="achieve-badge"><i class="fa-solid fa-trophy"></i> Professional Recognition · 2025</span>
+                    <h3 class="achieve-title">Franchise Operations BI Transformation</h3>
+                    <p class="achieve-desc">
+                        Engineered enterprise-wide Power BI dashboard infrastructure across franchise centers at Mentors Eduserv, driving a 50% increase in executive decision speed and 40% reduction in reporting overhead.
+                    </p>
                 </div>
-                <div class="edu-card">
-                    <h3 class="edu-title">Power BI Data Analysis</h3>
-                    <div class="edu-org">Professional Certification</div>
+                <div class="achieve-card">
+                    <span class="achieve-badge"><i class="fa-solid fa-medal"></i> Systems Optimization · 2024</span>
+                    <h3 class="achieve-title">Zero-Error Fee Reconciliation Architecture</h3>
+                    <p class="achieve-desc">
+                        Recognized by leadership at Dr DY Patil School for designing automated ledger audit models and real-time student tracking systems, improving outcome monitoring by 30%.
+                    </p>
                 </div>
+                <div class="achieve-card">
+                    <span class="achieve-badge"><i class="fa-solid fa-star"></i> AI & Workflow Innovation</span>
+                    <h3 class="achieve-title">Jarvis & SKAI Intelligent Engine Deployment</h3>
+                    <p class="achieve-desc">
+                        Successfully architected localized desktop assistant engines and prompt-driven ETL data pipelines enabling automated multi-tab workbook audits.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Verified Certificates Gallery -->
+            <div class="section-header" style="margin-top: 2rem; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.5rem; color: var(--text-heading);">Verified Professional Certifications</h3>
+            </div>
+
+            <div class="cert-gallery-grid">
+                <!-- Deloitte -->
+                <a href="./Certifications/Deloitte Certification Data Analytics Job Simulation.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Deloitte</div>
+                        <div class="cert-name">Data Analytics Job Simulation</div>
+                    </div>
+                    <img src="./Certifications/Deloitte Certification Data Analytics Job Simulation.jpg" alt="Deloitte Certification" class="cert-thumb">
+                </a>
+
+                <!-- PW: Gen AI M365 -->
+                <a href="./Certifications/Physics Wallah Certification For Gen AI with Microsoft 365 and Co-pilot.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Physics Wallah (PW Skills)</div>
+                        <div class="cert-name">Gen AI with Microsoft 365 & Copilot</div>
+                    </div>
+                    <img src="./Certifications/Physics Wallah Certification For Gen AI with Microsoft 365 and Co-pilot.jpg" alt="PW Gen AI Copilot Certification" class="cert-thumb">
+                </a>
+
+                <!-- PW: Gen AI for Devs -->
+                <a href="./Certifications/Physics Wallah Certification For Generative AI for Developers.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Physics Wallah (PW Skills)</div>
+                        <div class="cert-name">Generative AI for Developers</div>
+                    </div>
+                    <img src="./Certifications/Physics Wallah Certification For Generative AI for Developers.jpg" alt="PW Gen AI Developers Certification" class="cert-thumb">
+                </a>
+
+                <!-- PW: Gen AI for All -->
+                <a href="./Certifications/Physics Wallah Certification For Generative AI for All.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Physics Wallah (PW Skills)</div>
+                        <div class="cert-name">Generative AI for All</div>
+                    </div>
+                    <img src="./Certifications/Physics Wallah Certification For Generative AI for All.jpg" alt="PW Gen AI for All Certification" class="cert-thumb">
+                </a>
+
+                <!-- PW: Excel for Finance -->
+                <a href="./Certifications/Physics Wallah Certification for Excel For Finance.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Physics Wallah (PW Skills)</div>
+                        <div class="cert-name">Excel for Finance & Modeling</div>
+                    </div>
+                    <img src="./Certifications/Physics Wallah Certification for Excel For Finance.jpg" alt="PW Excel for Finance Certification" class="cert-thumb">
+                </a>
+
+                <!-- PW: React.js -->
+                <a href="./Certifications/Physics Wallah Certification For React.Js - Basics to Advance.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Physics Wallah (PW Skills)</div>
+                        <div class="cert-name">React.Js - Basics to Advance</div>
+                    </div>
+                    <img src="./Certifications/Physics Wallah Certification For React.Js - Basics to Advance.jpg" alt="PW React.Js Certification" class="cert-thumb">
+                </a>
+
+                <!-- Power BI Workshop -->
+                <a href="./Certifications/Certification Power BI Workshop.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Professional Workshop</div>
+                        <div class="cert-name">Power BI Data Analysis Workshop</div>
+                    </div>
+                    <img src="./Certifications/Certification Power BI Workshop.jpg" alt="Power BI Workshop Certification" class="cert-thumb">
+                </a>
+
+                <!-- CAT Internship -->
+                <a href="./Certifications/Certification Of Participation Internship CAT.jpg" target="_blank" class="cert-card">
+                    <div>
+                        <div class="cert-provider">Executive Program</div>
+                        <div class="cert-name">Executive CAT Analytics Internship</div>
+                    </div>
+                    <img src="./Certifications/Certification Of Participation Internship CAT.jpg" alt="CAT Internship Certification" class="cert-thumb">
+                </a>
             </div>
         </div>
     </section>
@@ -1342,8 +1764,7 @@
         <div class="container">
             <div class="contact-box">
                 <h2>Let's Build Something <span class="highlight">Exceptional</span></h2>
-                <p>Have an analytics project, AI automation challenge, or executive dashboard requirement? Connect
-                    directly.</p>
+                <p>Have an analytics project, AI automation challenge, or executive dashboard requirement? Connect directly.</p>
 
                 <div class="contact-methods">
                     <a href="mailto:sumit.kausik@gmail.com" class="contact-chip">
@@ -1352,7 +1773,10 @@
                     <a href="tel:+919153579997" class="contact-chip">
                         <i class="fa-solid fa-phone highlight"></i> +91 9153579997
                     </a>
-                    <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" class="contact-chip">
+                    <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="contact-chip whatsapp-chip">
+                        <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Direct
+                    </a>
+                    <a href="https://linkedin.com/in/sumeet-kumar-86038010b" target="_blank" rel="noopener noreferrer" class="contact-chip">
                         <i class="fa-brands fa-linkedin highlight"></i> LinkedIn
                     </a>
                 </div>
@@ -1364,6 +1788,12 @@
         </div>
     </section>
 
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/919153579997?text=Hello%20Sumeet,%20I%20visited%20your%20portfolio%20website" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp whatsapp-float-icon"></i>
+        <span class="whatsapp-float-text">Chat on WhatsApp</span>
+    </a>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1371,12 +1801,12 @@
         </div>
     </footer>
 
-    <!-- Case Study Modal -->
+    <!-- Case Study & Architecture Modal -->
     <div class="modal-backdrop" id="projectModal" onclick="closeModal(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModalDirect()"><i class="fa-solid fa-xmark"></i></button>
-            <h3 id="modalTitle" class="highlight" style="font-size: 1.5rem; margin-bottom: 1rem;"></h3>
-            <p id="modalDesc" style="color: var(--text-body); font-size: 1rem; line-height: 1.8;"></p>
+            <button class="modal-close" onclick="closeModalDirect()" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="modalTitle" class="highlight" style="font-size: 1.45rem; margin-bottom: 1rem;"></h3>
+            <div id="modalDesc" class="modal-body-content"></div>
         </div>
     </div>
 
@@ -1387,10 +1817,12 @@
             navLinks.classList.toggle("active");
         }
 
-        function filterProjects(category) {
+        function filterProjects(category, e) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (e && e.target) {
+                e.target.classList.add('active');
+            }
 
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(card => {
@@ -1402,9 +1834,9 @@
             });
         }
 
-        function openModal(title, desc) {
+        function openModal(title, htmlContent) {
             document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalDesc').innerHTML = htmlContent;
             document.getElementById('projectModal').style.display = 'flex';
         }
 
@@ -1416,6 +1848,72 @@
             if (e.target.id === 'projectModal') {
                 closeModalDirect();
             }
+        }
+
+        function openJarvisModal() {
+            openModal(
+                'Project Jarvis — Architecture & Workflow Engine',
+                `<p><strong>Project Jarvis</strong> is an advanced, multi-modal desktop assistant and automation engine designed to execute localized operating system tasks, voice-driven commands, and intelligent report synthesis.</p>
+                <div class="arch-box">
+                    [Speech/Voice API] ➔ [Intent Router] ➔ [FastAPI Local Daemon] ➔ [Task Orchestrator & OS Execution]
+                </div>
+                <ul>
+                    <li><strong>Proprietary Execution Architecture:</strong> Operates as a localized background service with zero external exposure of proprietary routines.</li>
+                    <li><strong>Task Orchestration:</strong> Automated file management, batch document conversion, system telemetry monitoring, and voice-triggered workflows.</li>
+                    <li><strong>Fault-Tolerant Loops:</strong> Built-in auto-recovery routines and secure credential vaults for desktop tasks.</li>
+                </ul>`
+            );
+        }
+
+        function openSKAIModal() {
+            openModal(
+                'SKAI Intelligence Platform — Enterprise AI Engine',
+                `<p><strong>SKAI Intelligence Platform</strong> is an enterprise-grade AI engine designed for contextual document retrieval, automated data cleaning, and intelligent summary generation.</p>
+                <div class="arch-box">
+                    [Enterprise Data / Sheets] ➔ [JSON ETL Parser] ➔ [LLM Orchestration Layer] ➔ [Executive Synthesis & Reports]
+                </div>
+                <ul>
+                    <li><strong>Prompt & Retrieval Engine:</strong> Structured context pipelines for generating accurate financial summaries from multi-tab workbooks.</li>
+                    <li><strong>Automated Data Sanitization:</strong> Python-based ETL algorithms filtering anomalies before AI ingestion.</li>
+                    <li><strong>Document Synthesis:</strong> Automatic export to PDF and executive markdown briefing formats.</li>
+                </ul>`
+            );
+        }
+
+        function openPowerBIModal() {
+            openModal(
+                'Power BI Executive Financial Dashboard — Case Study',
+                `<p>A unified multi-site business intelligence suite consolidating regional franchise operational expenses, student fee collections, and budget variance metrics.</p>
+                <ul>
+                    <li><strong>50% Acceleration:</strong> Drastically accelerated executive decision-making cycles by removing 5+ day reporting lag.</li>
+                    <li><strong>Advanced DAX Modeling:</strong> Dynamic measures for budget vs. actuals, MoM growth trends, and branch performance rankings.</li>
+                    <li><strong>Automated Data Pipelines:</strong> Integrated SQL Server feeds and automated Power Query ETL transformations.</li>
+                </ul>`
+            );
+        }
+
+        function openReconciliationModal() {
+            openModal(
+                'Automated Financial Reconciliation Pipeline — Case Study',
+                `<p>An automated audit workbook reconciling purchase orders, vendor invoices, fee ledgers, and department balances with zero manual intervention.</p>
+                <ul>
+                    <li><strong>40% Overhead Reduction:</strong> Eliminated manual spreadsheet reconciliations across multiple educational franchise centers.</li>
+                    <li><strong>Robust Audit Controls:</strong> Automated variance detection flags discrepancy items instantly before ledger close.</li>
+                    <li><strong>Power Pivot Integration:</strong> Relational data models handling hundreds of thousands of ledger entries seamlessly.</li>
+                </ul>`
+            );
+        }
+
+        function openSwadeshiModal() {
+            openModal(
+                'Swadeshi Retail Management — System Overview',
+                `<p>An end-to-end retail and inventory intelligence suite built to streamline SKU performance, vendor invoicing verification, and margin tracking.</p>
+                <ul>
+                    <li><strong>Inventory Auditing:</strong> Live tracking of stock replenishment levels and margin anomaly detection.</li>
+                    <li><strong>Supplier Invoicing:</strong> Direct ledger validation against purchase orders to eliminate overbilling.</li>
+                    <li><strong>POS Analytics:</strong> Real-time sales telemetry and fast-moving SKU identification.</li>
+                </ul>`
+            );
         }
     </script>
 </body>
