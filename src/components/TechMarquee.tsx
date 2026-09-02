@@ -59,14 +59,14 @@ export const TechMarquee: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-emerald-500/5 blur-[160px] pointer-events-none" />
 
       <div className="container mx-auto px-4 max-w-7xl mb-12">
-        <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs tracking-[0.2em] uppercase mb-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+        <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-[0.18em] font-semibold mb-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>// 02 TECHNICAL ARSENAL</span>
         </div>
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
           Technologies I Work With
         </h2>
-        <p className="text-zinc-400 text-xs md:text-sm font-mono mt-1">
+        <p className="text-zinc-300 text-sm font-mono uppercase tracking-[0.18em] font-semibold mt-1">
           BATTLE-TESTED STACK // SPEED-OPTIMIZED & SCALABLE
         </p>
       </div>
@@ -83,20 +83,20 @@ export const TechMarquee: React.FC = () => {
           {[...row1Items, ...row1Items].map((item, idx) => (
             <div
               key={`row1-${item.name}-${idx}`}
-              className={`flex items-center gap-3 px-5 py-3 mx-2 rounded-2xl border transition-all duration-300 group cursor-default ${
+              className={`flex items-center gap-3 px-5 py-3.5 mx-2 rounded-2xl border transition-all duration-300 group cursor-default backdrop-blur-xl ${
                 item.highlight
-                  ? 'bg-emerald-500/[0.04] border-emerald-500/25 hover:border-emerald-400 hover:bg-emerald-500/10 shadow-[0_0_15px_rgba(16,185,129,0.08)]'
-                  : 'bg-[#0c0c0e]/80 border-white/10 hover:border-white/20 hover:bg-white/[0.04]'
+                  ? 'bg-emerald-500/[0.08] border-emerald-500/35 hover:border-emerald-400 hover:bg-emerald-500/15 shadow-[0_0_20px_rgba(16,185,129,0.12)]'
+                  : 'bg-[#0c0d12]/90 border-white/15 hover:border-white/30 hover:bg-white/[0.08]'
               }`}
             >
-              <div className="p-2 rounded-xl bg-white/[0.05] border border-white/5 group-hover:scale-110 transition-transform">
+              <div className="p-2 rounded-xl bg-white/[0.06] border border-white/10 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <div className="text-left">
-                <div className="text-white font-mono font-semibold text-xs tracking-wide group-hover:text-emerald-400 transition-colors">
+                <div className="text-white font-mono font-bold text-xs tracking-wide group-hover:text-emerald-400 transition-colors">
                   {item.name}
                 </div>
-                <div className="text-zinc-500 font-mono text-[10px] tracking-wider uppercase">
+                <div className="text-zinc-400 font-mono text-[11px] tracking-wider uppercase font-semibold">
                   {item.category}
                 </div>
               </div>
@@ -109,20 +109,20 @@ export const TechMarquee: React.FC = () => {
           {[...row2Items, ...row2Items].map((item, idx) => (
             <div
               key={`row2-${item.name}-${idx}`}
-              className={`flex items-center gap-3 px-5 py-3 mx-2 rounded-2xl border transition-all duration-300 group cursor-default ${
+              className={`flex items-center gap-3 px-5 py-3.5 mx-2 rounded-2xl border transition-all duration-300 group cursor-default backdrop-blur-xl ${
                 item.highlight
-                  ? 'bg-amber-500/[0.04] border-amber-500/25 hover:border-amber-400 hover:bg-amber-500/10 shadow-[0_0_15px_rgba(245,158,11,0.08)]'
-                  : 'bg-[#0c0c0e]/80 border-white/10 hover:border-white/20 hover:bg-white/[0.04]'
+                  ? 'bg-amber-500/[0.08] border-amber-500/35 hover:border-amber-400 hover:bg-amber-500/15 shadow-[0_0_20px_rgba(245,158,11,0.12)]'
+                  : 'bg-[#0c0d12]/90 border-white/15 hover:border-white/30 hover:bg-white/[0.08]'
               }`}
             >
-              <div className="p-2 rounded-xl bg-white/[0.05] border border-white/5 group-hover:scale-110 transition-transform">
+              <div className="p-2 rounded-xl bg-white/[0.06] border border-white/10 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <div className="text-left">
-                <div className="text-white font-mono font-semibold text-xs tracking-wide group-hover:text-amber-400 transition-colors">
+                <div className="text-white font-mono font-bold text-xs tracking-wide group-hover:text-amber-400 transition-colors">
                   {item.name}
                 </div>
-                <div className="text-zinc-500 font-mono text-[10px] tracking-wider uppercase">
+                <div className="text-zinc-400 font-mono text-[11px] tracking-wider uppercase font-semibold">
                   {item.category}
                 </div>
               </div>

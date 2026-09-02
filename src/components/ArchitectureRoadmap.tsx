@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Layout, Server, Sparkles, Cloud } from 'lucide-react';
+import { SpotlightCard } from './SpotlightCard';
 
 interface PhaseStep {
   step: string;
@@ -21,7 +22,7 @@ const executionSteps: PhaseStep[] = [
     title: 'Frontend Engineering',
     icon: <Layout className="w-5 h-5 text-emerald-400" />,
     color: 'emerald',
-    borderColor: 'border-emerald-500/30',
+    borderColor: 'border-emerald-500/40',
     description: 'Responsive user interfaces, reactive state graphs, 60fps micro-animations, and WCAG accessibility standards.',
     technologies: ['React 18/19', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     deliverables: ['Modular component libraries', 'Sub-second page load speeds', 'Custom Bento UI paradigms'],
@@ -32,7 +33,7 @@ const executionSteps: PhaseStep[] = [
     title: 'Backend & API Design',
     icon: <Server className="w-5 h-5 text-cyan-400" />,
     color: 'cyan',
-    borderColor: 'border-cyan-500/30',
+    borderColor: 'border-cyan-500/40',
     description: 'FastAPI and Node.js microservices, relational schemas, secure session management, and zero-trust sanitization.',
     technologies: ['FastAPI', 'Python', 'PostgreSQL', 'SQL Server', 'REST / WebSockets'],
     deliverables: ['Sub-50ms endpoint latencies', 'Parameterized SQL queries', 'Asynchronous task queues'],
@@ -43,7 +44,7 @@ const executionSteps: PhaseStep[] = [
     title: 'AI & Automation',
     icon: <Sparkles className="w-5 h-5 text-amber-400" />,
     color: 'amber',
-    borderColor: 'border-amber-500/30',
+    borderColor: 'border-amber-500/40',
     description: 'Custom LLM integration, agentic intent routing, structured retrieval pipelines (RAG), and local desktop daemons.',
     technologies: ['LangChain', 'Gemini API', 'Prompt Engineering', 'Electron Daemon', 'Power Query'],
     deliverables: ['Project Jarvis local agent', 'Contextual document synthesis', 'Automated reconciliation scripts'],
@@ -54,7 +55,7 @@ const executionSteps: PhaseStep[] = [
     title: 'CI/CD & Deployment',
     icon: <Cloud className="w-5 h-5 text-purple-400" />,
     color: 'purple',
-    borderColor: 'border-purple-500/30',
+    borderColor: 'border-purple-500/40',
     description: 'Containerized service topologies, automated static builds, edge CDN caching, and process monitoring.',
     technologies: ['Docker', 'GitHub Actions', 'GitHub Pages', 'PowerShell', 'GitOps'],
     deliverables: ['Automated zero-downtime deploys', 'Hardened production bundles', 'Continuous quality gating'],
@@ -69,15 +70,15 @@ export const ArchitectureRoadmap: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
           <div>
-            <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs tracking-[0.2em] uppercase mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-[0.18em] font-semibold mb-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>// 03 SYSTEM ARCHITECTURE</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
               Core Execution Root Map
             </h2>
           </div>
-          <div className="text-zinc-400 font-mono text-xs md:text-sm max-w-md">
+          <div className="text-zinc-300 font-mono text-xs md:text-sm max-w-md font-semibold">
             Disciplined four-tier lifecycle governing every product release from concept to production edge delivery.
           </div>
         </div>
@@ -91,57 +92,55 @@ export const ArchitectureRoadmap: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className={`rounded-3xl p-6 bg-[#0c0c0e]/90 border border-white/10 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between group hover:${step.borderColor} transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/60`}
             >
-              <div>
-                {/* Step Counter & Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 group-hover:scale-110 transition-transform">
-                    {step.icon}
-                  </div>
-                  <span className="text-[10px] font-mono tracking-widest text-zinc-400 px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10">
-                    {step.step} / {step.badge}
-                  </span>
-                </div>
-
-                {/* Title & Description */}
-                <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-zinc-400 text-xs leading-relaxed font-sans mb-6">
-                  {step.description}
-                </p>
-
-                {/* Tech Pills */}
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {step.technologies.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/5 text-[10px] font-mono text-zinc-300"
-                    >
-                      {t}
+              <SpotlightCard className="p-6 h-full flex flex-col justify-between group">
+                <div>
+                  {/* Step Counter & Badge */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 rounded-2xl bg-white/[0.06] border border-white/15 group-hover:scale-110 transition-transform">
+                      {step.icon}
+                    </div>
+                    <span className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-300 font-bold px-3 py-1 rounded-full bg-white/[0.05] border border-white/15">
+                      {step.step} / {step.badge}
                     </span>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              {/* Deliverables Block */}
-              <div className="pt-4 border-t border-white/5">
-                <div className="text-[10px] font-mono text-zinc-500 tracking-wider uppercase mb-2">
-                  KEY DELIVERABLES:
-                </div>
-                <ul className="space-y-1">
-                  {step.deliverables.map((d, dIdx) => (
-                    <li key={dIdx} className="text-[11px] font-sans text-zinc-400 flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full bg-emerald-400 shrink-0" />
-                      <span>{d}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  {/* Title & Description */}
+                  <h3 className="text-lg md:text-xl font-extrabold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-normal mb-6">
+                    {step.description}
+                  </p>
 
-              {/* Subtle Ambient Glow Effect on Hover */}
-              <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all pointer-events-none" />
+                  {/* Tech Pills */}
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {step.technologies.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-xs font-mono text-zinc-200 font-medium"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Deliverables Block */}
+                <div className="pt-4 border-t border-white/10">
+                  <div className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-400 font-semibold mb-2.5">
+                    KEY DELIVERABLES:
+                  </div>
+                  <ul className="space-y-1.5">
+                    {step.deliverables.map((d, dIdx) => (
+                      <li key={dIdx} className="text-xs font-sans text-zinc-300 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

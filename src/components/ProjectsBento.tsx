@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Layers, ArrowUpRight } from 'lucide-react';
 import { ProjectModal, ProjectData } from './ProjectModal';
+import { SpotlightCard } from './SpotlightCard';
 
 const projectsList: ProjectData[] = [
   {
@@ -171,17 +172,17 @@ export const ProjectsBento: React.FC = () => {
         {/* Section Header & Category Filter Buttons */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs tracking-[0.2em] uppercase mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-[0.18em] font-semibold mb-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>// 04 PORTFOLIO WORK</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
               Featured Engineering Projects
             </h2>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#0c0c0e] border border-white/10 w-fit">
+          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#0c0d12] border border-white/10 w-fit">
             {[
               { id: 'all', label: 'All Projects' },
               { id: 'ai', label: 'AI & Full-Stack' },
@@ -192,10 +193,10 @@ export const ProjectsBento: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono tracking-wider transition-all duration-200 ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase tracking-wider font-semibold transition-all duration-200 ${
                   selectedCategory === cat.id
-                    ? 'bg-emerald-500 text-black font-semibold shadow-[0_0_15px_rgba(16,185,129,0.3)]'
-                    : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-emerald-500 text-black shadow-[0_0_15px_rgba(16,185,129,0.3)]'
+                    : 'text-zinc-300 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {cat.label}
@@ -214,82 +215,80 @@ export const ProjectsBento: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="rounded-3xl p-6 bg-[#0c0c0e]/90 border border-white/10 backdrop-blur-xl relative overflow-hidden flex flex-col justify-between group hover:border-emerald-500/40 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-black/80"
             >
-              {/* Top Meta Bar */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] font-mono tracking-widest text-emerald-400 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 uppercase">
-                    {proj.badge}
-                  </span>
-                  <button
-                    onClick={() => setActiveModalProject(proj)}
-                    className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-colors"
-                    title="View System Architecture & Case Study"
-                  >
-                    <Layers className="w-4 h-4" />
-                  </button>
-                </div>
-
-                <h3 className="text-xl font-display font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
-                  {proj.title}
-                </h3>
-
-                <p className="text-zinc-400 text-xs leading-relaxed font-sans mb-6">
-                  {proj.summary}
-                </p>
-
-                {/* ASCII Pipeline Snippet */}
-                <div className="p-3 rounded-xl bg-black/50 border border-white/5 font-mono text-[11px] text-emerald-400/90 mb-6 truncate">
-                  {proj.architecturePipeline}
-                </div>
-              </div>
-
-              {/* Bottom Tech Tags & Action CTAs */}
-              <div>
-                <div className="flex flex-wrap gap-1.5 mb-6">
-                  {proj.technologies.slice(0, 4).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/5 text-[10px] font-mono text-zinc-300"
+              <SpotlightCard className="p-6 h-full flex flex-col justify-between group">
+                {/* Top Meta Bar */}
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-mono uppercase tracking-[0.18em] text-emerald-400 font-bold px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                      {proj.badge}
+                    </span>
+                    <button
+                      onClick={() => setActiveModalProject(proj)}
+                      className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-zinc-300 hover:text-white transition-colors border border-white/10"
+                      title="View System Architecture & Case Study"
                     >
-                      {tech}
-                    </span>
-                  ))}
-                  {proj.technologies.length > 4 && (
-                    <span className="px-2 py-0.5 rounded-md bg-white/[0.03] border border-white/5 text-[10px] font-mono text-zinc-400">
-                      +{proj.technologies.length - 4}
-                    </span>
-                  )}
-                </div>
+                      <Layers className="w-4 h-4 text-emerald-400" />
+                    </button>
+                  </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                  <button
-                    onClick={() => setActiveModalProject(proj)}
-                    className="text-xs font-mono font-medium text-emerald-400 hover:text-emerald-300 flex items-center gap-1 group/btn"
-                  >
-                    <span>View Architecture</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </button>
+                  <h3 className="text-lg md:text-xl font-extrabold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                    {proj.title}
+                  </h3>
 
-                  <div className="flex items-center gap-2">
-                    {proj.liveUrl && (
-                      <a
-                        href={proj.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-zinc-300 hover:text-white border border-white/10 transition-colors"
-                        title="Live System"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
+                  <p className="text-zinc-300 text-xs md:text-sm leading-relaxed font-normal mb-6">
+                    {proj.summary}
+                  </p>
+
+                  {/* ASCII Pipeline Snippet */}
+                  <div className="p-3 rounded-xl bg-black/80 border border-white/10 font-mono text-xs text-emerald-300 font-semibold mb-6 truncate shadow-inner">
+                    {proj.architecturePipeline}
                   </div>
                 </div>
-              </div>
 
-              {/* Ambient Glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/[0.03] to-transparent pointer-events-none" />
+                {/* Bottom Tech Tags & Action CTAs */}
+                <div>
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {proj.technologies.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-xs font-mono text-zinc-200 font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {proj.technologies.length > 4 && (
+                      <span className="px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-xs font-mono text-zinc-400 font-medium">
+                        +{proj.technologies.length - 4}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                    <button
+                      onClick={() => setActiveModalProject(proj)}
+                      className="text-xs font-mono uppercase tracking-wider font-semibold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 group/btn"
+                    >
+                      <span>View Architecture</span>
+                      <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    </button>
+
+                    <div className="flex items-center gap-2">
+                      {proj.liveUrl && (
+                        <a
+                          href={proj.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-zinc-200 hover:text-white border border-white/10 transition-colors"
+                          title="Live System"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
