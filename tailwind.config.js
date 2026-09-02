@@ -8,6 +8,9 @@ export default {
   theme: {
     extend: {
       colors: {
+        darkBg: '#060709',
+        cardBg: '#0e1015',
+        cardBorder: 'rgba(255, 255, 255, 0.12)',
         obsidian: {
           950: '#050505',
           900: '#0c0c0e',
@@ -31,9 +34,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       animation: {
         'marquee-left': 'marqueeLeft 35s linear infinite',
