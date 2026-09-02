@@ -17,7 +17,6 @@ const rotatingTitles = [
 export const HeroScrubber: React.FC = () => {
   const [titleIndex, setTitleIndex] = useState<number>(0);
   const portraitRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [scrubProgress, setScrubProgress] = useState<number>(0);
 
   // Rotating title interval (3 seconds)
@@ -31,33 +30,7 @@ export const HeroScrubber: React.FC = () => {
   // GSAP ScrollTrigger Scrubbing Engine
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Video Scroll-Scrub
-      if (videoRef.current) {
-        const video = videoRef.current;
-        const setupVideoScrub = () => {
-          gsap.to(video, {
-            currentTime: video.duration || 5,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '#home',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: 1,
-              onUpdate: (self) => {
-                setScrubProgress(Math.round(self.progress * 100));
-              },
-            },
-          });
-        };
-
-        if (video.readyState >= 1) {
-          setupVideoScrub();
-        } else {
-          video.addEventListener('loadedmetadata', setupVideoScrub, { once: true });
-        }
-      }
-
-      // 2. Center Portrait Frame Zoom & Smooth Perspective Scrub
+      // Center Portrait Frame Zoom & Smooth Perspective Scrub
       if (portraitRef.current) {
         gsap.to(portraitRef.current, {
           scale: 0.94,
@@ -145,89 +118,49 @@ export const HeroScrubber: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* ─── CENTER COLUMN: Center Hero Visual & Picture Spotlight ─── */}
+          {/* ─── CENTER COLUMN: Center Hero Visual & Studio Spotlight ─── */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-4 flex justify-center items-center relative"
           >
-            {/* Glowing Studio Backlight behind Portrait */}
-            <div className="absolute inset-0 bg-radial-gradient from-white/15 via-white/5 to-transparent blur-3xl -z-10 rounded-full scale-125 pointer-events-none" />
-            <div className="absolute w-72 h-72 rounded-full bg-emerald-500/20 blur-2xl -z-10 animate-pulse pointer-events-none" />
-
             <div
               ref={portraitRef}
-              className="relative w-full max-w-[340px] aspect-[4/5] rounded-3xl p-1 bg-gradient-to-b from-white/20 via-white/5 to-emerald-500/30 shadow-[0_8px_35px_rgb(0,0,0,0.8)] group transition-transform duration-200"
+              className="relative flex flex-col justify-center items-center w-full"
             >
-              <div className="relative w-full h-full rounded-[22px] bg-[#0c0d12]/95 overflow-hidden flex flex-col justify-between p-5 border border-white/15 backdrop-blur-xl">
-                
-                {/* Hidden video element for scroll scrub timeline */}
-                <video
-                  ref={videoRef}
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="hidden pointer-events-none"
-                  src="data:video/mp4;base64,"
+              {/* Studio Radial Glow */}
+              <div className="absolute w-[350px] h-[350px] bg-white/10 rounded-full blur-[90px] pointer-events-none -z-10" />
+              <div className="absolute w-[280px] h-[280px] bg-emerald-500/15 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse" />
+
+              {/* Your Cutout Photo with gradient bottom mask */}
+              <div className="relative w-full max-w-[420px] flex justify-center items-center">
+                <img 
+                  src="./hero-portrait.png" 
+                  alt="Sumeet Kumar" 
+                  className="w-full max-w-[420px] object-cover [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] filter contrast-110 brightness-105"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = './PIC/MY PIC.jpeg';
+                  }}
                 />
+              </div>
 
-                {/* Top Status Bar */}
-                <div className="flex items-center justify-between z-10">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500/90" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/90" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/90" />
-                  </div>
-                  <span className="text-xs font-mono uppercase tracking-[0.18em] text-emerald-400 font-semibold px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                    LIVE // 2026
-                  </span>
-                </div>
-
-                {/* Center Portrait Image with Smooth Gradient Bottom Mask */}
-                <div className="relative my-auto flex flex-col items-center justify-center pt-2">
-                  <div className="relative w-44 h-48 sm:w-48 sm:h-52 overflow-hidden rounded-2xl border border-white/20 shadow-2xl bg-black">
-                    <img
-                      src="./PIC/MY PIC.jpeg"
-                      alt="Sumeet Kumar - Systems Architect"
-                      style={{
-                        maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-                        WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-                      }}
-                      className="w-full h-full object-cover object-top filter contrast-110 brightness-105 group-hover:scale-105 transition-all duration-700"
-                    />
-                  </div>
-
-                  {/* Identification Chip */}
-                  <div className="mt-3 text-center">
-                    <h2 className="text-white font-extrabold text-xl tracking-tight">
-                      Sumeet Kumar
-                    </h2>
-                    <p className="text-zinc-300 font-mono text-xs uppercase tracking-[0.18em] font-semibold mt-0.5">
-                      Systems Architect & Full-Stack Lead
-                    </p>
+              {/* Holographic Spec Badges */}
+              <div className="w-full max-w-[340px] grid grid-cols-2 gap-2 mt-4 z-10">
+                <div className="px-3.5 py-2 rounded-xl bg-cardBg border border-cardBorder backdrop-blur-xl flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <div>
+                    <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">EXPERIENCE</div>
+                    <div className="text-xs font-bold text-white">13+ Years</div>
                   </div>
                 </div>
-
-                {/* Bottom Spec Pills */}
-                <div className="grid grid-cols-2 gap-2 z-10">
-                  <div className="px-3 py-2 rounded-xl bg-white/[0.05] border border-white/10 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <div>
-                      <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">EXPERIENCE</div>
-                      <div className="text-xs font-bold text-white">13+ Years</div>
-                    </div>
-                  </div>
-                  <div className="px-3 py-2 rounded-xl bg-white/[0.05] border border-white/10 flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                    <div>
-                      <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">DELIVERY</div>
-                      <div className="text-xs font-bold text-white">50+ Enterprise</div>
-                    </div>
+                <div className="px-3.5 py-2 rounded-xl bg-cardBg border border-cardBorder backdrop-blur-xl flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                  <div>
+                    <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">DELIVERY</div>
+                    <div className="text-xs font-bold text-white">50+ Enterprise</div>
                   </div>
                 </div>
-
               </div>
             </div>
           </motion.div>
