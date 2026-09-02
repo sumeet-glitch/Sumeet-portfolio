@@ -4,8 +4,8 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Sumeet-portfolio/',
   plugins: [react()],
-  base: './', // Ensures relative assets work cleanly on GitHub Pages
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
