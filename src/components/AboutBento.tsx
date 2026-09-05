@@ -94,11 +94,11 @@ export const AboutBento: React.FC = () => {
               </h3>
               
               <p className="text-zinc-300 text-base leading-relaxed font-normal mb-4">
-                "Turning fragmented data into intelligent, self-healing automation engines."
+                "Turning complex operational bottlenecks into autonomous, self-healing software ecosystems."
               </p>
               
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal mb-6">
-                With over <strong className="text-white font-semibold">13 years of battle-tested domain authority</strong> across private banking, multi-site education, and enterprise retail, I engineer software that does not merely look modern—it eliminates operational bottlenecks and guarantees 99.9% uptime.
+                With over <strong className="text-white font-semibold">13 years of battle-tested domain authority</strong> across enterprise education, financial operations, and systems engineering, I design and build production-grade software that automates critical workflows, eliminates human error, and delivers verifiable speed.
               </p>
 
               {/* Core Execution Highlights */}
@@ -107,22 +107,22 @@ export const AboutBento: React.FC = () => {
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-zinc-100 font-bold text-sm md:text-base">
-                      Full-Stack Systems & Local Daemons
+                      Autonomous Desktop AI & Daemons
                     </h4>
                     <p className="text-zinc-300 text-xs md:text-sm leading-relaxed mt-1 font-normal">
-                      Architect of Project Jarvis (desktop OS automation) and SKAI multi-model summarizers.
+                      Architect of SK AI (completed v1.0.54 / upgrading v1.0.55) and Project Jarvis local desktop assistant.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <TrendingUp className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                  <TrendingUp className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-zinc-100 font-bold text-sm md:text-base">
-                      Financial Automation & P&L Telemetry
+                      Classroom & Workflow Automation
                     </h4>
                     <p className="text-zinc-300 text-xs md:text-sm leading-relaxed mt-1 font-normal">
-                      Automated audit pipelines cutting reconciliation latency by 50% across franchise networks.
+                      Engineer behind SK-ClassSync-Suite and data sheet automation pipelines eliminating manual operational overhead.
                     </p>
                   </div>
                 </div>
@@ -131,27 +131,27 @@ export const AboutBento: React.FC = () => {
 
             {/* 3 Large, Legible Metric Pills */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-white/[0.04] border border-white/10 px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-emerald-500/30 transition-all">
+              <div className="bg-cardBg border border-cardBorder px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-emerald-500/30 transition-all">
                 <Code2 className="w-5 h-5 text-emerald-400 shrink-0" />
                 <div>
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Core Track</div>
-                  <div className="text-white font-bold text-sm">Full-Stack / Core Track</div>
+                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Core Stack</div>
+                  <div className="text-white font-bold text-sm">Python, FastAPI & React</div>
                 </div>
               </div>
 
-              <div className="bg-white/[0.04] border border-white/10 px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-amber-500/30 transition-all">
-                <Terminal className="w-5 h-5 text-amber-400 shrink-0" />
+              <div className="bg-cardBg border border-cardBorder px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-emerald-500/30 transition-all">
+                <Terminal className="w-5 h-5 text-emerald-400 shrink-0" />
                 <div>
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Tech Stack</div>
-                  <div className="text-white font-bold text-sm">React, Node, Python</div>
+                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Desktop AI</div>
+                  <div className="text-white font-bold text-sm">SK AI & Jarvis Daemons</div>
                 </div>
               </div>
 
-              <div className="bg-white/[0.04] border border-white/10 px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-cyan-500/30 transition-all">
-                <Sparkles className="w-5 h-5 text-cyan-400 shrink-0" />
+              <div className="bg-cardBg border border-cardBorder px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-emerald-500/30 transition-all">
+                <Sparkles className="w-5 h-5 text-emerald-400 shrink-0" />
                 <div>
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Architecture</div>
-                  <div className="text-white font-bold text-sm">Scalable AI / Architecture</div>
+                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Automation</div>
+                  <div className="text-white font-bold text-sm">SK-ClassSync & ETL</div>
                 </div>
               </div>
             </div>

@@ -56,7 +56,7 @@ export const ContactTerminal: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 relative bg-[#050505] overflow-hidden">
+    <section id="contact" className="py-24 relative bg-darkBg overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-emerald-500/10 blur-[180px] pointer-events-none" />

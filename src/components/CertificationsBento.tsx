@@ -154,7 +154,7 @@ export const CertificationsBento: React.FC = () => {
     : certsList.filter(c => c.category === activeCategory);
 
   return (
-    <section id="credentials" className="py-24 relative bg-[#070709]">
+    <section id="certifications" className="py-24 relative bg-darkBg">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Section Header & Filter */}

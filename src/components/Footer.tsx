@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUp, Github, Linkedin, Mail, MessageSquare, Clock } from 'lucide-react';
+import { ArrowUp, Linkedin, Mail, MessageSquare, Clock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const [currentTime, setCurrentTime] = useState<string>('');
@@ -28,12 +28,12 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#050505] border-t border-white/10 pt-20 pb-12 overflow-hidden">
+    <footer className="relative bg-darkBg border-t border-white/10 pt-20 pb-12 overflow-hidden">
       
-      {/* ─── Giant Kinetic Stroke Watermark ─── */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
-        <span className="font-extrabold text-[15vw] leading-none tracking-tighter text-stroke-subtle block uppercase opacity-25 text-white">
-          SUMEET
+      {/* ─── Giant Kinetic Stroke Watermark matching Reference Video ─── */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none z-0">
+        <span className="font-extrabold text-[13vw] leading-none tracking-tighter text-stroke-subtle block uppercase opacity-20 text-white font-mono">
+          SUMEET KUMAR
         </span>
       </div>
 
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-zinc-300 text-sm leading-relaxed max-w-md font-normal">
-              Systems Architect, Full-Stack Engineer & AI Developer. Transforming enterprise data into high-performance intelligence.
+              Systems Architect, Full-Stack Engineer & AI Developer. Transforming enterprise operations into high-performance autonomous software.
             </p>
           </div>
 
@@ -77,20 +77,11 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Social & Copyright Row */}
+        {/* Bottom Social & Copyright Row (Zero GitHub links) */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-300 font-medium">
           
-          {/* Social Links */}
+          {/* Direct Verified Contact Channels */}
           <div className="flex items-center gap-4">
-            <a
-              href="https://github.com/sumeet-glitch"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-emerald-400 transition-colors flex items-center gap-1.5"
-            >
-              <Github className="w-4 h-4" />
-              <span>GitHub</span>
-            </a>
             <a
               href="https://linkedin.com/in/sumeet-kumar-86038010b"
               target="_blank"

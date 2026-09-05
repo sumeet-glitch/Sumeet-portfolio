@@ -8,10 +8,10 @@ import { SpotlightCard } from './SpotlightCard';
 gsap.registerPlugin(ScrollTrigger);
 
 const rotatingTitles = [
-  'CREATIVE DEVELOPER',
-  'FULL STACK ENGINEER',
-  'SCALABLE SYSTEMS',
-  'AI & AUTOMATION LEAD',
+  'AI SYSTEMS',
+  'AUTOMATION',
+  'SOFTWARE',
+  'INTELLIGENT PRODUCTS',
 ];
 
 export const HeroScrubber: React.FC = () => {
@@ -19,11 +19,11 @@ export const HeroScrubber: React.FC = () => {
   const portraitRef = useRef<HTMLDivElement>(null);
   const [scrubProgress, setScrubProgress] = useState<number>(0);
 
-  // Rotating title interval (3 seconds)
+  // Rotating title interval (2.8 seconds)
   useEffect(() => {
     const timer = setInterval(() => {
       setTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
-    }, 3000);
+    }, 2800);
     return () => clearInterval(timer);
   }, []);
 
@@ -60,7 +60,7 @@ export const HeroScrubber: React.FC = () => {
     >
       {/* Ambient Cyberpunk Glow Behind Hero */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[550px] bg-emerald-500/15 blur-[150px] rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-1/3 left-1/4 w-[450px] h-[400px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-1/4 w-[450px] h-[400px] bg-white/5 blur-[130px] rounded-full pointer-events-none -z-10" />
 
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
@@ -75,7 +75,7 @@ export const HeroScrubber: React.FC = () => {
             {/* Sub-badge: HI, I'M SUMEET KUMAR with Live Green Indicator */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/15 w-fit mb-6 shadow-sm">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_#10b981]" />
-              <span className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-300 font-bold">
+              <span className="text-xs font-mono uppercase tracking-[0.18em] text-zinc-200 font-bold">
                 HI, I'M SUMEET KUMAR
               </span>
               <span className="text-[11px] font-mono text-emerald-400 font-semibold ml-1">
@@ -155,7 +155,7 @@ export const HeroScrubber: React.FC = () => {
                   </div>
                 </div>
                 <div className="px-3.5 py-2 rounded-xl bg-cardBg border border-cardBorder backdrop-blur-xl flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
+                  <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                   <div>
                     <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">DELIVERY</div>
                     <div className="text-xs font-bold text-white">50+ Enterprise</div>
@@ -176,10 +176,10 @@ export const HeroScrubber: React.FC = () => {
             <SpotlightCard className="p-6">
               <div className="text-xs font-mono uppercase tracking-[0.18em] text-emerald-400 font-bold mb-3 flex items-center gap-2">
                 <Layers className="w-4 h-4" />
-                <span>// CORE FOCUS: SCALABLE ARCHITECTURE</span>
+                <span>// CURRENT FOCUS & ARCHITECTURE</span>
               </div>
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal">
-                Engineering high-performance web applications, voice-driven AI platforms, and automated workflow ecosystems with deep zero-trust foundations.
+                Engineering autonomous desktop AI agents, intelligent classroom automation, and enterprise workflow ecosystems with battle-tested resilience.
               </p>
 
               {/* Action Buttons: High-Contrast White + Glass Secondary */}
@@ -188,7 +188,7 @@ export const HeroScrubber: React.FC = () => {
                   href="#projects"
                   className="bg-white text-black font-semibold hover:bg-zinc-200 px-6 py-2.5 rounded-full transition-all duration-200 text-sm flex items-center gap-2 shadow-lg shadow-white/10"
                 >
-                  <span>Explore Work</span>
+                  <span>Explore Projects</span>
                   <ArrowUpRight className="w-4 h-4 text-black" />
                 </a>
                 <a
@@ -208,21 +208,21 @@ export const HeroScrubber: React.FC = () => {
                   <Sparkles className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-sm tracking-tight">AI & Voice Agents</h3>
+                  <h3 className="text-white font-bold text-sm tracking-tight">Autonomous Desktop AI</h3>
                   <p className="text-zinc-300 text-xs leading-relaxed mt-1 font-normal">
-                    Project Jarvis & SKAI Intelligence running sub-100ms intent classification and OS automation.
+                    SK AI (v1.0.54 completed / v1.0.55 upgrading) & Project Jarvis executing sub-250ms OS workflows.
                   </p>
                 </div>
               </SpotlightCard>
 
               <SpotlightCard className="p-4 flex items-start gap-3">
-                <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 shrink-0 mt-0.5">
+                <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 shrink-0 mt-0.5">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-sm tracking-tight">Financial BI & ETL</h3>
+                  <h3 className="text-white font-bold text-sm tracking-tight">Smart Classroom Automation</h3>
                   <p className="text-zinc-300 text-xs leading-relaxed mt-1 font-normal">
-                    Multi-ledger reconciliation engines processing 50K+ records with zero human error.
+                    SK-ClassSync-Suite: Autonomous OBS WebSocket v5 control, Note 3 PDF export, and cloud uploads.
                   </p>
                 </div>
               </SpotlightCard>

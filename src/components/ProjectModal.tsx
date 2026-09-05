@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, GitBranch, Layers, CheckCircle2, Terminal } from 'lucide-react';
+import { X, ExternalLink, Layers, CheckCircle2, Terminal, ShieldCheck } from 'lucide-react';
 
 export interface ProjectData {
   id: string;
+  projectNumber: string;
   title: string;
   category: string;
   categoryTag: string;
+  status: string;
+  statusType: 'completed-upgrading' | 'in-development' | 'active' | 'production';
   badge: string;
   summary: string;
   detailedDescription: string;
@@ -15,7 +18,6 @@ export interface ProjectData {
   metrics: { label: string; value: string }[];
   technologies: string[];
   liveUrl?: string;
-  repoUrl?: string;
   gradient: string;
 }
 
@@ -58,11 +60,23 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </button>
 
           {/* Header Tag & Title */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-[10px] font-mono tracking-widest text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 uppercase">
+          <div className="flex flex-wrap items-center gap-2 mb-3">
+            <span className="text-[11px] font-mono font-bold text-zinc-400">
+              {project.projectNumber}
+            </span>
+            <span className="text-[10px] font-mono tracking-widest text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 uppercase font-semibold">
               {project.badge}
             </span>
-            <span className="text-zinc-500 font-mono text-xs">
+            <span className={`text-[10px] font-mono tracking-wider px-3 py-1 rounded-full border uppercase font-bold ${
+              project.statusType === 'completed-upgrading'
+                ? 'bg-amber-500/10 border-amber-500/40 text-amber-400'
+                : project.statusType === 'in-development'
+                ? 'bg-cyan-500/10 border-cyan-500/40 text-cyan-400'
+                : 'bg-emerald-500/10 border-emerald-500/40 text-emerald-400'
+            }`}>
+              STATUS: {project.status}
+            </span>
+            <span className="text-zinc-500 font-mono text-xs hidden sm:inline">
               // {project.categoryTag}
             </span>
           </div>
@@ -77,7 +91,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Architecture Pipeline Flow Box */}
           <div className="mb-6 p-4 rounded-2xl bg-[#131317] border border-white/10 font-mono text-xs text-emerald-300 overflow-x-auto">
-            <div className="flex items-center gap-2 text-zinc-500 text-[10px] uppercase mb-2">
+            <div className="flex items-center gap-2 text-zinc-400 text-[10px] uppercase mb-2">
               <Terminal className="w-3.5 h-3.5" />
               <span>SYSTEM ARCHITECTURE PIPELINE</span>
             </div>
@@ -107,15 +121,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             {project.metrics.map((m, idx) => (
               <div key={idx} className="p-3 rounded-xl bg-white/[0.03] border border-white/5 text-center">
                 <div className="text-emerald-400 font-mono font-bold text-lg">{m.value}</div>
-                <div className="text-zinc-500 font-mono text-[10px] uppercase">{m.label}</div>
+                <div className="text-zinc-400 font-mono text-[10px] uppercase font-semibold">{m.label}</div>
               </div>
             ))}
           </div>
 
           {/* Technologies Stack */}
           <div className="mb-8">
-            <div className="text-xs font-mono text-zinc-500 tracking-wider uppercase mb-2">
-              TECHNOLOGY STACK:
+            <div className="text-xs font-mono text-zinc-400 tracking-wider uppercase mb-2 font-semibold">
+              VERIFIED TECHNOLOGY STACK:
             </div>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
@@ -129,7 +143,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           </div>
 
-          {/* Action Footer */}
+          {/* Action Footer (Zero GitHub links) */}
           <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
             <div className="flex items-center gap-3">
               {project.liveUrl && (
@@ -137,28 +151,21 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-mono font-bold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-all flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-xl bg-emerald-500 text-black font-mono font-bold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-all flex items-center gap-2 shadow-sm"
                 >
-                  <span>Launch Live Demo</span>
+                  <span>Launch Live System</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               )}
-              {project.repoUrl && (
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-white/[0.04] border border-white/10 text-zinc-200 font-mono text-xs uppercase tracking-wider hover:bg-white/[0.08] transition-all flex items-center gap-2"
-                >
-                  <GitBranch className="w-3.5 h-3.5" />
-                  <span>Source Code</span>
-                </a>
-              )}
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-[11px] font-mono text-zinc-300">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Verified Local Architecture</span>
+              </div>
             </div>
 
             <button
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-zinc-400 hover:text-white font-mono text-xs uppercase tracking-wider transition-colors"
+              className="px-5 py-2.5 rounded-xl bg-white/[0.06] border border-white/10 hover:bg-white/[0.12] text-white font-mono text-xs uppercase tracking-wider transition-colors"
             >
               Close Window
             </button>

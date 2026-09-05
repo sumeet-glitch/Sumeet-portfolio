@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Lenis from 'lenis';
+import { Preloader } from './components/Preloader';
 import { Navbar } from './components/Navbar';
 import { HeroScrubber } from './components/HeroScrubber';
 import { AboutBento } from './components/AboutBento';
@@ -36,7 +37,9 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative bg-[#050505] text-slate-100 min-h-screen overflow-x-hidden selection:bg-emerald-500/20 selection:text-emerald-400">
+    <div className="relative bg-darkBg text-slate-100 min-h-screen overflow-x-hidden selection:bg-emerald-500/20 selection:text-emerald-400">
+      {/* Reference 00:00 Preloader Entry Sequence */}
+      <Preloader />
       
       {/* Background Ambient Cyberpunk Grid Pattern */}
       <div className="fixed inset-0 bg-grid-pattern opacity-40 pointer-events-none z-0" />

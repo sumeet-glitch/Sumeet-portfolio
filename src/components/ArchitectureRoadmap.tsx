@@ -57,14 +57,14 @@ const executionSteps: PhaseStep[] = [
     color: 'purple',
     borderColor: 'border-purple-500/40',
     description: 'Containerized service topologies, automated static builds, edge CDN caching, and process monitoring.',
-    technologies: ['Docker', 'GitHub Actions', 'GitHub Pages', 'PowerShell', 'GitOps'],
+    technologies: ['Docker', 'CI/CD Pipelines', 'Edge CDN', 'PowerShell', 'GitOps'],
     deliverables: ['Automated zero-downtime deploys', 'Hardened production bundles', 'Continuous quality gating'],
   },
 ];
 
 export const ArchitectureRoadmap: React.FC = () => {
   return (
-    <section id="architecture" className="py-24 relative bg-[#070709]">
+    <section id="architecture" className="py-24 relative bg-darkBg">
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Section Header */}

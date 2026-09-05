@@ -4,17 +4,16 @@ import {
   Cpu, 
   Database, 
   Terminal, 
-  Layers, 
   Workflow, 
   Sparkles, 
   Bot, 
   BarChart3, 
   GitBranch, 
   Box, 
-  Server,
-  Atom,
-  Flame,
-  Binary
+  Server, 
+  Atom, 
+  Flame, 
+  Binary 
 } from 'lucide-react';
 
 interface TechItem {
@@ -25,35 +24,36 @@ interface TechItem {
 }
 
 const row1Items: TechItem[] = [
-  { name: 'Python', category: 'Language / Automation', icon: <Terminal className="w-4 h-4 text-amber-400" /> },
+  { name: 'Python', category: 'Language / Automation', icon: <Terminal className="w-4 h-4 text-emerald-400" />, highlight: true },
   { name: 'FastAPI', category: 'High-Perf Backend', icon: <Flame className="w-4 h-4 text-emerald-400" />, highlight: true },
-  { name: 'React 18/19', category: 'Modern UI Suite', icon: <Atom className="w-4 h-4 text-cyan-400" />, highlight: true },
-  { name: 'Next.js 14/15', category: 'App Router / SSR', icon: <Layers className="w-4 h-4 text-white" /> },
+  { name: 'Electron', category: 'Desktop AI Runtimes', icon: <Cpu className="w-4 h-4 text-cyan-400" />, highlight: true },
+  { name: 'React 18', category: 'Modern UI Systems', icon: <Atom className="w-4 h-4 text-cyan-400" />, highlight: true },
   { name: 'TypeScript', category: 'Type Safety', icon: <Code2 className="w-4 h-4 text-blue-400" /> },
   { name: 'Tailwind CSS', category: 'Design System', icon: <Sparkles className="w-4 h-4 text-teal-400" /> },
-  { name: 'Docker', category: 'Containerization', icon: <Box className="w-4 h-4 text-blue-500" /> },
-  { name: 'Electron', category: 'Desktop Apps', icon: <Cpu className="w-4 h-4 text-emerald-300" /> },
-  { name: 'Node.js', category: 'Runtime Engine', icon: <Server className="w-4 h-4 text-green-500" /> },
-  { name: 'PostgreSQL', category: 'Relational DB', icon: <Database className="w-4 h-4 text-indigo-400" /> },
-  { name: 'PowerShell', category: 'OS Automation', icon: <Binary className="w-4 h-4 text-sky-400" /> },
+  { name: 'OpenCV', category: 'Computer Vision / RPA', icon: <Cpu className="w-4 h-4 text-emerald-400" />, highlight: true },
+  { name: 'Playwright', category: 'Web Automation', icon: <Workflow className="w-4 h-4 text-purple-400" /> },
+  { name: 'PyAutoGUI', category: 'OS RPA Engine', icon: <Binary className="w-4 h-4 text-amber-400" /> },
+  { name: 'OBS WebSocket v5', category: 'Media Orchestration', icon: <Box className="w-4 h-4 text-blue-500" />, highlight: true },
+  { name: 'Docker', category: 'Containerization', icon: <Box className="w-4 h-4 text-blue-400" /> },
 ];
 
 const row2Items: TechItem[] = [
-  { name: 'Generative AI', category: 'Copilot / RAG', icon: <Sparkles className="w-4 h-4 text-amber-300" />, highlight: true },
+  { name: 'Generative AI', category: 'Copilot / RAG', icon: <Sparkles className="w-4 h-4 text-emerald-300" />, highlight: true },
   { name: 'LLM Orchestration', category: 'LangChain / Agents', icon: <Bot className="w-4 h-4 text-emerald-400" />, highlight: true },
   { name: 'Prompt Engineering', category: 'Structured Output', icon: <Workflow className="w-4 h-4 text-purple-400" /> },
-  { name: 'Power BI & DAX', category: 'Executive BI', icon: <BarChart3 className="w-4 h-4 text-amber-500" />, highlight: true },
-  { name: 'Power Query (M)', category: 'ETL Engine', icon: <Database className="w-4 h-4 text-yellow-500" /> },
+  { name: 'Power BI & DAX', category: 'Executive BI', icon: <BarChart3 className="w-4 h-4 text-amber-400" />, highlight: true },
+  { name: 'Power Query (M)', category: 'ETL Engine', icon: <Database className="w-4 h-4 text-yellow-400" /> },
+  { name: 'PostgreSQL & SQLite', category: 'Relational DBs', icon: <Database className="w-4 h-4 text-indigo-400" /> },
   { name: 'SQL Server', category: 'Enterprise DB', icon: <Server className="w-4 h-4 text-red-400" /> },
-  { name: 'REST APIs & WebSockets', category: 'Protocols', icon: <Workflow className="w-4 h-4 text-cyan-400" /> },
-  { name: 'Git & CI/CD', category: 'Version Control', icon: <GitBranch className="w-4 h-4 text-orange-400" /> },
-  { name: 'FastAPI Daemon', category: 'Task Engine', icon: <Flame className="w-4 h-4 text-emerald-400" /> },
-  { name: 'Financial Modeling', category: 'Ledger Audit', icon: <BarChart3 className="w-4 h-4 text-emerald-500" /> },
+  { name: 'REST & WebSockets', category: 'Async Protocols', icon: <Workflow className="w-4 h-4 text-cyan-400" /> },
+  { name: 'Git & CI/CD', category: 'Release Pipelines', icon: <GitBranch className="w-4 h-4 text-orange-400" /> },
+  { name: 'RSA-2048 Licensing', category: 'Hardware Cryptography', icon: <Cpu className="w-4 h-4 text-emerald-400" /> },
+  { name: 'Financial Modeling', category: 'Multi-Ledger Audit', icon: <BarChart3 className="w-4 h-4 text-emerald-400" /> },
 ];
 
 export const TechMarquee: React.FC = () => {
   return (
-    <section id="arsenal" className="py-20 relative overflow-hidden bg-[#050505]">
+    <section id="expertise" className="py-20 relative overflow-hidden bg-darkBg">
       
       {/* Background radial spotlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-emerald-500/5 blur-[160px] pointer-events-none" />
@@ -67,7 +67,7 @@ export const TechMarquee: React.FC = () => {
           Technologies I Work With
         </h2>
         <p className="text-zinc-300 text-sm font-mono uppercase tracking-[0.18em] font-semibold mt-1">
-          BATTLE-TESTED STACK // SPEED-OPTIMIZED & SCALABLE
+          PRODUCTION STACK // DESKTOP AI, WORKFLOW AUTOMATION & FULL-STACK SYSTEMS
         </p>
       </div>
 

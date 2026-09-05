@@ -6,35 +6,176 @@ import { SpotlightCard } from './SpotlightCard';
 
 const projectsList: ProjectData[] = [
   {
-    id: 'jarvis',
-    title: 'Project Jarvis // SK AI Assistant',
+    id: 'sk-ai',
+    projectNumber: '01',
+    title: 'SK AI — Autonomous Desktop Assistant',
     category: 'ai',
-    categoryTag: 'AI & DESKTOP RUNTIME',
-    badge: 'VOICE AI DAEMON',
-    summary: 'Multi-modal desktop assistant and localized automation daemon executing voice commands and intelligent system tasks.',
-    detailedDescription: 'Project Jarvis is a localized, high-resilience desktop automation daemon and voice assistant designed to bridge natural language processing with native operating system workflows. Built using an Electron runtime, React frontend, and a localized FastAPI background worker, it processes voice input, routes intent, and orchestrates system tasks with zero external exposure.',
-    architecturePipeline: '[Voice / Audio Stream] ➔ [Intent Parser] ➔ [FastAPI Daemon] ➔ [OS Automation & Telemetry]',
+    categoryTag: 'AUTONOMOUS DESKTOP AI',
+    status: 'COMPLETED // UPGRADING',
+    statusType: 'completed-upgrading',
+    badge: 'PRODUCTION AGENT',
+    summary: 'Functional autonomous desktop assistant operating with localized intent classification, system action execution, and self-upgrading pipelines.',
+    detailedDescription: 'SK AI is an autonomous, localized desktop application and worker engine. Production release v1.0.54 is fully functional with native action executor, command manager, SQLite persistence, and speech synthesis. Currently undergoing active engineering toward v1.0.55 featuring enhanced self-learning evolution, universal orchestrator, and automated release gates.',
+    architecturePipeline: '[Voice / Command Input] ➔ [Intent & Command Manager] ➔ [FastAPI / Python Daemon] ➔ [Native Action Executor & OS Engine]',
     features: [
-      'Localized background daemon operating with low system footprint',
-      'Context-aware intent classification and sub-second speech processing',
-      'Batch document transformation and file management routines',
-      'Self-healing crash recovery and secure OS credential vaults'
+      'Completed & functional desktop assistant with native Windows installer',
+      'Sub-250ms localized intent classification and speech engine',
+      'Action executor managing OS tasks, file discovery, and system telemetry',
+      'Active v1.0.55 upgrade pipeline introducing safe self-modification gates'
     ],
     metrics: [
-      { label: 'Latency', value: '< 250ms' },
-      { label: 'Voice Precision', value: '98.5%' },
-      { label: 'Memory Footprint', value: '< 85MB' }
+      { label: 'Current Release', value: 'v1.0.54' },
+      { label: 'Next Build', value: 'v1.0.55' },
+      { label: 'Execution', value: 'COMPLETED' }
     ],
-    technologies: ['Electron', 'React 18', 'TypeScript', 'FastAPI', 'Python', 'Gemini API'],
-    liveUrl: 'https://sumeet-glitch.github.io/Sumeet-portfolio/',
-    repoUrl: 'https://github.com/sumeet-glitch',
+    technologies: ['Python', 'Electron', 'FastAPI', 'SQLite', 'Speech Engine', 'NSIS'],
+    liveUrl: '#home',
     gradient: 'from-emerald-500/20 via-transparent to-transparent'
   },
   {
+    id: 'project-jarvis',
+    projectNumber: '02',
+    title: 'Project JARVIS — Localized AI Daemon',
+    category: 'ai',
+    categoryTag: 'VOICE AI & DESKTOP EMULATION',
+    status: 'IN DEVELOPMENT',
+    statusType: 'in-development',
+    badge: 'ACTIVE BUILD',
+    summary: 'In-development localized voice-driven AI daemon and desktop emulation agent built for real-time operating system control.',
+    detailedDescription: 'Project Jarvis is an active, in-development desktop automation system designed to bridge continuous natural language audio processing with native OS action dispatch. Engineered with a localized Python core, multi-agent feedback loops, and persistent memory caches, it operates as an ongoing engineering build rather than a finished production release.',
+    architecturePipeline: '[Continuous Voice Stream] ➔ [Hotword & Audio Router] ➔ [Jarvis Core Daemon] ➔ [OS Emulation & Subsystem Hooks]',
+    features: [
+      'Active development focused on low-latency voice command capture',
+      'Integrated memory module and secure credential key isolation',
+      'Desktop emulation routines for keyboard, mouse, and app dispatch',
+      'Dynamic feedback loops for iterative command refinement'
+    ],
+    metrics: [
+      { label: 'Project State', value: 'ACTIVE' },
+      { label: 'Iteration', value: 'v3.0 Build' },
+      { label: 'Execution', value: 'In-Dev' }
+    ],
+    technologies: ['Python', 'FastAPI', 'Desktop Emulation', 'Speech-to-Intent', 'Process Automation'],
+    liveUrl: '#home',
+    gradient: 'from-cyan-500/20 via-transparent to-transparent'
+  },
+  {
+    id: 'classsync-suite',
+    projectNumber: '03',
+    title: 'SK-ClassSync-Suite — Smart Classroom Automation',
+    category: 'automation',
+    categoryTag: 'SMART CLASSROOM ORCHESTRATION',
+    status: 'IN DEVELOPMENT // ACTIVE',
+    statusType: 'in-development',
+    badge: 'ACTIVE PROJECT',
+    summary: 'Enterprise-grade autonomous classroom recording, digital board PDF export, and cloud content publishing orchestration platform.',
+    detailedDescription: 'SK-ClassSync-Suite is a comprehensive classroom automation platform developed to orchestrate daily academic lecture capture across scheduled slot matrices (08:00–20:00 IST). It interfaces directly with OBS Studio v5 over WebSockets, automates Note 3 digital whiteboard PDF exports via OpenCV visual template matching, and manages disk-backed async upload queues to cloud CMS portals.',
+    architecturePipeline: '[Daily Slot Matrix 08:00-20:00] ➔ [OBS WebSocket v5 Start/Stop] ➔ [Note 3 OpenCV Template Exporter] ➔ [Playwright Portal Uploader]',
+    features: [
+      '1-Year Hardware-Locked RSA-2048 licensing with hardware UUID binding',
+      'OBS Studio WebSocket v5 automation for start, stop, and standardized naming',
+      'Note 3 digital board auto-exporter using OpenCV visual template matching & pywinauto',
+      'Autonomous daily classroom scheduler daemon tracking rooms G-7, G-3, G-4',
+      'Playwright persistent-session CMS uploader with disk-backed queue management'
+    ],
+    metrics: [
+      { label: 'Schedule Window', value: '08:00-20:00' },
+      { label: 'RSA Security', value: '2048-Bit' },
+      { label: 'Test Coverage', value: '93 Tests (100%)' }
+    ],
+    technologies: ['Python', 'OBS WebSocket v5', 'OpenCV', 'Playwright', 'pywinauto', 'PyAutoGUI', 'PyInstaller'],
+    liveUrl: '#home',
+    gradient: 'from-blue-500/20 via-transparent to-transparent'
+  },
+  {
+    id: 'data-sheet-automation',
+    projectNumber: '04',
+    title: 'Data Sheet Automation Engine',
+    category: 'automation',
+    categoryTag: 'WORKFLOW & SPREADSHEET AUTOMATION',
+    status: 'COMPLETED // ACTIVE',
+    statusType: 'active',
+    badge: 'PROCESS AUTOMATION',
+    summary: 'Workflow automation initiative eliminating repetitive spreadsheet entries, data-sheet validation errors, and manual workbook reconciliation.',
+    detailedDescription: 'An automation initiative engineered to replace error-prone, repetitive manual data-sheet work with structured, scripted ETL pipelines. Consolidates disparate daily entry workbooks, enforces schema consistency, validates formula outputs, and exports reconciled operational data sheets with zero human calculation mistakes.',
+    architecturePipeline: '[Raw Operational Data Sheets] ➔ [Python OpenPyXL / Power Query ETL] ➔ [Validation & Anomaly Rules] ➔ [Clean Production Reports]',
+    features: [
+      'Automated multi-sheet consolidation and schema standardization',
+      'Formula validation and anomaly detection catching transcription mismatches',
+      'Significant reduction in manual data-entry turnaround time',
+      'Clean, formatted exports ready for management audit and downstream reporting'
+    ],
+    metrics: [
+      { label: 'Human Error', value: '0.00%' },
+      { label: 'Latency Drop', value: '-80%' },
+      { label: 'Audit Status', value: '100% Passed' }
+    ],
+    technologies: ['Python', 'Power Query (M)', 'Excel Data Models', 'OpenPyXL', 'VBA Automation'],
+    liveUrl: '#home',
+    gradient: 'from-emerald-500/20 via-transparent to-transparent'
+  },
+  {
+    id: 'studio-work-automation',
+    projectNumber: '05',
+    title: 'Studio Work Performance Automation',
+    category: 'automation',
+    categoryTag: 'OPERATIONAL TELEMETRY & STUDIO WORK',
+    status: 'COMPLETED // ACTIVE',
+    statusType: 'active',
+    badge: 'STUDIO TELEMETRY',
+    summary: 'Operational tracking and studio recording performance system monitoring faculty schedules, studio allocations, and content turnaround.',
+    detailedDescription: 'An operational performance automation system managing academic recording studio sessions. Automates tracking of faculty entry dates, recording schedules, room assignments, session completion statuses, and recording turnaround times to maintain consistent broadcast throughput across multi-studio facilities.',
+    architecturePipeline: '[Faculty Recording Schedule] ➔ [Daily Session Telemetry Logger] ➔ [Studio Throughput Validator] ➔ [Executive Performance Reports]',
+    features: [
+      'Standardized faculty code and recording slot tracking across studios',
+      'Session completion telemetry with automated discrepancy flagging',
+      'Automated studio utilization tracking to balance recording load',
+      'Performance summaries tracking daily output against academic delivery deadlines'
+    ],
+    metrics: [
+      { label: 'Tracking Delay', value: 'Real-Time' },
+      { label: 'Schedule Precision', value: '99.5%' },
+      { label: 'Coverage', value: 'Multi-Studio' }
+    ],
+    technologies: ['Python', 'Excel Data Models', 'Power BI', 'ETL Pipelines', 'Operational Telemetry'],
+    liveUrl: '#home',
+    gradient: 'from-amber-500/20 via-transparent to-transparent'
+  },
+  {
+    id: 'powerbi-suite',
+    projectNumber: '06',
+    title: 'Power BI Executive Financial Suite',
+    category: 'bi',
+    categoryTag: 'BUSINESS INTELLIGENCE & TELEMETRY',
+    status: 'COMPLETED // PRODUCTION',
+    statusType: 'production',
+    badge: 'EXECUTIVE TELEMETRY',
+    summary: 'Unified multi-site financial intelligence suite consolidating franchise expenses, fee collections, and P&L variance modeling.',
+    detailedDescription: 'A multi-tier business intelligence platform consolidating regional operational expenses, fee collection cashflows, and dynamic budget variance models across dozens of institutional franchise branches. Replaced a 5-day manual reporting lag with instantaneous executive dashboards.',
+    architecturePipeline: '[SQL Server & Ledger Feeds] ➔ [Power Query M ETL] ➔ [DAX Analytical Cubes] ➔ [Executive Dashboard]',
+    features: [
+      'Multi-branch P&L variance matrix with dynamic MoM and YoY calculations',
+      'Automated data pipeline processing hundreds of thousands of ledger rows',
+      'Role-based security views for regional directors and corporate leadership',
+      'Automated scheduled refreshes eliminating manual workbook updates'
+    ],
+    metrics: [
+      { label: 'Reporting Lag', value: '-5 Days' },
+      { label: 'Decision Speed', value: '2x Faster' },
+      { label: 'Data Scale', value: '500K+ Rows' }
+    ],
+    technologies: ['Power BI', 'DAX', 'Power Query (M)', 'SQL Server', 'Excel Power Pivot'],
+    liveUrl: '#home',
+    gradient: 'from-amber-500/20 via-transparent to-transparent'
+  },
+  {
     id: 'ats-resume',
+    projectNumber: '07',
     title: 'Sumeet ATS Resume Pro',
     category: 'ai',
     categoryTag: 'FULL-STACK WEB & LLM',
+    status: 'COMPLETED // ACTIVE',
+    statusType: 'active',
     badge: 'ENTERPRISE AI PLATFORM',
     summary: 'Full-stack resume optimization platform and applicant tracking engine with semantic keyword match analytics.',
     detailedDescription: 'An enterprise-grade applicant tracking and resume optimization engine built with React and FastAPI. The application performs deep semantic parsing on multi-format resumes, matches candidates against strict job descriptions, flags formatting anomalies, and delivers AI-augmented career briefings.',
@@ -51,87 +192,17 @@ const projectsList: ProjectData[] = [
       { label: 'ATS Accuracy', value: '99.1%' }
     ],
     technologies: ['FastAPI', 'React', 'Python', 'Tailwind CSS', 'PostgreSQL', 'LangChain'],
-    liveUrl: 'https://sumeet-glitch.github.io/Sumeet-portfolio/',
-    repoUrl: 'https://github.com/sumeet-glitch',
+    liveUrl: '#home',
     gradient: 'from-cyan-500/20 via-transparent to-transparent'
   },
   {
-    id: 'powerbi-bi',
-    title: 'Power BI Executive Financial Suite',
-    category: 'powerbi',
-    categoryTag: 'BUSINESS INTELLIGENCE',
-    badge: 'EXECUTIVE TELEMETRY',
-    summary: 'Unified multi-site financial intelligence suite consolidating franchise expenses, student fee collections, and P&L variances.',
-    detailedDescription: 'A multi-tier business intelligence platform consolidating regional operational expenses, fee collection cashflows, and dynamic budget variance models across dozens of institutional franchise branches. Replaced a 5-day manual reporting lag with instantaneous executive dashboards.',
-    architecturePipeline: '[SQL Server & Ledger Feeds] ➔ [Power Query M ETL] ➔ [DAX Analytical Cubes] ➔ [Executive Dashboard]',
-    features: [
-      'Multi-branch P&L variance matrix with dynamic MoM and YoY calculations',
-      'Automated data pipeline processing hundreds of thousands of ledger rows',
-      'Role-based security views for regional directors and corporate leadership',
-      'Automated scheduled refreshes eliminating manual workbook updates'
-    ],
-    metrics: [
-      { label: 'Reporting Lag', value: '-5 Days' },
-      { label: 'Decision Speed', value: '2x Faster' },
-      { label: 'Data Scale', value: '500K+ Rows' }
-    ],
-    technologies: ['Power BI', 'DAX', 'Power Query (M)', 'SQL Server', 'Excel Power Pivot'],
-    liveUrl: 'https://sumeet-glitch.github.io/Sumeet-portfolio/',
-    gradient: 'from-amber-500/20 via-transparent to-transparent'
-  },
-  {
-    id: 'geo-attendance',
-    title: 'Mobile Attendance & Geo-Verification',
-    category: 'mobile',
-    categoryTag: 'SYSTEMS SECURITY & TELEMETRY',
-    badge: 'SECURITY ENGINE',
-    summary: 'Secure enterprise attendance verification platform featuring GPS perimeter fencing and camera authentication.',
-    detailedDescription: 'An enterprise workforce compliance application providing verifiable on-site check-ins. Combines precise GPS perimeter geofencing with camera-based visual verification and timestamp telemetry, fully integrated with central payroll databases.',
-    architecturePipeline: '[Mobile Device Telemetry] ➔ [Geo-Fencing Validator] ➔ [API Gateway] ➔ [Payroll Ledger Sync]',
-    features: [
-      'Sub-meter geofencing radius validation preventing spoofed check-ins',
-      'Tamper-proof device signature and hardware-bound biometric verification',
-      'Offline queuing with cryptographic synchronization on reconnection',
-      'Automated discrepancy alerts sent to regional operations managers'
-    ],
-    metrics: [
-      { label: 'Spoof Rate', value: '0.00%' },
-      { label: 'Sync Latency', value: '< 500ms' },
-      { label: 'Uptime', value: '99.98%' }
-    ],
-    technologies: ['React Native', 'Node.js', 'FastAPI', 'PostgreSQL', 'WebSockets'],
-    liveUrl: 'https://sumeet-glitch.github.io/Sumeet-portfolio/',
-    gradient: 'from-purple-500/20 via-transparent to-transparent'
-  },
-  {
-    id: 'reconciliation',
-    title: 'Automated Financial Reconciliation Engine',
-    category: 'finance',
-    categoryTag: 'FINANCIAL ENGINEERING',
-    badge: 'AUDIT AUTOMATION',
-    summary: 'Automated multi-ledger audit workbook reconciling purchase orders, supplier invoices, and department balances.',
-    detailedDescription: 'A high-precision financial audit workbook designed to eliminate manual monthly spreadsheet reconciliations across educational franchise networks. Employs relational Power Pivot data models and Python automation scripts to cross-validate invoice items against approved purchase orders.',
-    architecturePipeline: '[Vendor Invoices & Bank Ledgers] ➔ [Python ETL Script] ➔ [Variance Matrix] ➔ [Audited Close]',
-    features: [
-      'Automated discrepancy flagging prior to month-end ledger closing',
-      'Consolidation of purchase orders, vendor invoices, and student fee rolls',
-      'Eliminated 40% of administrative operational overhead',
-      'Historical variance tracking and audit trail generation'
-    ],
-    metrics: [
-      { label: 'Overhead Reduction', value: '40%' },
-      { label: 'Audit Accuracy', value: '100%' },
-      { label: 'Closing Time', value: '3x Faster' }
-    ],
-    technologies: ['Python', 'Power Pivot', 'DAX', 'SQL Server', 'VBA Automation'],
-    liveUrl: 'https://sumeet-glitch.github.io/Sumeet-portfolio/',
-    gradient: 'from-emerald-500/20 via-transparent to-transparent'
-  },
-  {
-    id: 'swadeshi',
+    id: 'swadeshi-retail',
+    projectNumber: '08',
     title: 'Swadeshi Retail Inventory Management',
     category: 'retail',
     categoryTag: 'OPERATIONS & INVENTORY',
+    status: 'COMPLETED // PRODUCTION',
+    statusType: 'production',
     badge: 'RETAIL INTELLIGENCE',
     summary: 'End-to-end retail and inventory intelligence suite streamlining SKU tracking, invoice validation, and POS telemetry.',
     detailedDescription: 'An operational retail platform engineered for high-velocity stock auditing and supplier validation. Tracks fast-moving consumer SKUs, flags margin discrepancies, and enforces supplier invoice matching to eliminate supplier overbilling.',
@@ -148,7 +219,7 @@ const projectsList: ProjectData[] = [
       { label: 'SKU Capacity', value: '10,000+' }
     ],
     technologies: ['React', 'FastAPI', 'PostgreSQL', 'Power BI', 'Tailwind CSS'],
-    liveUrl: 'https://sumeet-glitch.github.io/Sumeet-portfolio/',
+    liveUrl: '#home',
     gradient: 'from-blue-500/20 via-transparent to-transparent'
   }
 ];
@@ -159,10 +230,15 @@ export const ProjectsBento: React.FC = () => {
 
   const filteredProjects = selectedCategory === 'all'
     ? projectsList
-    : projectsList.filter(p => p.category === selectedCategory || (selectedCategory === 'ai' && (p.category === 'ai' || p.category === 'mobile')));
+    : projectsList.filter(p => {
+        if (selectedCategory === 'ai') return p.category === 'ai';
+        if (selectedCategory === 'automation') return p.category === 'automation';
+        if (selectedCategory === 'bi') return p.category === 'bi' || p.category === 'retail';
+        return p.category === selectedCategory;
+      });
 
   return (
-    <section id="projects" className="py-24 relative">
+    <section id="projects" className="py-24 relative bg-darkBg">
       
       {/* Background Radial Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-emerald-500/5 blur-[160px] pointer-events-none" />
@@ -184,11 +260,10 @@ export const ProjectsBento: React.FC = () => {
           {/* Filter Pills */}
           <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#0c0d12] border border-white/10 w-fit">
             {[
-              { id: 'all', label: 'All Projects' },
-              { id: 'ai', label: 'AI & Full-Stack' },
-              { id: 'powerbi', label: 'Power BI & BI' },
-              { id: 'finance', label: 'Finance & Audit' },
-              { id: 'retail', label: 'Retail & Ops' },
+              { id: 'all', label: 'All Projects (8)' },
+              { id: 'ai', label: 'Autonomous & AI' },
+              { id: 'automation', label: 'Automation & RPA' },
+              { id: 'bi', label: 'BI & Operations' },
             ].map((cat) => (
               <button
                 key={cat.id}
@@ -214,15 +289,27 @@ export const ProjectsBento: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              transition={{ duration: 0.5, delay: idx * 0.06 }}
             >
               <SpotlightCard className="p-6 h-full flex flex-col justify-between group">
                 {/* Top Meta Bar */}
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono uppercase tracking-[0.18em] text-emerald-400 font-bold px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                      {proj.badge}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono font-bold text-zinc-400">
+                        {proj.projectNumber}
+                      </span>
+                      <span className={`text-[10px] font-mono uppercase tracking-wider font-bold px-2.5 py-0.5 rounded border ${
+                        proj.statusType === 'completed-upgrading'
+                          ? 'bg-amber-500/10 border-amber-500/35 text-amber-400'
+                          : proj.statusType === 'in-development'
+                          ? 'bg-cyan-500/10 border-cyan-500/35 text-cyan-400'
+                          : 'bg-emerald-500/10 border-emerald-500/35 text-emerald-400'
+                      }`}>
+                        {proj.status}
+                      </span>
+                    </div>
+
                     <button
                       onClick={() => setActiveModalProject(proj)}
                       className="p-2 rounded-lg bg-white/5 hover:bg-white/15 text-zinc-300 hover:text-white transition-colors border border-white/10"
@@ -274,17 +361,13 @@ export const ProjectsBento: React.FC = () => {
                     </button>
 
                     <div className="flex items-center gap-2">
-                      {proj.liveUrl && (
-                        <a
-                          href={proj.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-zinc-200 hover:text-white border border-white/10 transition-colors"
-                          title="Live System"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
-                      )}
+                      <button
+                        onClick={() => setActiveModalProject(proj)}
+                        className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-zinc-200 hover:text-white border border-white/10 transition-colors"
+                        title="Open Details Modal"
+                      >
+                        <ExternalLink className="w-4 h-4 text-emerald-400" />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -295,7 +378,7 @@ export const ProjectsBento: React.FC = () => {
 
       </div>
 
-      {/* Interactive Case Study Modal */}
+      {/* Interactive Case Study Modal (Zero GitHub presentation) */}
       <ProjectModal
         project={activeModalProject}
         onClose={() => setActiveModalProject(null)}
