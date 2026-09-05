@@ -30,6 +30,23 @@ export const App: React.FC = () => {
 
     const rafId = requestAnimationFrame(raf);
 
+    const params = new URLSearchParams(window.location.search);
+    const scrollY = params.get('scrollY');
+    if (scrollY) {
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(scrollY, 10));
+      }, 100);
+    }
+    const scrollTarget = params.get('scroll');
+    if (scrollTarget) {
+      setTimeout(() => {
+        const el = document.getElementById(scrollTarget);
+        if (el) {
+          el.scrollIntoView({ behavior: 'instant', block: 'start' });
+        }
+      }, 100);
+    }
+
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();

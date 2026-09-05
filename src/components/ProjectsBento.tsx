@@ -106,9 +106,9 @@ const projectsList: ProjectData[] = [
       'Clean, formatted exports ready for management audit and downstream reporting'
     ],
     metrics: [
-      { label: 'Human Error', value: '0.00%' },
-      { label: 'Latency Drop', value: '-80%' },
-      { label: 'Audit Status', value: '100% Passed' }
+      { label: 'Pipeline', value: 'OpenPyXL ETL' },
+      { label: 'Validation', value: 'Formula Engine' },
+      { label: 'Execution', value: 'Production' }
     ],
     technologies: ['Python', 'Power Query (M)', 'Excel Data Models', 'OpenPyXL', 'VBA Automation'],
     liveUrl: '#home',
@@ -133,9 +133,9 @@ const projectsList: ProjectData[] = [
       'Performance summaries tracking daily output against academic delivery deadlines'
     ],
     metrics: [
-      { label: 'Tracking Delay', value: 'Real-Time' },
-      { label: 'Schedule Precision', value: '99.5%' },
-      { label: 'Coverage', value: 'Multi-Studio' }
+      { label: 'Telemetry', value: 'Active Tracking' },
+      { label: 'Throughput', value: 'Automated' },
+      { label: 'Scope', value: 'Multi-Studio' }
     ],
     technologies: ['Python', 'Excel Data Models', 'Power BI', 'ETL Pipelines', 'Operational Telemetry'],
     liveUrl: '#home',
@@ -160,9 +160,9 @@ const projectsList: ProjectData[] = [
       'Automated scheduled refreshes eliminating manual workbook updates'
     ],
     metrics: [
-      { label: 'Reporting Lag', value: '-5 Days' },
-      { label: 'Decision Speed', value: '2x Faster' },
-      { label: 'Data Scale', value: '500K+ Rows' }
+      { label: 'Refresh Model', value: 'Scheduled' },
+      { label: 'Model', value: 'DAX & M' },
+      { label: 'Data Source', value: 'SQL Server' }
     ],
     technologies: ['Power BI', 'DAX', 'Power Query (M)', 'SQL Server', 'Excel Power Pivot'],
     liveUrl: '#home',
@@ -187,9 +187,9 @@ const projectsList: ProjectData[] = [
       'Secure user authentication and report export generation'
     ],
     metrics: [
-      { label: 'Score Boost', value: '+45%' },
-      { label: 'Parse Speed', value: '1.2s' },
-      { label: 'ATS Accuracy', value: '99.1%' }
+      { label: 'Parser', value: 'Semantic Engine' },
+      { label: 'Backend', value: 'FastAPI' },
+      { label: 'Frontend', value: 'React' }
     ],
     technologies: ['FastAPI', 'React', 'Python', 'Tailwind CSS', 'PostgreSQL', 'LangChain'],
     liveUrl: '#home',
@@ -214,9 +214,9 @@ const projectsList: ProjectData[] = [
       'Executive dashboard summarizing top-performing product categories'
     ],
     metrics: [
-      { label: 'Shrinkage Reduction', value: '25%' },
-      { label: 'Stockout Drop', value: '35%' },
-      { label: 'SKU Capacity', value: '10,000+' }
+      { label: 'Tracking', value: 'SKU Telemetry' },
+      { label: 'Verification', value: 'PO Match' },
+      { label: 'Execution', value: 'Production' }
     ],
     technologies: ['React', 'FastAPI', 'PostgreSQL', 'Power BI', 'Tailwind CSS'],
     liveUrl: '#home',
@@ -225,17 +225,7 @@ const projectsList: ProjectData[] = [
 ];
 
 export const ProjectsBento: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeModalProject, setActiveModalProject] = useState<ProjectData | null>(null);
-
-  const filteredProjects = selectedCategory === 'all'
-    ? projectsList
-    : projectsList.filter(p => {
-        if (selectedCategory === 'ai') return p.category === 'ai';
-        if (selectedCategory === 'automation') return p.category === 'automation';
-        if (selectedCategory === 'bi') return p.category === 'bi' || p.category === 'retail';
-        return p.category === selectedCategory;
-      });
 
   return (
     <section id="projects" className="py-24 relative bg-darkBg">
@@ -245,44 +235,20 @@ export const ProjectsBento: React.FC = () => {
 
       <div className="container mx-auto px-4 max-w-7xl">
         
-        {/* Section Header & Category Filter Buttons */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-[0.18em] font-semibold mb-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>// 04 PORTFOLIO WORK</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
-              Featured Engineering Projects
-            </h2>
+        {/* Section Header matching Reference Video */}
+        <div className="mb-12">
+          <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs uppercase tracking-[0.18em] font-semibold mb-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>// 04 PORTFOLIO WORK</span>
           </div>
-
-          {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-[#0c0d12] border border-white/10 w-fit">
-            {[
-              { id: 'all', label: 'All Projects (8)' },
-              { id: 'ai', label: 'Autonomous & AI' },
-              { id: 'automation', label: 'Automation & RPA' },
-              { id: 'bi', label: 'BI & Operations' },
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs font-mono uppercase tracking-wider font-semibold transition-all duration-200 ${
-                  selectedCategory === cat.id
-                    ? 'bg-emerald-500 text-black shadow-[0_0_15px_rgba(16,185,129,0.3)]'
-                    : 'text-zinc-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">
+            Featured Engineering Projects
+          </h2>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((proj, idx) => (
+          {projectsList.map((proj, idx) => (
             <motion.div
               key={proj.id}
               layout

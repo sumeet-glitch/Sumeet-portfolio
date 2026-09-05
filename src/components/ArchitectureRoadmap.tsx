@@ -25,7 +25,7 @@ const executionSteps: PhaseStep[] = [
     borderColor: 'border-emerald-500/40',
     description: 'Responsive user interfaces, reactive state graphs, 60fps micro-animations, and WCAG accessibility standards.',
     technologies: ['React 18/19', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    deliverables: ['Modular component libraries', 'Sub-second page load speeds', 'Custom Bento UI paradigms'],
+    deliverables: ['Modular component libraries', 'Fast interactive rendering', 'Custom Bento UI paradigms'],
   },
   {
     step: '02',
@@ -36,7 +36,7 @@ const executionSteps: PhaseStep[] = [
     borderColor: 'border-cyan-500/40',
     description: 'FastAPI and Node.js microservices, relational schemas, secure session management, and zero-trust sanitization.',
     technologies: ['FastAPI', 'Python', 'PostgreSQL', 'SQL Server', 'REST / WebSockets'],
-    deliverables: ['Sub-50ms endpoint latencies', 'Parameterized SQL queries', 'Asynchronous task queues'],
+    deliverables: ['Low-latency API architecture', 'Parameterized SQL queries', 'Asynchronous task queues'],
   },
   {
     step: '03',

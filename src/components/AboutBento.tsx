@@ -65,9 +65,9 @@ export const AboutBento: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                  <div className="text-amber-400 font-mono font-extrabold text-xl">100%</div>
+                  <div className="text-amber-400 font-mono font-extrabold text-xl">VERIFIED</div>
                   <div className="text-zinc-300 font-mono text-xs uppercase tracking-wider font-semibold mt-0.5">
-                    Audit Precision
+                    Execution
                   </div>
                 </div>
               </div>

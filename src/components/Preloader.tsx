@@ -10,22 +10,26 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
-    const startTime = Date.now();
-    const duration = 1200; // 1.2s smooth load
+    if (typeof window !== 'undefined' && window.location.href.includes('skipPreloader')) {
+      setIsLoaded(true);
+      onComplete?.();
+      return;
+    }
 
     const interval = setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      const pct = Math.min(100, Math.round((elapsed / duration) * 100));
-      setProgress(pct);
-
-      if (pct >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          setIsLoaded(true);
-          onComplete?.();
-        }, 300);
-      }
-    }, 20);
+      setProgress((prev) => {
+        const next = prev + 5;
+        if (next >= 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            setIsLoaded(true);
+            onComplete?.();
+          }, 250);
+          return 100;
+        }
+        return next;
+      });
+    }, 25);
 
     return () => clearInterval(interval);
   }, [onComplete]);
