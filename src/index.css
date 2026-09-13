@@ -96,6 +96,16 @@ html.lenis, html.lenis body {
   transform-style: preserve-3d;
 }
 
+.hero-editorial-wash {
+  background:
+    radial-gradient(circle at 76% 42%, rgba(16, 185, 129, 0.12), transparent 28rem),
+    linear-gradient(115deg, rgba(6, 7, 9, 0.98) 0%, rgba(6, 7, 9, 0.78) 48%, rgba(16, 185, 129, 0.04) 100%);
+}
+
+.hero-editorial-portrait {
+  filter: drop-shadow(0 28px 60px rgba(0, 0, 0, 0.38));
+}
+
 .hero-map-grid {
   opacity: 0.42;
   background-image:
@@ -188,6 +198,7 @@ html.lenis, html.lenis body {
   .hero-orbit, .hero-portrait-frame::after, .hero-portrait-image { animation: none; }
   .hero-camera-deck, .hero-camera-deck:hover { transform: none; transition: none; }
   .hero-map-grid { transform: none; opacity: 0.2; }
+  .hero-editorial-portrait { filter: none; }
 }
 
 /* Kinetic Stroke Text */
