@@ -13,7 +13,10 @@ import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   useEffect(() => {
-    // Initialize Lenis Smooth Scrolling
+    // Keep the cinematic scroll feel while honoring accessibility preferences.
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -23,12 +26,14 @@ export const App: React.FC = () => {
       wheelMultiplier: 1,
     });
 
+    let animationFrameId = 0;
+
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animationFrameId = requestAnimationFrame(raf);
     }
 
-    const rafId = requestAnimationFrame(raf);
+    animationFrameId = requestAnimationFrame(raf);
 
     const params = new URLSearchParams(window.location.search);
     const scrollY = params.get('scrollY');
@@ -48,7 +53,7 @@ export const App: React.FC = () => {
     }
 
     return () => {
-      cancelAnimationFrame(rafId);
+      cancelAnimationFrame(animationFrameId);
       lenis.destroy();
     };
   }, []);

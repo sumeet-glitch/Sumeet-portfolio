@@ -22,6 +22,10 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
+  body::selection {
+    background: rgba(52, 211, 153, 0.25);
+  }
+
   /* Accessibility: Prefers Reduced Motion */
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
@@ -84,6 +88,64 @@ html.lenis, html.lenis body {
 
 .bg-radial-glow {
   background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+}
+
+.hero-portrait-frame {
+  isolation: isolate;
+  box-shadow: inset 0 0 80px rgba(16, 185, 129, 0.08), 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.hero-portrait-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.12) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: hero-scan 5s ease-in-out infinite;
+}
+
+.hero-orbit {
+  position: absolute;
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 9999px;
+  pointer-events: none;
+  transform: rotate(-18deg);
+}
+
+.hero-orbit--outer {
+  width: min(34rem, 94vw);
+  height: min(18rem, 50vw);
+  animation: hero-orbit 18s linear infinite;
+}
+
+.hero-orbit--inner {
+  width: min(25rem, 72vw);
+  height: min(13rem, 38vw);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: rotate(28deg);
+  animation: hero-orbit-reverse 14s linear infinite;
+}
+
+.hero-orbit-dot {
+  position: absolute;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: #34d399;
+  box-shadow: 0 0 18px #10b981;
+}
+
+.hero-orbit-dot--one { top: 18%; right: 19%; }
+.hero-orbit-dot--two { bottom: 18%; left: 16%; background: #f59e0b; box-shadow: 0 0 18px #f59e0b; }
+
+@keyframes hero-orbit { to { transform: rotate(342deg); } }
+@keyframes hero-orbit-reverse { to { transform: rotate(-332deg); } }
+@keyframes hero-scan { 0%, 20% { transform: translateX(-120%); } 55%, 100% { transform: translateX(120%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbit, .hero-portrait-frame::after { animation: none; }
 }
 
 /* Kinetic Stroke Text */
