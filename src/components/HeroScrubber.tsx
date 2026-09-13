@@ -16,15 +16,19 @@ const rotatingTitles = [
 ];
 
 const portraitFrames = Array.from({ length: 8 }, (_, index) =>
-  `${assetBaseUrl}PIC/${index + 1}picofme.png`,
+  `${assetBaseUrl}PIC/${index + 1}picofme.webp`,
 );
+const portraitFallbacks = [
+  `${assetBaseUrl}hero-portrait.webp`,
+  `${assetBaseUrl}PIC/my-pic.webp`,
+];
 
 export const HeroScrubber: React.FC = () => {
   const [titleIndex, setTitleIndex] = useState<number>(0);
   const portraitRef = useRef<HTMLDivElement>(null);
   const [scrubProgress, setScrubProgress] = useState<number>(0);
   const [portraitFrame, setPortraitFrame] = useState<number>(0);
-  const [portraitFallback, setPortraitFallback] = useState<boolean>(false);
+  const [portraitErrorCount, setPortraitErrorCount] = useState<number>(0);
 
   // Rotating title interval (2.8 seconds)
   useEffect(() => {
@@ -173,19 +177,17 @@ export const HeroScrubber: React.FC = () => {
                   <span>Live feed</span>
                 </div>
                 <img
-                  src={portraitFallback ? `${assetBaseUrl}hero-portrait.png` : portraitFrames[portraitFrame]}
+                  src={portraitErrorCount === 0
+                    ? portraitFrames[portraitFrame]
+                    : portraitFallbacks[Math.min(portraitErrorCount - 1, portraitFallbacks.length - 1)]}
                   alt="Sumeet Kumar" 
                   width="1024"
                   height="1024"
                   decoding="async"
                   fetchPriority="high"
                   className="hero-portrait-image relative z-[1] w-full h-full object-cover object-top filter contrast-110 brightness-105 transition-transform duration-700 hover:scale-[1.04]"
-                  onError={(e) => {
-                    if (!portraitFallback) {
-                      setPortraitFallback(true);
-                    } else {
-                      e.currentTarget.src = `${assetBaseUrl}PIC/MY%20PIC.jpeg`;
-                    }
+                  onError={() => {
+                    setPortraitErrorCount((current) => Math.min(current + 1, portraitFallbacks.length));
                   }}
                 />
                 <div className="absolute bottom-5 left-7 right-7 z-10 flex items-end justify-between">

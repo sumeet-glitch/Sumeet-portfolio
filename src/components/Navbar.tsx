@@ -53,6 +53,13 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('keydown', closeOnEscape);
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const closeButton = document.querySelector<HTMLButtonElement>('[aria-controls="mobile-navigation"]');
+    return () => closeButton?.focus();
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">

@@ -29,7 +29,6 @@ const projectsList: ProjectData[] = [
       { label: 'Execution', value: 'COMPLETED' }
     ],
     technologies: ['Python', 'Electron', 'FastAPI', 'SQLite', 'Speech Engine', 'NSIS'],
-    liveUrl: '#home',
     gradient: 'from-emerald-500/20 via-transparent to-transparent'
   },
   {
@@ -56,7 +55,6 @@ const projectsList: ProjectData[] = [
       { label: 'Execution', value: 'In-Dev' }
     ],
     technologies: ['Python', 'FastAPI', 'Desktop Emulation', 'Speech-to-Intent', 'Process Automation'],
-    liveUrl: '#home',
     gradient: 'from-cyan-500/20 via-transparent to-transparent'
   },
   {
@@ -84,7 +82,6 @@ const projectsList: ProjectData[] = [
       { label: 'Test Coverage', value: '93 Tests (100%)' }
     ],
     technologies: ['Python', 'OBS WebSocket v5', 'OpenCV', 'Playwright', 'pywinauto', 'PyAutoGUI', 'PyInstaller'],
-    liveUrl: '#home',
     gradient: 'from-blue-500/20 via-transparent to-transparent'
   },
   {
@@ -111,7 +108,6 @@ const projectsList: ProjectData[] = [
       { label: 'Execution', value: 'Production' }
     ],
     technologies: ['Python', 'Power Query (M)', 'Excel Data Models', 'OpenPyXL', 'VBA Automation'],
-    liveUrl: '#home',
     gradient: 'from-emerald-500/20 via-transparent to-transparent'
   },
   {
@@ -138,7 +134,6 @@ const projectsList: ProjectData[] = [
       { label: 'Scope', value: 'Multi-Studio' }
     ],
     technologies: ['Python', 'Excel Data Models', 'Power BI', 'ETL Pipelines', 'Operational Telemetry'],
-    liveUrl: '#home',
     gradient: 'from-amber-500/20 via-transparent to-transparent'
   },
   {
@@ -165,7 +160,6 @@ const projectsList: ProjectData[] = [
       { label: 'Data Source', value: 'SQL Server' }
     ],
     technologies: ['Power BI', 'DAX', 'Power Query (M)', 'SQL Server', 'Excel Power Pivot'],
-    liveUrl: '#home',
     gradient: 'from-amber-500/20 via-transparent to-transparent'
   },
   {
@@ -192,7 +186,6 @@ const projectsList: ProjectData[] = [
       { label: 'Frontend', value: 'React' }
     ],
     technologies: ['FastAPI', 'React', 'Python', 'Tailwind CSS', 'PostgreSQL', 'LangChain'],
-    liveUrl: '#home',
     gradient: 'from-cyan-500/20 via-transparent to-transparent'
   },
   {
@@ -219,7 +212,6 @@ const projectsList: ProjectData[] = [
       { label: 'Execution', value: 'Production' }
     ],
     technologies: ['React', 'FastAPI', 'PostgreSQL', 'Power BI', 'Tailwind CSS'],
-    liveUrl: '#home',
     gradient: 'from-blue-500/20 via-transparent to-transparent'
   }
 ];

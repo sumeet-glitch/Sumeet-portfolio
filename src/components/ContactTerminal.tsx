@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { MessageSquare, Mail, Phone, CheckCircle2, Copy, Check } from 'lucide-react';
@@ -12,30 +12,39 @@ export const ContactTerminal: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [copiedEmail, setCopiedEmail] = useState<boolean>(false);
+  const copyTimeoutRef = useRef<number | undefined>(undefined);
+  const submitTimeoutRef = useRef<number | undefined>(undefined);
+
+  useEffect(() => () => {
+    if (copyTimeoutRef.current !== undefined) window.clearTimeout(copyTimeoutRef.current);
+    if (submitTimeoutRef.current !== undefined) window.clearTimeout(submitTimeoutRef.current);
+  }, []);
 
   const fullName = `${firstName} ${lastName}`.trim() || 'Guest Developer / Recruiter';
   const displayEmail = email || 'client@enterprise.com';
   const displayMessage = message || 'Inquiry regarding AI systems architecture and full-stack engineering...';
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('sumit.kausik@gmail.com');
+    void navigator.clipboard?.writeText('sumit.kausik@gmail.com');
     setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
+    if (copyTimeoutRef.current !== undefined) window.clearTimeout(copyTimeoutRef.current);
+    copyTimeoutRef.current = window.setTimeout(() => setCopiedEmail(false), 2000);
   };
 
   const handleFormSubmit = (e: React.FormEvent, method: 'email' | 'whatsapp') => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Trigger celebratory confetti
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#10B981', '#F59E0B', '#3B82F6', '#FFFFFF']
-    });
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#10B981', '#F59E0B', '#3B82F6', '#FFFFFF']
+      });
+    }
 
-    setTimeout(() => {
+    submitTimeoutRef.current = window.setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
 
