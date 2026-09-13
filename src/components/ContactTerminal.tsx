@@ -24,8 +24,16 @@ export const ContactTerminal: React.FC = () => {
   const displayEmail = email || 'client@enterprise.com';
   const displayMessage = message || 'Inquiry regarding AI systems architecture and full-stack engineering...';
 
-  const handleCopyEmail = () => {
-    void navigator.clipboard?.writeText('sumit.kausik@gmail.com');
+  const handleCopyEmail = async () => {
+    const clipboard = navigator.clipboard;
+    if (!clipboard) return;
+
+    try {
+      await clipboard.writeText('sumit.kausik@gmail.com');
+    } catch {
+      return;
+    }
+
     setCopiedEmail(true);
     if (copyTimeoutRef.current !== undefined) window.clearTimeout(copyTimeoutRef.current);
     copyTimeoutRef.current = window.setTimeout(() => setCopiedEmail(false), 2000);
