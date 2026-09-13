@@ -36,24 +36,26 @@ export const App: React.FC = () => {
     animationFrameId = requestAnimationFrame(raf);
 
     const params = new URLSearchParams(window.location.search);
-    const scrollY = params.get('scrollY');
-    if (scrollY) {
-      setTimeout(() => {
-        window.scrollTo(0, parseInt(scrollY, 10));
-      }, 100);
+    const scrollTimeouts: number[] = [];
+    const scrollY = Number(params.get('scrollY'));
+    if (Number.isFinite(scrollY) && scrollY >= 0) {
+      scrollTimeouts.push(window.setTimeout(() => {
+        window.scrollTo(0, scrollY);
+      }, 100));
     }
     const scrollTarget = params.get('scroll');
     if (scrollTarget) {
-      setTimeout(() => {
+      scrollTimeouts.push(window.setTimeout(() => {
         const el = document.getElementById(scrollTarget);
         if (el) {
           el.scrollIntoView({ behavior: 'instant', block: 'start' });
         }
-      }, 100);
+      }, 100));
     }
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      scrollTimeouts.forEach((timeoutId) => window.clearTimeout(timeoutId));
       lenis.destroy();
     };
   }, []);

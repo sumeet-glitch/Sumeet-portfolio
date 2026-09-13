@@ -42,6 +42,17 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false);
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
@@ -110,6 +121,8 @@ export const Navbar: React.FC = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-1.5 text-zinc-400 hover:text-white rounded-lg transition-colors"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -124,6 +137,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
+            id="mobile-navigation"
             className="fixed top-20 left-4 right-4 z-40 lg:hidden p-6 rounded-2xl bg-[#0c0c0e]/95 backdrop-blur-2xl border border-white/10 shadow-2xl"
           >
             <div className="flex flex-col gap-3">

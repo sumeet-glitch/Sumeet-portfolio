@@ -6,6 +6,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const assetBaseUrl = import.meta.env.BASE_URL;
+
 const rotatingTitles = [
   'AI SYSTEMS',
   'AUTOMATION',
@@ -13,17 +15,36 @@ const rotatingTitles = [
   'INTELLIGENT PRODUCTS',
 ];
 
+const portraitFrames = Array.from({ length: 8 }, (_, index) =>
+  `${assetBaseUrl}PIC/${index + 1}picofme.png`,
+);
+
 export const HeroScrubber: React.FC = () => {
   const [titleIndex, setTitleIndex] = useState<number>(0);
   const portraitRef = useRef<HTMLDivElement>(null);
   const [scrubProgress, setScrubProgress] = useState<number>(0);
+  const [portraitFrame, setPortraitFrame] = useState<number>(0);
+  const [portraitFallback, setPortraitFallback] = useState<boolean>(false);
 
   // Rotating title interval (2.8 seconds)
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     const timer = setInterval(() => {
       setTitleIndex((prev) => (prev + 1) % rotatingTitles.length);
     }, 2800);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const timer = window.setInterval(() => {
+      setPortraitFrame((prev) => (prev + 1) % portraitFrames.length);
+    }, 3600);
+
+    return () => window.clearInterval(timer);
   }, []);
 
   // GSAP ScrollTrigger Scrubbing Engine
@@ -151,12 +172,20 @@ export const HeroScrubber: React.FC = () => {
                   <span>Subject / SK-01</span>
                   <span>Live feed</span>
                 </div>
-                <img 
-                  src="./hero-portrait.png" 
+                <img
+                  src={portraitFallback ? `${assetBaseUrl}hero-portrait.png` : portraitFrames[portraitFrame]}
                   alt="Sumeet Kumar" 
-                  className="relative z-[1] w-full h-full object-cover object-top filter contrast-110 brightness-105 transition-transform duration-700 hover:scale-[1.04]"
+                  width="1024"
+                  height="1024"
+                  decoding="async"
+                  fetchPriority="high"
+                  className="hero-portrait-image relative z-[1] w-full h-full object-cover object-top filter contrast-110 brightness-105 transition-transform duration-700 hover:scale-[1.04]"
                   onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = './PIC/MY PIC.jpeg';
+                    if (!portraitFallback) {
+                      setPortraitFallback(true);
+                    } else {
+                      e.currentTarget.src = `${assetBaseUrl}PIC/MY%20PIC.jpeg`;
+                    }
                   }}
                 />
                 <div className="absolute bottom-5 left-7 right-7 z-10 flex items-end justify-between">

@@ -16,22 +16,27 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       return;
     }
 
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let completionTimeout: number | undefined;
     const interval = setInterval(() => {
       setProgress((prev) => {
         const next = prev + 5;
         if (next >= 100) {
           clearInterval(interval);
-          setTimeout(() => {
+          completionTimeout = window.setTimeout(() => {
             setIsLoaded(true);
             onComplete?.();
-          }, 250);
+          }, prefersReducedMotion ? 0 : 250);
           return 100;
         }
         return next;
       });
     }, 25);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (completionTimeout !== undefined) window.clearTimeout(completionTimeout);
+    };
   }, [onComplete]);
 
   return (

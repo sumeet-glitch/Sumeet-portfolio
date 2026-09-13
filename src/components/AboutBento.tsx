@@ -42,8 +42,11 @@ export const AboutBento: React.FC = () => {
               {/* Photo Framing with Rounded-2xl & Subtle Inner Border Glow */}
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/20 bg-black mb-6 shadow-inner shadow-white/10 group-hover:border-emerald-500/40 transition-colors duration-500">
                 <img
-                  src="./PIC/MY PIC.jpeg"
+                  src={`${import.meta.env.BASE_URL}PIC/1picofme.png`}
                   alt="Sumeet Kumar"
+                  width="1024"
+                  height="1024"
+                  decoding="async"
                   className="w-full h-full object-cover filter contrast-110 brightness-105 group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-transparent pointer-events-none" />

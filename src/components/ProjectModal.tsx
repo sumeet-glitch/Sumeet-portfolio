@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Layers, CheckCircle2, Terminal, ShieldCheck } from 'lucide-react';
 
@@ -27,11 +27,31 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!project) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [project, onClose]);
+
   if (!project) return null;
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto" role="presentation">
         
         {/* Backdrop */}
         <motion.div
@@ -49,9 +69,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="relative w-full max-w-3xl rounded-3xl bg-[#0c0c0e] border border-white/15 p-6 sm:p-8 shadow-2xl shadow-black z-10 max-h-[90vh] overflow-y-auto"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="project-modal-title"
         >
           {/* Close Button */}
           <button
+            ref={closeButtonRef}
             onClick={onClose}
             className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-colors border border-white/10"
             aria-label="Close project modal"
@@ -81,7 +105,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
+          <h3 id="project-modal-title" className="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
             {project.title}
           </h3>
 
