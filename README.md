@@ -2,6 +2,8 @@
 
 > Building practical AI systems, automation platforms, developer tools, and product experiences.
 
+**Live portfolio:** [sumeet-glitch.github.io/Sumeet-portfolio](https://sumeet-glitch.github.io/Sumeet-portfolio/)
+
 ## About
 
 I build software at the intersection of **AI engineering, automation, product development, and real-world operations**. My work focuses on turning ambitious ideas into usable systems with clear architecture, reliable workflows, and maintainable code.

@@ -90,6 +90,44 @@ html.lenis, html.lenis body {
   background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
 }
 
+/* Technology stack motion: the track gives continuous movement while each card
+   gets a subtle independent float, making the section feel alive without harming
+   readability. The Tailwind animations are mirrored here as a resilient fallback. */
+.tech-marquee-track {
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.tech-marquee-track:hover,
+.tech-marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+.tech-marquee-card {
+  animation: tech-card-float 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.tech-marquee-card:nth-child(3n) { animation-delay: -1.8s; }
+.tech-marquee-card:nth-child(3n + 1) { animation-delay: -3.6s; }
+
+@keyframes tech-card-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
 .hero-portrait-frame {
   isolation: isolate;
   box-shadow: inset 0 0 80px rgba(16, 185, 129, 0.08), 0 24px 80px rgba(0, 0, 0, 0.45);
@@ -195,6 +233,8 @@ html.lenis, html.lenis body {
 @keyframes portrait-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.015); } }
 
 @media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track { animation: none !important; }
+  .tech-marquee-card { animation: none !important; }
   .hero-orbit, .hero-portrait-frame::after, .hero-portrait-image { animation: none; }
   .hero-camera-deck, .hero-camera-deck:hover { transform: none; transition: none; }
   .hero-map-grid { transform: none; opacity: 0.2; }

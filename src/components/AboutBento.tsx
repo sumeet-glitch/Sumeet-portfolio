@@ -35,7 +35,7 @@ export const AboutBento: React.FC = () => {
               <div className="flex items-center justify-between mb-6 z-10">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs uppercase tracking-[0.18em] font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span>🟢 OPEN TO OPPORTUNITIES 2026</span>
+                  <span>OPEN TO OPPORTUNITIES 2026</span>
                 </div>
               </div>
 
@@ -43,7 +43,7 @@ export const AboutBento: React.FC = () => {
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/20 bg-black mb-6 shadow-inner shadow-white/10 group-hover:border-emerald-500/40 transition-colors duration-500">
                 <img
                   src={`${import.meta.env.BASE_URL}PIC/my-pic.webp`}
-                  alt="Sumeet Kumar"
+                  alt="Sumeet Kumar in a professional suit"
                   width="1024"
                   height="1024"
                   decoding="async"

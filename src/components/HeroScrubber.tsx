@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const assetBaseUrl = import.meta.env.BASE_URL;
-const heroPortrait = `${assetBaseUrl}hero-portrait.webp`;
+const heroPortrait = `${assetBaseUrl}PIC/my-pic.webp`;
 
 export const HeroScrubber: React.FC = () => {
   const portraitRef = useRef<HTMLDivElement>(null);
@@ -49,16 +49,16 @@ export const HeroScrubber: React.FC = () => {
           >
             <div className="mb-7 flex items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-emerald-300">
               <span className="h-px w-10 bg-emerald-400" />
-              <span>Independent engineer · Patna, India</span>
+              <span>Systems architect · AI developer · Patna, India</span>
             </div>
 
             <h1 className="max-w-3xl text-[clamp(3.7rem,9vw,8.5rem)] font-black leading-[0.84] tracking-[-0.085em] text-white">
-              Software
-              <span className="block text-emerald-400">with intent.</span>
+              Intelligent software
+              <span className="block text-emerald-400">built to ship.</span>
             </h1>
 
             <p className="mt-8 max-w-xl text-base leading-7 text-zinc-300 sm:text-lg">
-              I build intelligent products, workflow automation, and dependable AI systems for people who need their ideas to work in the real world.
+              I build production-ready AI systems, full-stack products, and workflow automation with Python, FastAPI, React, and TypeScript—turning complex operations into dependable software.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">
@@ -74,6 +74,13 @@ export const HeroScrubber: React.FC = () => {
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white transition-colors hover:border-emerald-400/50 hover:bg-white/[0.06]"
               >
                 About me
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-amber-300 transition-colors hover:border-amber-300/70 hover:bg-amber-300/10"
+              >
+                Discuss a role
+                <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
 
@@ -99,7 +106,7 @@ export const HeroScrubber: React.FC = () => {
                 <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/75 via-transparent to-transparent" aria-hidden="true" />
                 <img
                   src={heroPortrait}
-                  alt="Sumeet Kumar in a black jacket"
+                  alt="Sumeet Kumar in a professional suit"
                   width="1023"
                   height="1537"
                   fetchPriority="high"
