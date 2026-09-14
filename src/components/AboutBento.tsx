@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { UserCheck, CheckCircle2, TrendingUp, Sparkles, Terminal, Code2 } from 'lucide-react';
 import { SpotlightCard } from './SpotlightCard';
 
+const profilePortrait = `${import.meta.env.BASE_URL}PIC/profile-portrait.png`;
+
 export const AboutBento: React.FC = () => {
   return (
     <section id="about" className="py-24 relative">
@@ -42,12 +44,15 @@ export const AboutBento: React.FC = () => {
               {/* Photo Framing with Rounded-2xl & Subtle Inner Border Glow */}
               <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-white/20 bg-black mb-6 shadow-inner shadow-white/10 group-hover:border-emerald-500/40 transition-colors duration-500">
                 <img
-                  src={`${import.meta.env.BASE_URL}PIC/my-pic.webp`}
+                  src={profilePortrait}
                   alt="Sumeet Kumar in a professional suit"
                   width="1024"
                   height="1024"
                   decoding="async"
                   className="w-full h-full object-cover filter contrast-110 brightness-105 group-hover:scale-105 transition-transform duration-700"
+                  onError={(event) => {
+                    event.currentTarget.src = `${import.meta.env.BASE_URL}hero-portrait.png`;
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c0d12] via-transparent to-transparent pointer-events-none" />
                 

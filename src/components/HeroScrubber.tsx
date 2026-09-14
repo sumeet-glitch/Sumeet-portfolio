@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const assetBaseUrl = import.meta.env.BASE_URL;
-const heroPortrait = `${assetBaseUrl}PIC/my-pic.webp`;
+const heroPortrait = `${assetBaseUrl}PIC/profile-portrait.png`;
 
 export const HeroScrubber: React.FC = () => {
   const portraitRef = useRef<HTMLDivElement>(null);
@@ -113,7 +113,7 @@ export const HeroScrubber: React.FC = () => {
                   decoding="async"
                   className="block aspect-[2/3] w-full object-cover object-top grayscale-[0.08] contrast-[1.04] brightness-[0.96] transition-transform duration-700 hover:scale-[1.025]"
                   onError={(event) => {
-                    event.currentTarget.src = `${assetBaseUrl}PIC/MY%20PIC.jpeg`;
+                    event.currentTarget.src = `${assetBaseUrl}hero-portrait.png`;
                   }}
                 />
                 <div className="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between p-6 sm:p-8">
