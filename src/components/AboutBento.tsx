@@ -73,9 +73,9 @@ export const AboutBento: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-3.5 rounded-xl bg-white/[0.04] border border-white/10">
-                  <div className="text-amber-400 font-mono font-extrabold text-xl">VERIFIED</div>
+                  <div className="text-amber-400 font-mono font-extrabold text-xl">CADAC™</div>
                   <div className="text-zinc-300 font-mono text-xs uppercase tracking-wider font-semibold mt-0.5">
-                    Execution
+                    Certified AI
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export const AboutBento: React.FC = () => {
               </p>
               
               <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-normal mb-6">
-                With over <strong className="text-white font-semibold">13 years of battle-tested domain authority</strong> across enterprise education, financial operations, and systems engineering, I design and build production-grade software that automates critical workflows, eliminates human error, and delivers verifiable speed.
+                With over <strong className="text-white font-semibold">13 years of battle-tested domain authority</strong> across enterprise education, financial operations, and systems engineering, I am an accredited <strong className="text-emerald-400 font-semibold">Certified AI Data & Automation Consultant (CADAC™)</strong> through Ira Skills / ICM Quantum™. I design and build production-grade software that automates critical workflows, eliminates human error, and delivers verifiable speed.
               </p>
 
               {/* Core Execution Highlights */}
@@ -155,11 +155,11 @@ export const AboutBento: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-cardBg border border-cardBorder px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-emerald-500/30 transition-all">
-                <Sparkles className="w-5 h-5 text-emerald-400 shrink-0" />
+              <div className="bg-cardBg border border-cardBorder px-4 py-3.5 rounded-xl text-zinc-200 text-sm font-medium flex items-center gap-3 hover:border-amber-400/40 transition-all">
+                <Sparkles className="w-5 h-5 text-amber-400 shrink-0" />
                 <div>
-                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Automation</div>
-                  <div className="text-white font-bold text-sm">SK-ClassSync & ETL</div>
+                  <div className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider font-semibold">Credential</div>
+                  <div className="text-white font-bold text-sm">CADAC™ AI Consultant</div>
                 </div>
               </div>
             </div>

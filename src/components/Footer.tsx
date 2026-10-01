@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-zinc-300 text-sm leading-relaxed max-w-md font-normal">
-              Systems Architect, Full-Stack Engineer & AI Developer. Transforming enterprise operations into high-performance autonomous software.
+              Certified AI Data & Automation Consultant (CADAC™), Systems Architect & Full-Stack Engineer. Transforming enterprise operations into high-performance autonomous software.
             </p>
           </div>
 

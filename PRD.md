@@ -18,7 +18,7 @@ In enterprise technology and financial operations, technical decision-makers (CT
 The **Sumeet Kumar Enterprise AI & Analytics Portfolio Platform** is a bespoke, high-performance, single-page application (SPA) engineered to demonstrate 13+ years of enterprise data transformation, AI systems development, and financial automation. It provides recruiters, clients, and technical stakeholders with:
 1. Interactive project architecture modals showing end-to-end data pipelines (e.g., Project Jarvis, SKAI Intelligence).
 2. Filterable project portfolios spanning AI Automation, Power BI BI Suites, and Financial Reconciliation Engines.
-3. Live credential verification through a 3D-interactive certification gallery backed by 18 authentic PDF/JPEG artifacts.
+3. Live credential verification through a 3D-interactive certification gallery backed by 19 authentic PDF/JPEG artifacts, headlined by the flagship Certified AI Data & Automation Consultant (CADAC™) certification from Ira Skills / ICM Quantum™.
 4. Omnichannel instant-engagement pipelines (Direct WhatsApp, RFC 6068 Mailto, Phone, and LinkedIn).
 
 ---
@@ -66,7 +66,7 @@ The **Sumeet Kumar Enterprise AI & Analytics Portfolio Platform** is a bespoke, 
 
 ### 3.4 3D-Interactive Certification Verification Gallery
 - **Mouse-Follow Tilt Calculations:** 3D perspective tilt ($X/Y$ rotation) on card hover.
-- **18 Verified Documents:** Direct modal/new-tab viewing of official certifications from Physics Wallah (PW Skills), Deloitte, Skill Nation, and Executive Banking programs.
+- **19 Verified Documents:** Direct in-app Lightbox modal and verified document viewing for official certifications from Ira Skills (CADAC™), Physics Wallah (PW Skills), Deloitte, Skill Nation, and Executive Banking programs.
 
 ### 3.5 Omnichannel Lead Generation & Contact Interface
 - **Form Submission Bridge:** Client-side sanitized contact form formatting mailto payloads with encoded subjects and bodies.

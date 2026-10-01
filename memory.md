@@ -13,7 +13,7 @@ The repository is in a **fully operational, hardened, and production-ready state
 
 - ✅ **Live Portfolio Web App:** Single-page application rendering all sections (Hero, Stats, About, Projects, Skills, Experience, Education & Certifications, Achievements, Contact Hub, Floating WhatsApp Widget).
 - ✅ **Self-Healing Runtime Engine:** [script.js](file:///d:/My%20Profile/script.js) actively enforces global error trapping, isolated `supervise()` watchdogs, circuit breaker resilience, and deterministic resource disposal.
-- ✅ **Verified Media Assets:** All 18 certification artifacts (PDFs & high-res JPGs) in [Certifications/](file:///d:/My%20Profile/Certifications) are linked and verified with zero 404s.
+- ✅ **Verified Media Assets:** All 19 certification artifacts (PDFs & high-res JPGs/JPEGs), including the flagship Certified AI Data & Automation Consultant (CADAC™) credential by Ira Skills / ICM Quantum™, in [Certifications/](file:///d:/My%20Profile/Certifications) and [public/Certifications/](file:///d:/My%20Profile/public/Certifications) are linked and verified with zero 404s.
 - ✅ **Complete Governance Suite:** Full 6-file documentation suite (`PRD.md`, `architecture.md`, `rules.md`, `phases.md`, `design.md`, `memory.md`, plus `AGENT_RULES.md`) active in project root.
 
 ---

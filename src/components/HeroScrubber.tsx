@@ -49,7 +49,7 @@ export const HeroScrubber: React.FC = () => {
           >
             <div className="mb-7 flex items-center gap-3 text-xs font-mono uppercase tracking-[0.2em] text-emerald-300">
               <span className="h-px w-10 bg-emerald-400" />
-              <span>Systems architect · AI developer · Patna, India</span>
+              <span>Systems architect · Certified AI & Automation Consultant (CADAC™) · Patna, India</span>
             </div>
 
             <h1 className="max-w-3xl text-[clamp(3.7rem,9vw,8.5rem)] font-black leading-[0.84] tracking-[-0.085em] text-white">
@@ -119,7 +119,7 @@ export const HeroScrubber: React.FC = () => {
                 <div className="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between p-6 sm:p-8">
                   <div>
                     <p className="text-xs font-mono uppercase tracking-[0.2em] text-emerald-300">Sumeet Kumar</p>
-                    <p className="mt-2 text-sm text-zinc-200">AI systems · full-stack · automation</p>
+                    <p className="mt-2 text-sm text-zinc-200">Certified AI Consultant (CADAC™) · Systems & Automation</p>
                   </div>
                   <span className="rounded-full border border-white/20 bg-black/30 px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.18em] text-zinc-300 backdrop-blur-sm">Available</span>
                 </div>
